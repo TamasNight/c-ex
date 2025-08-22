@@ -1,0 +1,20 @@
+#ifndef C_EX_POKEMON_CLASSES_H
+#define C_EX_POKEMON_CLASSES_H
+
+#define CLASS_ARTIFICER  0
+#define CLASS_BARBARIAN  1
+#define CLASS_BARD       2
+#define CLASS_CLERIC     3
+#define CLASS_FIGHTER    4
+#define CLASS_MONK       5
+#define CLASS_RANGER     6
+#define CLASS_WIZARD     7
+#define CLASS_WARLOCK    8
+#define CLASS_SORCERER   9
+#define CLASS_PALADIN    10
+#define CLASS_THIEF      11
+#define CLASS_DRUID      12
+
+#define NUM_POKEMON_CLASSES 13
+
+#endif //C_EX_POKEMON_CLASSES_H

@@ -119,6 +119,7 @@ enum {
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
     MON_DATA_EVOLUTION_TRACKER,
+    MON_DATA_CLASS,
 };
 
 struct PokemonSubstruct0
@@ -126,7 +127,7 @@ struct PokemonSubstruct0
     u16 species:11; // 2047 species.
     u16 teraType:5; // 30 types.
     u16 heldItem:10; // 1023 items.
-    u16 unused_02:6;
+    u16 unused_02:6; // Tamas Class System
     u32 experience:21;
     u32 nickname11:8; // 11th character of nickname.
     u32 unused_04:3;
@@ -830,5 +831,7 @@ uq4_12_t GetDynamaxLevelHPMultiplier(u32 dynamaxLevel, bool32 inverseMultiplier)
 u32 GetRegionalFormByRegion(u32 species, u32 region);
 bool32 IsSpeciesForeignRegionalForm(u32 species, u32 currentRegion);
 u32 GetTeraTypeFromPersonality(struct Pokemon *mon);
+u16 GenerateRandomPokemonClass(void);
+const u8 *GetPokemonClassName(u16 pokemonClass);
 
 #endif // GUARD_POKEMON_H

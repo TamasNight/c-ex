@@ -66,6 +66,40 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 #include "wild_encounter.h"
+// Tamas Class System
+#include "constants/pokemon_classes.h"
+
+static const u8 sClassName_Artificer[] = _("ARTIFICER");
+static const u8 sClassName_Barbarian[] = _("BARBARIAN");
+static const u8 sClassName_Bard[] = _("BARD");
+static const u8 sClassName_Cleric[] = _("CLERIC");
+static const u8 sClassName_Fighter[] = _("FIGHTER");
+static const u8 sClassName_Monk[] = _("MONK");
+static const u8 sClassName_Ranger[] = _("RANGER");
+static const u8 sClassName_Wizard[] = _("WIZARD");
+static const u8 sClassName_Warlock[] = _("WARLOCK");
+static const u8 sClassName_Sorcerer[] = _("SORCERER");
+static const u8 sClassName_Paladin[] = _("PALADIN");
+static const u8 sClassName_Thief[] = _("THIEF");
+static const u8 sClassName_Druid[] = _("DRUID");
+
+static const u8 * const gClassNames[NUM_POKEMON_CLASSES] =
+{
+    [CLASS_ARTIFICER] = sClassName_Artificer,
+    [CLASS_BARBARIAN] = sClassName_Barbarian,
+    [CLASS_BARD] = sClassName_Bard,
+    [CLASS_CLERIC] = sClassName_Cleric,
+    [CLASS_FIGHTER] = sClassName_Fighter,
+    [CLASS_MONK] = sClassName_Monk,
+    [CLASS_RANGER] = sClassName_Ranger,
+    [CLASS_WIZARD] = sClassName_Wizard,
+    [CLASS_WARLOCK] = sClassName_Warlock,
+    [CLASS_SORCERER] = sClassName_Sorcerer,
+    [CLASS_PALADIN] = sClassName_Paladin,
+    [CLASS_THIEF] = sClassName_Thief,
+    [CLASS_DRUID] = sClassName_Druid,
+};
+
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
 
@@ -1283,6 +1317,9 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         value = personality & 1;
         SetBoxMonData(boxMon, MON_DATA_ABILITY_NUM, &value);
     }
+    // Tamas Class System
+    u16 class = GenerateRandomPokemonClass();
+    SetBoxMonData(boxMon, MON_DATA_CLASS, &class);
 
     GiveBoxMonInitialMoveset(boxMon);
 }
@@ -2822,6 +2859,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             evoTracker.asField.unused = 0;
             retVal = evoTracker.value;
             break;
+        case MON_DATA_CLASS:
+            retVal = substruct0->unused_02;
+            break;
         default:
             break;
         }
@@ -3248,6 +3288,10 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             substruct1->evolutionTracker2 = evoTracker.asField.b;
             break;
         }
+        // Tamas Class System
+        case MON_DATA_CLASS:
+            SET16(substruct0->unused_02);
+            break;
         default:
             break;
         }
@@ -7167,4 +7211,20 @@ u32 GetTeraTypeFromPersonality(struct Pokemon *mon)
 {
     const u8 *types = gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].types;
     return (GetMonData(mon, MON_DATA_PERSONALITY) & 0x1) == 0 ? types[0] : types[1];
+}
+
+// Tamas Class System
+// Funzione per assegnare una classe casuale
+u16 GenerateRandomPokemonClass(void)
+{
+    return Random() % NUM_POKEMON_CLASSES;
+}
+
+// Funzione per ottenere il nome della classe
+const u8 *GetPokemonClassName(u16 pokemonClass)
+{
+    if (pokemonClass >= NUM_POKEMON_CLASSES)
+        return gClassNames[CLASS_ARTIFICER]; // Default fallback
+
+    return gClassNames[pokemonClass];
 }

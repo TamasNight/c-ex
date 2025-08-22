@@ -166,6 +166,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
         u32 OTID; // 0x48
         u8 teraType;
         u8 mintNature;
+        u16 class;
     } summary;
     u16 bgTilemapBuffers[PSS_PAGE_COUNT][2][0x400];
     u8 mode;
@@ -1535,6 +1536,7 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
     default:
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);
         sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
+        sum->class = GetMonData(mon, MON_DATA_CLASS);
         sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
         sMonSummaryScreen->relearnableMovesNum = P_SUMMARY_SCREEN_MOVE_RELEARNER ? GetNumberOfRelearnableMoves(mon) : 0;
         return TRUE;
@@ -3530,7 +3532,8 @@ static void BufferMonTrainerMemo(void)
 
 static void PrintMonTrainerMemo(void)
 {
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), gStringVar4, 0, 1, 0, 0);
+    // Tamas Class System Injection
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), GetPokemonClassName(sMonSummaryScreen->summary.class), 0, 1, 0, 0);
 }
 
 static void BufferNatureString(void)
