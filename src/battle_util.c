@@ -9189,7 +9189,6 @@ static inline uq4_12_t GetGlaiveRushModifier(u32 battlerDef)
 // Tamas Class System
 static inline uq4_12_t GetThiefDamageModifier(void)
 {
-    DebugPrintf("THIEF Boosted Check");
     if (IsHighPriorityMove()) {
         if (AttackerHasThiefClass(CLASS_ROGUE)) {
             DebugPrintf("THIEF Boosted OK");
@@ -11529,7 +11528,6 @@ bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId)
 bool32 IsHighPriorityMove(void)
 {
     bool32 ret = GetChosenMovePriority(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)) > 0;
-    DebugPrintf("THIEF High Priority: %d", ret);
     return ret;
 }
 
@@ -11540,6 +11538,6 @@ bool32 AttackerHasThiefClass(u8 class)
     struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
     u8 monClass = GetMonData(&party[0], MON_DATA_CLASS);
     bool32 ret = monClass == class;
-    DebugPrintf("THIEF %d Class: %d", monClass, ret);
+    DebugPrintf("CLASS: %d == %d: %d", class, monClass, ret);
     return ret;
 }
