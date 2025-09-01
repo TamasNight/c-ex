@@ -12,7 +12,7 @@
 #define CLASS_WARLOCK    8
 #define CLASS_SORCERER   9
 #define CLASS_PALADIN    10
-#define CLASS_THIEF      11
+#define CLASS_ROGUE      11
 #define CLASS_DRUID      12
 
 #define NUM_POKEMON_CLASSES 13

@@ -69,19 +69,19 @@
 // Tamas Class System
 #include "constants/pokemon_classes.h"
 
-static const u8 sClassName_Artificer[] = _("ARTIFICER");
-static const u8 sClassName_Barbarian[] = _("BARBARIAN");
-static const u8 sClassName_Bard[] = _("BARD");
-static const u8 sClassName_Cleric[] = _("CLERIC");
-static const u8 sClassName_Fighter[] = _("FIGHTER");
-static const u8 sClassName_Monk[] = _("MONK");
-static const u8 sClassName_Ranger[] = _("RANGER");
-static const u8 sClassName_Wizard[] = _("WIZARD");
-static const u8 sClassName_Warlock[] = _("WARLOCK");
-static const u8 sClassName_Sorcerer[] = _("SORCERER");
-static const u8 sClassName_Paladin[] = _("PALADIN");
-static const u8 sClassName_Thief[] = _("THIEF");
-static const u8 sClassName_Druid[] = _("DRUID");
+static const u8 sClassName_Artificer[] = _("Artificer");
+static const u8 sClassName_Barbarian[] = _("Barbarian");
+static const u8 sClassName_Bard[] = _("Bard");
+static const u8 sClassName_Cleric[] = _("Cleric");
+static const u8 sClassName_Fighter[] = _("Fighter");
+static const u8 sClassName_Monk[] = _("Monk");
+static const u8 sClassName_Ranger[] = _("Ranger");
+static const u8 sClassName_Wizard[] = _("Wizard");
+static const u8 sClassName_Warlock[] = _("Warlock");
+static const u8 sClassName_Sorcerer[] = _("Sorcerer");
+static const u8 sClassName_Paladin[] = _("Paladin");
+static const u8 sClassName_Rogue[] = _("Rogue");
+static const u8 sClassName_Druid[] = _("Druid");
 
 static const u8 * const gClassNames[NUM_POKEMON_CLASSES] =
 {
@@ -96,7 +96,7 @@ static const u8 * const gClassNames[NUM_POKEMON_CLASSES] =
     [CLASS_WARLOCK] = sClassName_Warlock,
     [CLASS_SORCERER] = sClassName_Sorcerer,
     [CLASS_PALADIN] = sClassName_Paladin,
-    [CLASS_THIEF] = sClassName_Thief,
+    [CLASS_ROGUE] = sClassName_Rogue,
     [CLASS_DRUID] = sClassName_Druid,
 };
 

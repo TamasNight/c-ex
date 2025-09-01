@@ -9191,7 +9191,7 @@ static inline uq4_12_t GetThiefDamageModifier(void)
 {
     DebugPrintf("THIEF Boosted Check");
     if (IsHighPriorityMove()) {
-        if (AttackerHasThiefClass()) {
+        if (AttackerHasThiefClass(CLASS_ROGUE)) {
             DebugPrintf("THIEF Boosted OK");
             return UQ_4_12(THIEF_PRIORITY_DAMAGE_MULTIPLIER);
         }
@@ -11534,10 +11534,12 @@ bool32 IsHighPriorityMove(void)
 }
 
 // Controlla se il Pokemon attaccante ha classe THIEF
-bool32 AttackerHasThiefClass(void)
+bool32 AttackerHasThiefClass(u8 class)
 {
-    u8 monClass = GetMonData(&gPlayerParty[0], MON_DATA_CLASS, NULL);
-    bool32 ret = monClass == CLASS_THIEF;
+    // TODO check for 2vs2 battle
+    struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
+    u8 monClass = GetMonData(&party[0], MON_DATA_CLASS);
+    bool32 ret = monClass == class;
     DebugPrintf("THIEF %d Class: %d", monClass, ret);
     return ret;
 }
