@@ -8679,6 +8679,24 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
             modifier = uq4_12_multiply(modifier, UQ_4_12(WIZARD_STAB_DAMAGE_MULTIPLIER));
         }
     }
+    if (AttackerHasClass(CLASS_BARBARIAN)) {
+        if (GetBattleMoveCategory(gCurrentMove) == DAMAGE_CATEGORY_PHYSICAL) {
+            DebugPrintf("BARBARIAN Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(BARBARIAN_PHYSICAL_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (AttackerHasClass(CLASS_SORCERER)) {
+        if (GetBattleMoveCategory(gCurrentMove) == DAMAGE_CATEGORY_SPECIAL) {
+            DebugPrintf("SORCERER Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(SORCERER_SPECIAL_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (AttackerHasClass(CLASS_BARD)) {
+        if (IsSoundMove(gCurrentMove)) {
+            DebugPrintf("BARD Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(BARD_SOUND_DAMAGE_MULTIPLIER));
+        }
+    }
 
     return uq4_12_multiply_by_int_half_down(modifier, basePower);
 }
