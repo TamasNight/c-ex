@@ -2014,6 +2014,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 ball = gTrainerClasses[trainer->trainerClass].ball ?: ITEM_POKE_BALL;
                 SetMonData(&party[i], MON_DATA_POKEBALL, &ball);
             }
+            // Tamas Class System
+            DebugPrintf("GENNPC-CLASS: %d", GetMonData(&party[i], MON_DATA_CLASS, NULL));
         }
     }
 
@@ -2032,10 +2034,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 void CreateTrainerPartyForPlayer(void)
 {
     Script_RequestEffects(SCREFF_V1);
-
+    // Tamas Class System
     ZeroPlayerPartyMons();
     gPartnerTrainerId = gSpecialVar_0x8004;
     CreateNPCTrainerPartyFromTrainer(gPlayerParty, GetTrainerStructFromId(gSpecialVar_0x8004), TRUE, BATTLE_TYPE_TRAINER);
+    DebugPrintf("CREATION PARTY FOR PLAYER");
 }
 
 void VBlankCB_Battle(void)

@@ -50,6 +50,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
+#include "constants/pokemon_classes.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -9185,6 +9186,19 @@ static inline uq4_12_t GetGlaiveRushModifier(u32 battlerDef)
     return UQ_4_12(1.0);
 }
 
+// Tamas Class System
+static inline uq4_12_t GetThiefDamageModifier(void)
+{
+    DebugPrintf("THIEF Boosted Check");
+    if (IsHighPriorityMove()) {
+        if (AttackerHasThiefClass()) {
+            DebugPrintf("THIEF Boosted OK");
+            return UQ_4_12(THIEF_PRIORITY_DAMAGE_MULTIPLIER);
+        }
+    }
+    return UQ_4_12(1.0);
+}
+
 static inline uq4_12_t GetZMaxMoveAgainstProtectionModifier(struct DamageCalculationData *damageCalcData)
 {
     if (!IsZMove(damageCalcData->move) && !IsMaxMove(damageCalcData->move))
@@ -9448,6 +9462,9 @@ static inline s32 DoMoveDamageCalcVars(struct DamageCalculationData *damageCalcD
     DAMAGE_APPLY_MODIFIER(GetWeatherDamageModifier(damageCalcData, holdEffectAtk, holdEffectDef, weather));
     DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData->isCrit));
     DAMAGE_APPLY_MODIFIER(GetGlaiveRushModifier(battlerDef));
+    // Tamas Class System
+    DAMAGE_APPLY_MODIFIER(GetThiefDamageModifier());
+
 
     if (damageCalcData->randomFactor)
     {
@@ -11506,4 +11523,21 @@ bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId)
             return TRUE;
     }
     return FALSE;
+}
+
+// Tamas Class System
+bool32 IsHighPriorityMove(void)
+{
+    bool32 ret = GetChosenMovePriority(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)) > 0;
+    DebugPrintf("THIEF High Priority: %d", ret);
+    return ret;
+}
+
+// Controlla se il Pokemon attaccante ha classe THIEF
+bool32 AttackerHasThiefClass(void)
+{
+    u8 monClass = GetMonData(&gPlayerParty[0], MON_DATA_CLASS, NULL);
+    bool32 ret = monClass == CLASS_THIEF;
+    DebugPrintf("THIEF %d Class: %d", monClass, ret);
+    return ret;
 }

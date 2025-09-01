@@ -1320,7 +1320,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     // Tamas Class System
     u16 class = GenerateRandomPokemonClass();
     SetBoxMonData(boxMon, MON_DATA_CLASS, &class);
-
+    DebugPrintf("CREATION: %d", GetBoxMonData(boxMon, MON_DATA_CLASS, NULL));
     GiveBoxMonInitialMoveset(boxMon);
 }
 
@@ -3770,6 +3770,9 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
         dst->statStages[i] = DEFAULT_STAT_STAGE;
 
     dst->status2 = 0;
+    // Tamas Class System
+    DebugPrintf("BATTLEMON - CLASS: %d", GetMonData(src, MON_DATA_CLASS, NULL));
+    dst->class = GetMonData(src, MON_DATA_CLASS, NULL);
 }
 
 void CopyPartyMonToBattleData(u32 battler, u32 partyIndex)

@@ -385,5 +385,6 @@ bool32 IsFutureSightAttackerInParty(u32 battlerAtk, u32 battlerDef, u32 move);
 bool32 HadMoreThanHalfHpNowDoesnt(u32 battler);
 void UpdateStallMons(void);
 bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId);
-
+bool32 IsHighPriorityMove(void);
+bool32 AttackerHasThiefClass(void);
 #endif // GUARD_BATTLE_UTIL_H
