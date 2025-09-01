@@ -8648,6 +8648,38 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
         return 60;
     }
 
+    // Tamas Class System Attack Boost
+    if (AttackerHasClass(CLASS_ROGUE)) {
+        if (GetChosenMovePriority(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)) > 0) {
+            DebugPrintf("ROGUE Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(ROGUE_PRIORITY_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (AttackerHasClass(CLASS_MONK)) {
+        if (GetMoveEffect(gCurrentMove) == EFFECT_MULTI_HIT) {
+            DebugPrintf("MONK Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(MONK_MULTI_HIT_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (AttackerHasClass(CLASS_RANGER)) {
+        if (!IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), gCurrentMove)) {
+            DebugPrintf("RANGER Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(RANGER_NO_CONTACT_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (AttackerHasClass(CLASS_FIGHTER)) {
+        if (IsSlicingMove(gCurrentMove)) {
+            DebugPrintf("FIGHTER Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(FIGHTER_SCLICING_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (AttackerHasClass(CLASS_WIZARD)) {
+        if (IS_BATTLER_OF_TYPE(gBattlerAttacker, GetBattleMoveType(gCurrentMove))) {
+            DebugPrintf("WIZARD Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(WIZARD_STAB_DAMAGE_MULTIPLIER));
+        }
+    }
+
     return uq4_12_multiply_by_int_half_down(modifier, basePower);
 }
 
@@ -9186,18 +9218,6 @@ static inline uq4_12_t GetGlaiveRushModifier(u32 battlerDef)
     return UQ_4_12(1.0);
 }
 
-// Tamas Class System
-static inline uq4_12_t GetThiefDamageModifier(void)
-{
-    if (IsHighPriorityMove()) {
-        if (AttackerHasThiefClass(CLASS_ROGUE)) {
-            DebugPrintf("THIEF Boosted OK");
-            return UQ_4_12(THIEF_PRIORITY_DAMAGE_MULTIPLIER);
-        }
-    }
-    return UQ_4_12(1.0);
-}
-
 static inline uq4_12_t GetZMaxMoveAgainstProtectionModifier(struct DamageCalculationData *damageCalcData)
 {
     if (!IsZMove(damageCalcData->move) && !IsMaxMove(damageCalcData->move))
@@ -9461,9 +9481,6 @@ static inline s32 DoMoveDamageCalcVars(struct DamageCalculationData *damageCalcD
     DAMAGE_APPLY_MODIFIER(GetWeatherDamageModifier(damageCalcData, holdEffectAtk, holdEffectDef, weather));
     DAMAGE_APPLY_MODIFIER(GetCriticalModifier(damageCalcData->isCrit));
     DAMAGE_APPLY_MODIFIER(GetGlaiveRushModifier(battlerDef));
-    // Tamas Class System
-    DAMAGE_APPLY_MODIFIER(GetThiefDamageModifier());
-
 
     if (damageCalcData->randomFactor)
     {
@@ -11525,14 +11542,8 @@ bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId)
 }
 
 // Tamas Class System
-bool32 IsHighPriorityMove(void)
-{
-    bool32 ret = GetChosenMovePriority(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)) > 0;
-    return ret;
-}
-
 // Controlla se il Pokemon attaccante ha classe THIEF
-bool32 AttackerHasThiefClass(u8 class)
+bool32 AttackerHasClass(u8 class)
 {
     // TODO check for 2vs2 battle
     struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
