@@ -8340,7 +8340,7 @@ static inline u32 CalcMoveBasePower(struct DamageCalculationData *damageCalcData
     return basePower;
 }
 
-static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData, u32 atkAbility, u32 defAbility, enum ItemHoldEffect holdEffectAtk, u32 weather)
+u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData, u32 atkAbility, u32 defAbility, enum ItemHoldEffect holdEffectAtk, u32 weather)
 {
     u32 holdEffectParamAtk;
     u32 basePower = CalcMoveBasePower(damageCalcData, defAbility, weather);
@@ -8650,49 +8650,49 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *
 
     // Tamas Class System Attack Boost
     if (AttackerHasClass(CLASS_ROGUE)) {
-        if (GetChosenMovePriority(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)) > 0) {
+        if (GetChosenMovePriority(battlerAtk, GetBattlerAbility(battlerAtk)) > 0) {
             DebugPrintf("ROGUE Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(ROGUE_PRIORITY_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_MONK)) {
-        if (GetMoveEffect(gCurrentMove) == EFFECT_MULTI_HIT) {
+        if (GetMoveEffect(move) == EFFECT_MULTI_HIT) {
             DebugPrintf("MONK Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(MONK_MULTI_HIT_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_RANGER)) {
-        if (!IsMoveMakingContact(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), gCurrentMove)) {
+        if (!MoveMakesContact(move)) {
             DebugPrintf("RANGER Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(RANGER_NO_CONTACT_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_FIGHTER)) {
-        if (IsSlicingMove(gCurrentMove)) {
+        if (IsSlicingMove(move)) {
             DebugPrintf("FIGHTER Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(FIGHTER_SCLICING_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_WIZARD)) {
-        if (IS_BATTLER_OF_TYPE(gBattlerAttacker, GetBattleMoveType(gCurrentMove))) {
+        if (IS_BATTLER_OF_TYPE(battlerAtk, GetBattleMoveType(move))) {
             DebugPrintf("WIZARD Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(WIZARD_STAB_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_BARBARIAN)) {
-        if (GetBattleMoveCategory(gCurrentMove) == DAMAGE_CATEGORY_PHYSICAL) {
+        if (GetBattleMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL) {
             DebugPrintf("BARBARIAN Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(BARBARIAN_PHYSICAL_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_SORCERER)) {
-        if (GetBattleMoveCategory(gCurrentMove) == DAMAGE_CATEGORY_SPECIAL) {
+        if (GetBattleMoveCategory(move) == DAMAGE_CATEGORY_SPECIAL) {
             DebugPrintf("SORCERER Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(SORCERER_SPECIAL_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_BARD)) {
-        if (IsSoundMove(gCurrentMove)) {
+        if (IsSoundMove(move)) {
             DebugPrintf("BARD Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(BARD_SOUND_DAMAGE_MULTIPLIER));
         }
@@ -11560,13 +11560,13 @@ bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId)
 }
 
 // Tamas Class System
-// Controlla se il Pokemon attaccante ha classe THIEF
+// Controlla se il Pokemon attaccante ha una certa classe
 bool32 AttackerHasClass(u8 class)
 {
     // TODO check for 2vs2 battle
     struct Pokemon *party = GetBattlerParty(gBattlerAttacker);
     u8 monClass = GetMonData(&party[0], MON_DATA_CLASS);
     bool32 ret = monClass == class;
-    DebugPrintf("CLASS: %d == %d: %d", class, monClass, ret);
+    // DebugPrintf("CLASS: %d == %d: %d", class, monClass, ret);
     return ret;
 }

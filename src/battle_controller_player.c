@@ -1782,9 +1782,9 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
 {
     struct ChooseMoveStruct *moveInfo = (struct ChooseMoveStruct*)(&gBattleResources->bufferA[battler][4]);
     u16 move = moveInfo->moves[gMoveSelectionCursor[battler]];
-    u16 pwr = GetMovePower(move);
+    u16 pwr = GetMoveRealPower(battler, move); //GetMovePower(move);
     u16 acc = GetMoveAccuracy(move);
-
+    // TODO controllo
     u8 pwr_num[3], acc_num[3];
     u8 cat_desc[7] = _("CAT: ");
     u8 pwr_desc[7] = _("PWR: ");
@@ -2513,4 +2513,31 @@ static void MoveSelectionDisplayMoveEffectiveness(u32 foeEffectiveness, u32 batt
     }
 
     BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_PP);
+}
+// Tamas Class System
+static u32 GetWeather(void)
+{
+    if (gBattleWeather == B_WEATHER_NONE || !HasWeatherEffect())
+        return B_WEATHER_NONE;
+    else
+        return gBattleWeather;
+}
+
+u16 GetMoveRealPower(u32 battlerAtk, u32 moveId) {
+    u32 battlerDef = gBattlerTarget;
+    enum ItemHoldEffect holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
+
+    u32 abilityAtk = GetBattlerAbility(battlerAtk);
+    u32 abilityDef = GetBattlerAbility(battlerDef);
+
+    struct DamageCalculationData damageCalcData;
+    damageCalcData.battlerAtk = battlerAtk;
+    damageCalcData.battlerDef = battlerDef;
+    damageCalcData.move = moveId;
+    damageCalcData.moveType = GetMoveType(moveId);
+    damageCalcData.isCrit = FALSE;
+    damageCalcData.randomFactor = FALSE;
+    damageCalcData.updateFlags = FALSE;
+
+    return CalcMoveBasePowerAfterModifiers(&damageCalcData, abilityAtk, abilityDef, holdEffectAtk, GetWeather());
 }

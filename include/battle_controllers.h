@@ -385,6 +385,7 @@ void HandleInputShowEntireFieldTargets(u32 battler);
 void HandleInputShowTargets(u32 battler);
 void HandleMoveSwitching(u32 battler);
 void HandleChooseMoveAfterDma3(u32 battler);
+u16 GetMoveRealPower(u32 battlerAtk, u32 moveId);
 
 // recorded player controller
 void SetControllerToRecordedPlayer(u32 battler);
