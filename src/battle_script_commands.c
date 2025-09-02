@@ -68,6 +68,7 @@
 #include "data/battle_move_effects.h"
 #include "follower_npc.h"
 #include "load_save.h"
+#include "constants/pokemon_classes.h"
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
 // this returns (i^2.5)/4
@@ -11840,7 +11841,7 @@ static void Cmd_tryhealhalfhealth(void)
     gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
     // Tamas Class System TODO controllo
     if (AttackerHasClass(CLASS_CLERIC)) {
-        gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10)
+        gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
     }
     if (gBattleStruct->moveDamage[gBattlerTarget] == 0)
         gBattleStruct->moveDamage[gBattlerTarget] = 1;
@@ -14533,7 +14534,7 @@ static void Cmd_recoverbasedonsunlight(void)
         }
         // Tamas Class System TODO controllo
         if (AttackerHasClass(CLASS_CLERIC)) {
-            gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10)
+            gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
         }
         if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
             gBattleStruct->moveDamage[gBattlerAttacker] = 1;
@@ -17669,7 +17670,7 @@ void BS_TryHealPulse(void)
             gBattleStruct->moveDamage[gBattlerTarget] = -(GetNonDynamaxMaxHP(gBattlerTarget) / 2);
         // Tamas Class System TODO controllo
         if (AttackerHasClass(CLASS_CLERIC)) {
-            gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10)
+            gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
         }
         if (gBattleStruct->moveDamage[gBattlerTarget] == 0)
             gBattleStruct->moveDamage[gBattlerTarget] = -1;
