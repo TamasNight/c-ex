@@ -11840,7 +11840,7 @@ static void Cmd_tryhealhalfhealth(void)
 
     gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
     // Tamas Class System TODO controllo
-    if (AttackerHasClass(CLASS_CLERIC)) {
+    if (AttackerHasClass(CLASS_CLERIC, gBattlerAttacker)) {
         gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
     }
     if (gBattleStruct->moveDamage[gBattlerTarget] == 0)
@@ -14533,7 +14533,7 @@ static void Cmd_recoverbasedonsunlight(void)
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
         }
         // Tamas Class System TODO controllo
-        if (AttackerHasClass(CLASS_CLERIC)) {
+        if (AttackerHasClass(CLASS_CLERIC, gBattlerAttacker)) {
             gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
         }
         if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
@@ -17669,7 +17669,7 @@ void BS_TryHealPulse(void)
         else
             gBattleStruct->moveDamage[gBattlerTarget] = -(GetNonDynamaxMaxHP(gBattlerTarget) / 2);
         // Tamas Class System TODO controllo
-        if (AttackerHasClass(CLASS_CLERIC)) {
+        if (AttackerHasClass(CLASS_CLERIC, gBattlerAttacker)) {
             gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
         }
         if (gBattleStruct->moveDamage[gBattlerTarget] == 0)
