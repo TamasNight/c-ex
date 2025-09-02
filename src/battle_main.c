@@ -2015,6 +2015,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 SetMonData(&party[i], MON_DATA_POKEBALL, &ball);
             }
             // Tamas Class System
+            if (partyData[monIndex].padding2 != 13) {
+                u8 class = partyData[monIndex].padding2;
+                SetMonData(&party[i], MON_DATA_CLASS, &class);
+            }
             DebugPrintf("GENNPC-CLASS: %d", GetMonData(&party[i], MON_DATA_CLASS, NULL));
         }
     }

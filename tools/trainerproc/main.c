@@ -86,6 +86,9 @@ struct Pokemon
     struct String tera_type;
     int tera_type_line;
 
+    int class;
+    int class_line;
+
     struct String moves[MAX_MON_MOVES];
     int moves_n;
     int move1_line;
@@ -1448,6 +1451,14 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 pokemon->tera_type_line = value.location.line;
                 pokemon->tera_type = token_string(&value);
             }
+            else if (is_literal_token(&key, "Class"))
+            {
+                if (pokemon->class_line)
+                    any_error = !set_show_parse_error(p, key.location, "duplicate 'Class'");
+                pokemon->class_line = value.location.line;
+                if (!token_int(p, &value, &pokemon->class))
+                    any_error = !show_parse_error(p);
+            }
             else if (is_literal_token(&key, "Tags"))
             {
                 if (pokemon->tags_line)
@@ -2001,7 +2012,14 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
                 fprint_constant(f, "TYPE", pokemon->tera_type);
                 fprintf(f, ",\n");
             }
-
+            // Tamas Class System
+            if (pokemon->class_line)
+            {
+                fprintf(f, "#line %d\n", pokemon->class_line);
+                fprintf(f, "            .padding2 = %d,\n", pokemon->class);
+            } else {
+                fprintf(f, "            .padding2 = 13,\n");
+            }
             if (pokemon->tags_line)
             {
                 fprintf(f, "#line %d\n", pokemon->tags_line);
