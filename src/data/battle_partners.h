@@ -51,8 +51,10 @@
 #line 16
             .nature = NATURE_BRAVE,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
 #line 20
+            .padding2 = 8,
+            .moves = {
+#line 21
                 MOVE_LIGHT_SCREEN,
                 MOVE_PSYCHIC,
                 MOVE_REFLECT,
@@ -60,20 +62,21 @@
             },
             },
             {
-#line 25
+#line 26
             .species = SPECIES_SKARMORY,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 29
+#line 30
             .ev = TRAINER_PARTY_EVS(252, 0, 0, 0, 6, 252),
-#line 28
+#line 29
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 27
+#line 28
             .lvl = 43,
-#line 26
+#line 27
             .nature = NATURE_IMPISH,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .padding2 = 13,
             .moves = {
-#line 30
+#line 31
                 MOVE_TOXIC,
                 MOVE_AERIAL_ACE,
                 MOVE_PROTECT,
@@ -81,20 +84,21 @@
             },
             },
             {
-#line 35
+#line 36
             .species = SPECIES_AGGRON,
             .gender = TRAINER_MON_RANDOM_GENDER,
-#line 39
+#line 40
             .ev = TRAINER_PARTY_EVS(0, 252, 0, 0, 252, 6),
-#line 38
+#line 39
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 37
+#line 38
             .lvl = 44,
-#line 36
+#line 37
             .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .padding2 = 13,
             .moves = {
-#line 40
+#line 41
                 MOVE_THUNDER,
                 MOVE_PROTECT,
                 MOVE_SOLAR_BEAM,
