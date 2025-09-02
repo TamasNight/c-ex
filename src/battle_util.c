@@ -8395,20 +8395,35 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
     // various effects
     if (gProtectStructs[battlerAtk].helpingHand)
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
-    if (gSpecialStatuses[battlerAtk].gemBoost)
-        modifier = uq4_12_multiply(modifier, uq4_12_add(UQ_4_12(1.0), PercentToUQ4_12(gSpecialStatuses[battlerAtk].gemParam)));
+    if (gSpecialStatuses[battlerAtk].gemBoost) {
+        // Tamas Class System - Artificer
+        uq4_12_t mul = UQ_4_12(0.0);
+        if (AttackerHasClass(CLASS_ARTIFICER, battlerAtk)) {
+            DebugPrintf("ARTIFICER Boosted OK");
+            mul = UQ_4_12(ARTIFICER_GEM_DAMAGE_PERCENT);
+        }
+        modifier = uq4_12_multiply(modifier, uq4_12_add(uq4_12_add(UQ_4_12(1.0), PercentToUQ4_12(gSpecialStatuses[battlerAtk].gemParam)), mul);
+    }
     if (gStatuses3[battlerAtk] & STATUS3_CHARGED_UP && moveType == TYPE_ELECTRIC)
         modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
     if (GetMoveEffect(gChosenMove) == EFFECT_ME_FIRST)
         modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+    // Tamas Class System - Druid
+    uq4_12_t terrainAtk = UQ_4_12(1.3);
+    uq4_12_t terrainDef = UQ_4_12(0.5);
+    if (AttackerHasClass(CLASS_ARTIFICER, battlerAtk)) {
+        DebugPrintf("DRUID Boosted OK");
+        terrainAtk = UQ_4_12(DRUID_TERRAIN_DAMAGE_MULTIPLIER);
+        terrainDef = UQ_4_12(DRUID_TERRAIN_DEFENCE_MULTIPLIER)
+    }
     if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_GRASSY_TERRAIN) && moveType == TYPE_GRASS)
-        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
+        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? terrainAtk : UQ_4_12(1.5)));
     if (IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN) && moveType == TYPE_DRAGON)
-        modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
+        modifier = uq4_12_multiply(modifier, terrainDef : UQ_4_12(0.5));
     if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_ELECTRIC_TERRAIN) && moveType == TYPE_ELECTRIC)
-        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
+        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? terrainAtk : UQ_4_12(1.5)));
     if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_PSYCHIC_TERRAIN) && moveType == TYPE_PSYCHIC)
-        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? UQ_4_12(1.3) : UQ_4_12(1.5)));
+        modifier = uq4_12_multiply(modifier, (B_TERRAIN_TYPE_BOOST >= GEN_8 ? terrainAtk : UQ_4_12(1.5)));
 
     if (moveType == TYPE_ELECTRIC && ((gFieldStatuses & STATUS_FIELD_MUDSPORT)
     || AbilityBattleEffects(ABILITYEFFECT_FIELD_SPORT, 0, 0, ABILITYEFFECT_MUD_SPORT, 0)))
@@ -8697,6 +8712,16 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
             modifier = uq4_12_multiply(modifier, UQ_4_12(BARD_SOUND_DAMAGE_MULTIPLIER));
         }
     }
+    if (AttackerHasClass(CLASS_WARLOCK, battlerAtk)) {
+        DebugPrintf("WARLOCK Boosted OK");
+        modifier = uq4_12_multiply(modifier, UQ_4_12(WARLOCK_ALL_DAMAGE_MULTIPLIER));
+    }
+    if (AttackerHasClass(CLASS_PALADIN, battlerAtk)) {
+        DebugPrintf("PALADIN Boosted OK");
+        modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
+    }
+
+
 
     return uq4_12_multiply_by_int_half_down(modifier, basePower);
 }
