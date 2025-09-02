@@ -8685,7 +8685,7 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
     if (AttackerHasClass(CLASS_FIGHTER, battlerAtk)) {
         if (IsSlicingMove(move)) {
             DebugPrintf("FIGHTER Boosted OK");
-            modifier = uq4_12_multiply(modifier, UQ_4_12(FIGHTER_SCLICING_DAMAGE_MULTIPLIER));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(FIGHTER_SLICING_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_WIZARD, battlerAtk)) {
