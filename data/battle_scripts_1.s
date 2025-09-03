@@ -8120,6 +8120,15 @@ BattleScript_SoundproofProtected::
 	setmoveresultflags MOVE_RESULT_DOESNT_AFFECT_FOE
 	goto BattleScript_MoveEnd
 
+BattleScript_RogueProtected::
+	attackstring
+	ppreduce
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_ROGUEPROTECT
+	waitmessage B_WAIT_TIME_LONG
+	setmoveresultflags MOVE_RESULT_DOESNT_AFFECT_FOE
+	goto BattleScript_MoveEnd
+
 BattleScript_IceFaceNullsDamage::
 	call BattleScript_TargetFormChangeWithString
 	return
@@ -9528,6 +9537,10 @@ BattleScript_MagicianActivates::
 	call BattleScript_AbilityPopUp
 	call BattleScript_ItemSteal
 	return
+
+BattleScript_RogueActivates::
+    call BattleScript_ItemSteal
+    return
 
 BattleScript_SymbiosisActivates::
 	call BattleScript_AbilityPopUp

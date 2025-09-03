@@ -6143,10 +6143,12 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
     bool32 effect = FALSE;
     u32 abilityAtk = GetBattlerAbility(battlerAtk);
     u32 barbarianBonus = PokemonHasClassAndLevel(CLASS_BARBARIAN, battlerAtk, CLASS_LEVEL_DUE) ? 1 : 0;
-
+    if (PokemonHasClassAndLevel(CLASS_ROGUE, battlerAtk, CLASS_LEVEL_DUE))
+        goto MAGICIAN;
     switch (abilityAtk)
     {
     case ABILITY_MAGICIAN:
+    MAGICIAN:
         if (move != MOVE_FLING && move != MOVE_NATURAL_GIFT
          && gBattleMons[battlerAtk].item == ITEM_NONE
          && gBattleMons[battlerDef].item != ITEM_NONE
@@ -6162,7 +6164,10 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
             gBattleScripting.battler = gBattlerAbility = battlerAtk;
             gEffectBattler = battlerDef;
             BattleScriptPushCursor();
-            gBattlescriptCurrInstr = BattleScript_MagicianActivates;
+            if (PokemonHasClassAndLevel(CLASS_ROGUE, battlerAtk, CLASS_LEVEL_DUE))
+                gBattlescriptCurrInstr = BattleScript_RogueActivates;
+            else
+                gBattlescriptCurrInstr = BattleScript_MagicianActivates;
             effect = TRUE;
         }
         break;

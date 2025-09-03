@@ -2932,6 +2932,8 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u32 a
         atkPriority = GetBattleMovePriority(battlerAtk, abilityAtk, move);
     else
         atkPriority = GetChosenMovePriority(battlerAtk, abilityAtk);
+    if (PokemonHasClassAndLevel(CLASS_ROGUE, battlerAtk, CLASS_LEVEL_UNO))
+        goto BULLETPROOF;
 
     switch (abilityDef)
     {
@@ -2944,6 +2946,7 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u32 a
         }
         break;
     case ABILITY_BULLETPROOF:
+    BULLETPROOF:
         if (IsBallisticMove(move))
         {
             if (gBattleMons[battlerAtk].status2 & STATUS2_MULTIPLETURNS)
