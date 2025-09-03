@@ -11,6 +11,7 @@
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/pokemon_classes.h"
 
 // General End Turn Effects based on research from smogon from vanilla games:
 // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/page-64#post-9244179
@@ -110,7 +111,7 @@ enum FourthEventBlock
 
 static inline bool32 IsBattlerProtectedByMagicGuard(u32 battler, u32 ability)
 {
-    if (ability != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30) )
+    if (ability != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE) )
         return FALSE;
 
     RecordAbilityBattle(battler, ability);

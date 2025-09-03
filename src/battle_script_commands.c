@@ -8312,7 +8312,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].spikesDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SPIKES)
         && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
-        && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)
+        && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE)
         && IsBattlerAffectedByHazards(battler, FALSE)
         && IsBattlerGrounded(battler))
     {

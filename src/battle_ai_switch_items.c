@@ -20,6 +20,7 @@
 #include "constants/battle_move_effects.h"
 #include "constants/items.h"
 #include "constants/moves.h"
+#include "constants/pokemon_classes.h"
 
 // this file's functions
 static bool32 CanUseSuperEffectiveMoveAgainstOpponents(u32 battler);
@@ -702,7 +703,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
 
         // Secondary Damage
         if (monAbility != ABILITY_MAGIC_GUARD
-            && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)
+            && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE)
             && !AiExpectsToFaintPlayer(battler)
             && gAiLogicData->mostSuitableMonId[battler] != PARTY_SIZE)
         {
@@ -1534,7 +1535,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
     u32 hazardFlags = gSideStatuses[GetBattlerSide(battler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES | SIDE_STATUS_SAFEGUARD);
 
     // Check ways mon might avoid all hazards
-    if (ability != ABILITY_MAGIC_GUARD || PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
+    if (ability != ABILITY_MAGIC_GUARD || PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
         !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || ability == ABILITY_KLUTZ)))
     {
         // Stealth Rock
