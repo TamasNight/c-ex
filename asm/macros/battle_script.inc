@@ -884,8 +884,12 @@
 	.byte 0x9e
 	.endm
 
-	.macro unused_0x9f
+	.macro unused_0x9f mon:req class:req level:req jumpInstr:req
 	.byte 0x9f
+	.byte \mon
+	.byte \class
+	.byte \level
+	.4byte \jumpInstr
 	.endm
 
 	.macro unused_0xA0

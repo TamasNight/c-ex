@@ -386,5 +386,6 @@ bool32 IsFutureSightAttackerInParty(u32 battlerAtk, u32 battlerDef, u32 move);
 bool32 HadMoreThanHalfHpNowDoesnt(u32 battler);
 void UpdateStallMons(void);
 bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId);
-bool32 AttackerHasClass(u8 class, u32 battleAtk);
+bool32 AttackerHasClass(u32 class, u32 battler);
+bool32 PokemonHasClassAndLevel(u32 class, u32 battler, u32 level);
 #endif // GUARD_BATTLE_UTIL_H

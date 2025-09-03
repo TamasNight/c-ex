@@ -1699,9 +1699,8 @@ s32 GetDrainedBigRootHp(u32 battler, s32 hp)
 // This should always be the last check. Otherwise the ability might be recorded when it is not supposed to be
 bool32 IsMagicGuardProtected(u32 battler, u32 ability)
 {
-    if (ability != ABILITY_MAGIC_GUARD)
+    if (ability != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE))
         return FALSE;
-
     RecordAbilityBattle(battler, ability);
     return TRUE;
 }
@@ -2296,7 +2295,7 @@ static void CancellerPowderStatus(u32 *effect)
     if (TryActivatePowderStatus(gCurrentMove))
     {
         gProtectStructs[gBattlerAttacker].powderSelfDmg = TRUE;
-        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
             gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
 
         if (GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE
@@ -4832,7 +4831,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
              && IsBattlerAlive(gBattlerAttacker)
              && gBattleMons[gBattlerTarget].species != SPECIES_CRAMORANT)
             {
-                if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
                 {
                     gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
@@ -6874,7 +6873,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                 {
                     goto LEFTOVERS;
                 }
-                else if (GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD && !moveTurn)
+                else if (GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD && !moveTurn && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
                 {
                     gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 8;
                     if (gBattleStruct->moveDamage[battler] == 0)
@@ -7158,6 +7157,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                 && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
                 && (IsBattlerTurnDamaged(gBattlerTarget) || gBattleScripting.savedDmg > 0)
                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, 30)
                 && !IsFutureSightAttackerInParty(gBattlerAttacker, gBattlerTarget, gCurrentMove))
             {
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 10;
@@ -7206,7 +7206,8 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                 if (IsBattlerTurnDamaged(gBattlerTarget)
                     && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker, TRUE), gCurrentMove)
                     && IsBattlerAlive(gBattlerAttacker)
-                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                    && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                    && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
                 {
                     gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 6;
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
@@ -7280,7 +7281,8 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                  && IsBattlerTurnDamaged(gBattlerTarget)
                  && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
                  && IsBattleMovePhysical(gCurrentMove)
-                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                 && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
                 {
                     gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
@@ -7300,7 +7302,8 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                  && IsBattlerTurnDamaged(gBattlerTarget)
                  && !DoesSubstituteBlockMove(gBattlerAttacker, battler, gCurrentMove)
                  && IsBattleMoveSpecial(gCurrentMove)
-                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+                 && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
                 {
                     gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
@@ -7379,7 +7382,7 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
             }
             break;
         case HOLD_EFFECT_STICKY_BARB:   // Not an orb per se, but similar effect, and needs to NOT activate with pickpocket
-            if (battlerAbility != ABILITY_MAGIC_GUARD)
+            if (battlerAbility != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
             {
                 gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 8;
                 if (gBattleStruct->moveDamage[battler] == 0)
@@ -8676,6 +8679,18 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
             modifier = uq4_12_multiply(modifier, UQ_4_12(MONK_MULTI_HIT_DAMAGE_MULTIPLIER));
         }
     }
+    if (PokemonHasClassAndLevel(CLASS_MONK, battlerAtk, CLASS_LEVEL_UNO) {
+        if (IsPunchingMove(move)) {
+            DebugPrintf("MONK Lv1 Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(MONK_PUNCH_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (PokemonHasClassAndLevel(CLASS_MONK, battlerAtk, CLASS_LEVEL_DUE) {
+        if ((GetBattleMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL)) {
+            DebugPrintf("MONK Lv2 Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(MONK_PHYSICAL_DAMAGE_MULTIPLIER));
+        }
+    }
     if (AttackerHasClass(CLASS_RANGER, battlerAtk)) {
         if (!MoveMakesContact(move)) {
             DebugPrintf("RANGER Boosted OK");
@@ -8688,6 +8703,12 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
             modifier = uq4_12_multiply(modifier, UQ_4_12(FIGHTER_SLICING_DAMAGE_MULTIPLIER));
         }
     }
+    if (PokemonHasClassAndLevel(CLASS_FIGHTER, battlerAtk, CLASS_LEVEL_DUE) {
+        if ((GetBattleMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL)) {
+            DebugPrintf("FIGHTER Lv2 Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(FIGHTER_PHYSICAL_DAMAGE_MULTIPLIER));
+        }
+    }
     if (AttackerHasClass(CLASS_WIZARD, battlerAtk)) {
         if (IS_BATTLER_OF_TYPE(battlerAtk, GetBattleMoveType(move))) {
             DebugPrintf("WIZARD Boosted OK");
@@ -8695,15 +8716,27 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
         }
     }
     if (AttackerHasClass(CLASS_BARBARIAN, battlerAtk)) {
-        if (GetBattleMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL) {
+        if (MoveMakesContact(move)) {
             DebugPrintf("BARBARIAN Boosted OK");
-            modifier = uq4_12_multiply(modifier, UQ_4_12(BARBARIAN_PHYSICAL_DAMAGE_MULTIPLIER));
+            modifier = uq4_12_multiply(modifier, UQ_4_12(BARBARIAN_CONTACT_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (PokemonHasClassAndLevel(CLASS_BARBARIAN, battlerAtk, CLASS_LEVEL_UNO) {
+        if (GetMoveEffect(move) == EFFECT_RECOIL || GetMoveEffect(move) == EFFECT_RECOIL_IF_MISS) {
+            DebugPrintf("BARBARIAN Lv1 Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(BARBARIAN_RECOIL_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_SORCERER, battlerAtk)) {
         if (GetBattleMoveCategory(move) == DAMAGE_CATEGORY_SPECIAL) {
             DebugPrintf("SORCERER Boosted OK");
             modifier = uq4_12_multiply(modifier, UQ_4_12(SORCERER_SPECIAL_DAMAGE_MULTIPLIER));
+        }
+    }
+    if (PokemonHasClassAndLevel(CLASS_SORCERER, battlerAtk, CLASS_LEVEL_UNO) {
+        if (IsPulseMove(move)) {
+            DebugPrintf("SORCERER Lv1 Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(SORCERER_PULSE_DAMAGE_MULTIPLIER));
         }
     }
     if (AttackerHasClass(CLASS_BARD, battlerAtk)) {
@@ -8717,11 +8750,28 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
         modifier = uq4_12_multiply(modifier, UQ_4_12(WARLOCK_ALL_DAMAGE_MULTIPLIER));
     }
     if (AttackerHasClass(CLASS_PALADIN, battlerAtk)) {
-        DebugPrintf("PALADIN Boosted OK");
+        // DebugPrintf("PALADIN Boosted OK");
         modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
     }
 
 
+    // Defensive bonus
+    if (PokemonHasClassAndLevel(CLASS_PALADIN, battlerDef, CLASS_LEVEL_UNO) {
+        DebugPrintf("PALADIN Defensive Boosted OK");
+        modifier = uq4_12_multiply(modifier, UQ_4_12(PALADIN_ALL_DEFENCE_MULTIPLIER));
+    }
+    if (PokemonHasClassAndLevel(CLASS_FIGHTER, battlerDef, CLASS_LEVEL_UNO) {
+        if ((GetBattleMoveCategory(move) == DAMAGE_CATEGORY_PHYSICAL)) {
+            DebugPrintf("FIGHTER Lv1 Defensive Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(FIGHTER_PHYSICAL_DEFENCE_MULTIPLIER));
+        }
+    }
+    if (PokemonHasClassAndLevel(CLASS_SORCERER, battlerDef, CLASS_LEVEL_DUE) {
+        if ((GetBattleMoveCategory(move) == DAMAGE_CATEGORY_SPECIAL)) {
+            DebugPrintf("SORCERER Lv2 Defensive Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(SORCERER_SPECIAL_DEFENCE_MULTIPLIER));
+        }
+    }
 
     return uq4_12_multiply_by_int_half_down(modifier, basePower);
 }
@@ -9328,6 +9378,13 @@ static inline uq4_12_t GetCollisionCourseElectroDriftModifier(u32 move, uq4_12_t
 
 static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typeEffectivenessModifier, bool32 isCrit, u32 abilityAtk)
 {
+    uq4_12_t mul = UQ_4_12(1.0);
+    if (PokemonHasClassAndLevel(CLASS_WIZARD, battlerAtk, CLASS_LEVEL_UNO) {
+        if (typeEffectivenessModifier <= UQ_4_12(0.5)) {
+            DebugPrintf("WIZARD Lv1 Boosted OK");
+            mul = UQ_4_12(WIZARD_SUPER_EFFECTIVE_DAMAGE_MULTIPLIER);
+        }
+    }
     switch (abilityAtk)
     {
     case ABILITY_NEUROFORCE:
@@ -9336,47 +9393,54 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(u32 battlerAtk, uq4_12_t typ
         break;
     case ABILITY_SNIPER:
         if (isCrit)
-            return UQ_4_12(1.5);
+            return uq4_12_multiply(UQ_4_12(1.5), mul);
         break;
     case ABILITY_TINTED_LENS:
         if (typeEffectivenessModifier <= UQ_4_12(0.5))
-            return UQ_4_12(2.0);
+            return uq4_12_multiply(UQ_4_12(2.0), mul);
         break;
     }
-    return UQ_4_12(1.0);
+    return uq4_12_multiply(UQ_4_12(1.0), mul);
 }
 
 static inline uq4_12_t GetDefenderAbilitiesModifier(u32 move, u32 moveType, u32 battlerAtk, u32 battlerDef, uq4_12_t typeEffectivenessModifier, u32 abilityDef, enum ItemHoldEffect holdEffectAtk)
 {
+    uq4_12_t mul = UQ_4_12(1.0);
+    if (PokemonHasClassAndLevel(CLASS_WIZARD, battlerDef, CLASS_LEVEL_DUE) {
+        if (typeEffectivenessModifier >= UQ_4_12(2.0)) {
+            DebugPrintf("WIZARD Lv2 Defensive Boosted OK");
+            mul = UQ_4_12(WIZARD_SUPER_EFFECTIVE_DEFENCE_MULTIPLIER);
+        }
+    }
     switch (abilityDef)
     {
     case ABILITY_MULTISCALE:
     case ABILITY_SHADOW_SHIELD:
         if (IsBattlerAtMaxHp(battlerDef))
-            return UQ_4_12(0.5);
+            return uq4_12_multiply(UQ_4_12(0.5), mul);
         break;
     case ABILITY_FILTER:
     case ABILITY_SOLID_ROCK:
     case ABILITY_PRISM_ARMOR:
         if (typeEffectivenessModifier >= UQ_4_12(2.0))
-            return UQ_4_12(0.75);
+            return uq4_12_multiply(UQ_4_12(0.75), mul);
         break;
     case ABILITY_FLUFFY:
         if (moveType == TYPE_FIRE && !IsMoveMakingContact(battlerAtk, battlerDef, ABILITY_NONE, holdEffectAtk, move))
-            return UQ_4_12(2.0);
+            return uq4_12_multiply(UQ_4_12(2.0), mul);
         if (moveType != TYPE_FIRE && IsMoveMakingContact(battlerAtk, battlerDef, ABILITY_NONE, holdEffectAtk, move))
-            return UQ_4_12(0.5);
+            return uq4_12_multiply(UQ_4_12(0.5), mul);
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
-            return UQ_4_12(0.5);
+            return uq4_12_multiply(UQ_4_12(0.5), mul);
         break;
     case ABILITY_ICE_SCALES:
         if (IsBattleMoveSpecial(move))
-            return UQ_4_12(0.5);
+            return uq4_12_multiply(UQ_4_12(0.5), mul);
         break;
     }
-    return UQ_4_12(1.0);
+    return uq4_12_multiply(UQ_4_12(1.0), mul);
 }
 
 static inline uq4_12_t GetDefenderPartnerAbilitiesModifier(u32 battlerPartnerDef)
@@ -11586,17 +11650,20 @@ bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId)
 
 // Tamas Class System
 // Controlla se il Pokemon attaccante ha una certa classe
-bool32 AttackerHasClass(u8 class, u32 battleAtk)
+bool32 AttackerHasClass(u32 class, u32 battler)
 {
     // TODO check for 2vs2 battle
-    struct Pokemon *party = GetBattlerParty(battleAtk);
+    struct Pokemon *party = GetBattlerParty(battler);
     u32 i = 1;
-    if (GetBattlerPosition(battleAtk) == B_POSITION_PLAYER_LEFT
-        || GetBattlerPosition(battleAtk) == B_POSITION_OPPONENT_LEFT) {
+    if (GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT
+        || GetBattlerPosition(battler) == B_POSITION_OPPONENT_LEFT) {
         i = 0;
     }
-    u8 monClass = GetMonData(&party[i], MON_DATA_CLASS);
+    u32 monClass = GetMonData(&party[i], MON_DATA_CLASS);
     bool32 ret = monClass == class;
-    // DebugPrintf("CLASS: %d == %d: %d", class, monClass, ret);
     return ret;
+}
+
+bool32 PokemonHasClassAndLevel(u32 class, u32 battler, u32 level) {
+    return AttackerHasClass(class, battler) && gBattleMons[battler].level >= level;
 }

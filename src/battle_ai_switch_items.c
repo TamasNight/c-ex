@@ -702,6 +702,7 @@ static bool32 ShouldSwitchIfBadlyStatused(u32 battler)
 
         // Secondary Damage
         if (monAbility != ABILITY_MAGIC_GUARD
+            && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)
             && !AiExpectsToFaintPlayer(battler)
             && gAiLogicData->mostSuitableMonId[battler] != PARTY_SIZE)
         {
@@ -1533,7 +1534,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
     u32 hazardFlags = gSideStatuses[GetBattlerSide(battler)] & (SIDE_STATUS_SPIKES | SIDE_STATUS_STEALTH_ROCK | SIDE_STATUS_STICKY_WEB | SIDE_STATUS_TOXIC_SPIKES | SIDE_STATUS_SAFEGUARD);
 
     // Check ways mon might avoid all hazards
-    if (ability != ABILITY_MAGIC_GUARD || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
+    if (ability != ABILITY_MAGIC_GUARD || PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
         !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || ability == ABILITY_KLUTZ)))
     {
         // Stealth Rock
@@ -1589,7 +1590,7 @@ static s32 GetSwitchinWeatherImpact(void)
 
     if (HasWeatherEffect())
     {
-        // Damage
+        // Damage TODO aggiungere anche conoscenza dell'immunità del paladino
         if (holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && ability != ABILITY_MAGIC_GUARD && ability != ABILITY_OVERCOAT)
         {
             if ((gBattleWeather & B_WEATHER_HAIL)
@@ -1685,7 +1686,7 @@ static u32 GetSwitchinRecurringDamage(void)
     u32 passiveDamage = 0, maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP, ability = gAiLogicData->switchinCandidate.battleMon.ability;
     enum ItemHoldEffect holdEffect = GetItemHoldEffect(gAiLogicData->switchinCandidate.battleMon.item);
 
-    // Items
+    // Items TODO aggiungere anche info su immunità del paladino
     if (ability != ABILITY_MAGIC_GUARD && ability != ABILITY_KLUTZ)
     {
         if (holdEffect == HOLD_EFFECT_BLACK_SLUDGE && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_POISON && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_POISON)
@@ -1719,7 +1720,7 @@ static u32 GetSwitchinStatusDamage(u32 battler)
     u32 status = gAiLogicData->switchinCandidate.battleMon.status1, ability = gAiLogicData->switchinCandidate.battleMon.ability, maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP;
     u32 statusDamage = 0;
 
-    // Status condition damage
+    // Status condition damage TODO aggiungere info su immunità del Paladino
     if ((status != 0) && gAiLogicData->switchinCandidate.battleMon.ability != ABILITY_MAGIC_GUARD)
     {
         if (status & STATUS1_BURN)

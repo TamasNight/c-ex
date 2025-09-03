@@ -110,7 +110,7 @@ enum FourthEventBlock
 
 static inline bool32 IsBattlerProtectedByMagicGuard(u32 battler, u32 ability)
 {
-    if (ability != ABILITY_MAGIC_GUARD)
+    if (ability != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30) )
         return FALSE;
 
     RecordAbilityBattle(battler, ability);

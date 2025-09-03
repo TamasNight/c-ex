@@ -869,7 +869,7 @@ struct SimulatedDamage AI_CalcDamage(u32 move, u32 battlerAtk, u32 battlerDef, u
 bool32 AI_IsDamagedByRecoil(u32 battler)
 {
     u32 ability = gAiLogicData->abilities[battler];
-    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_ROCK_HEAD)
+    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_ROCK_HEAD || PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)  )
         return FALSE;
     return TRUE;
 }
@@ -1789,6 +1789,7 @@ bool32 ShouldSetSandstorm(u32 battler, u32 ability, enum ItemHoldEffect holdEffe
      || ability == ABILITY_SAND_FORCE
      || ability == ABILITY_OVERCOAT
      || ability == ABILITY_MAGIC_GUARD
+     || PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)
      || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
      || IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
      || HasMoveWithEffect(battler, EFFECT_SHORE_UP)
@@ -1809,6 +1810,7 @@ bool32 ShouldSetHail(u32 battler, u32 ability, enum ItemHoldEffect holdEffect)
      || ability == ABILITY_FORECAST
      || ability == ABILITY_SLUSH_RUSH
      || ability == ABILITY_MAGIC_GUARD
+     || PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)
      || ability == ABILITY_OVERCOAT
      || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
@@ -2928,7 +2930,7 @@ u32 GetBattlerSecondaryDamage(u32 battlerId)
 {
     u32 secondaryDamage;
 
-    if (gAiLogicData->abilities[battlerId] == ABILITY_MAGIC_GUARD)
+    if (gAiLogicData->abilities[battlerId] == ABILITY_MAGIC_GUARD || PokemonHasClassAndLevel(CLASS_PALADIN, battlerId, CLASS_LEVEL_DUE))
         return FALSE;
 
     secondaryDamage = GetLeechSeedDamage(battlerId)
@@ -3000,7 +3002,7 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
     if (flags == 0)
         return FALSE;
 
-    if (ability == ABILITY_MAGIC_GUARD)
+    if (ability == ABILITY_MAGIC_GUARD || PokemonHasClassAndLevel(CLASS_PALADIN, currBattler, CLASS_LEVEL_DUE))
         return FALSE;
     if (gFieldStatuses & STATUS_FIELD_MAGIC_ROOM || ability == ABILITY_KLUTZ)
         holdEffect = HOLD_EFFECT_NONE;
@@ -3256,6 +3258,7 @@ static inline bool32 DoesBattlerBenefitFromAllVolatileStatus(u32 battler, u32 ab
     if (ability == ABILITY_MARVEL_SCALE
      || ability == ABILITY_QUICK_FEET
      || ability == ABILITY_MAGIC_GUARD
+     || PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)
      || (ability == ABILITY_GUTS && HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
      || HasMoveWithEffect(battler, EFFECT_FACADE)
      || HasMoveWithEffect(battler, EFFECT_PSYCHO_SHIFT))

@@ -3742,7 +3742,8 @@ void SetMoveEffect(bool32 primary, bool32 certain)
             case MOVE_EFFECT_FLAME_BURST:
                 if (IsBattlerAlive(BATTLE_PARTNER(gBattlerTarget))
                  && !(gStatuses3[BATTLE_PARTNER(gBattlerTarget)] & STATUS3_SEMI_INVULNERABLE)
-                 && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) != ABILITY_MAGIC_GUARD)
+                 && GetBattlerAbility(BATTLE_PARTNER(gBattlerTarget)) != ABILITY_MAGIC_GUARD
+                 && !PokemonHasClassAndLevel(CLASS_PALADIN, BATTLE_PARTNER(gBattlerTarget), CLASS_LEVEL_DUE))
                 {
                     i = BATTLE_PARTNER(gBattlerTarget);
                     gBattleScripting.savedBattler = i;
@@ -6134,6 +6135,7 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
 {
     bool32 effect = FALSE;
     u32 abilityAtk = GetBattlerAbility(battlerAtk);
+    u32 barbarianBonus = PokemonHasClassAndLevel(CLASS_BARBARIAN, battlerAtk, CLASS_LEVEL_DUE) ? 1 : 0;
 
     switch (abilityAtk)
     {
@@ -6168,7 +6170,7 @@ static bool32 HandleMoveEndAbilityBlock(u32 battlerAtk, u32 battlerDef, u32 move
                 break;
 
             u32 stat = STAT_ATK;
-            u32 numMonsFainted = NumFaintedBattlersByAttacker(battlerAtk);
+            u32 numMonsFainted = NumFaintedBattlersByAttacker(battlerAtk) + barbarianBonus;
 
             if (abilityAtk == ABILITY_BEAST_BOOST)
                 stat = GetHighestStatId(battlerAtk);
@@ -6411,7 +6413,8 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
     case EFFECT_MIND_BLOWN:
         if (IsBattlerAlive(gBattlerAttacker)
          && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_FAILED)
-         && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+         && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
+         && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
         {
             gBattleStruct->moveDamage[gBattlerAttacker] = (GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / 2; // Half of Max HP Rounded UP
             BattleScriptPushCursor();
@@ -8309,6 +8312,7 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].spikesDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SPIKES)
         && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, 30)
         && IsBattlerAffectedByHazards(battler, FALSE)
         && IsBattlerGrounded(battler))
     {
@@ -8323,7 +8327,8 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].stealthRockDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEALTH_ROCK)
         && IsBattlerAffectedByHazards(battler, FALSE)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE))
     {
         gDisableStructs[battler].stealthRockDone = TRUE;
         gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
@@ -8380,7 +8385,8 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
     else if (!(gDisableStructs[battler].steelSurgeDone)
         && (gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_STEELSURGE)
         && IsBattlerAffectedByHazards(battler, FALSE)
-        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD
+        && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE))
     {
         gDisableStructs[battler].steelSurgeDone = TRUE;
         gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_SHARP_STEEL, battler);
@@ -13438,9 +13444,22 @@ static void Cmd_metronome(void)
     gBattlerTarget = GetBattleMoveTarget(gCurrentMove, NO_TARGET_OVERRIDE);
     ResetValuesForCalledMove();
 }
-
+// Tamas Class System
+// jumpbased on class
 static void Cmd_unused_0x9f(void)
 {
+    CMD_ARGS(u8 battler, u8 class, u8 level, const u8 *jumpInstr);
+
+    u8 battler = GetBattlerForBattleScript(cmd->battler);
+    u8 class = cmd->class;
+    u8 level = cmd->level;
+    const u8 *jumpInstr = cmd->jumpInstr;
+
+    if (PokemonHasClassAndLevel(class, battler, level))
+        gBattlescriptCurrInstr = jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    // TODO controllo
 }
 
 static void Cmd_unused_0xA0(void)
@@ -17923,7 +17942,7 @@ void BS_TryActivateGulpMissile(void)
         && gBattleMons[gBattlerTarget].species != SPECIES_CRAMORANT
         && GetBattlerAbility(gBattlerTarget) == ABILITY_GULP_MISSILE)
     {
-        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
+        if (GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD && !PokemonHasClassAndLevel(CLASS_PALADIN, gBattlerAttacker, CLASS_LEVEL_DUE))
         {
             gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
             if (gBattleStruct->moveDamage[gBattlerTarget] == 0)
