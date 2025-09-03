@@ -8697,6 +8697,12 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
             modifier = uq4_12_multiply(modifier, UQ_4_12(RANGER_NO_CONTACT_DAMAGE_MULTIPLIER));
         }
     }
+    if (PokemonHasClassAndLevel(CLASS_RANGER, battlerAtk, CLASS_LEVEL_DUE)) {
+        if (gDisableStructs[battlerAtk].isFirstTurn) {
+            DebugPrintf("RANGER Lv2 Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(RANGER_FIRST_TURN_DAMAGE_MULTIPLIER));
+        }
+    }
     if (AttackerHasClass(CLASS_FIGHTER, battlerAtk)) {
         if (IsSlicingMove(move)) {
             DebugPrintf("FIGHTER Boosted OK");
