@@ -1168,6 +1168,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
         case ABILITY_LEAF_GUARD:
             if ((AI_GetWeather() & B_WEATHER_SUN)
               && aiData->holdEffects[battlerDef] != HOLD_EFFECT_UTILITY_UMBRELLA
+              // && PokemonHasClassAndLevel(CLASS_RANGER, battlerDef, CLASS_LEVEL_UNO) TODO valutare rimozione
               && IsNonVolatileStatusMove(move))
                 RETURN_SCORE_MINUS(10);
             break;
@@ -4139,6 +4140,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
     case EFFECT_FOCUS_ENERGY:
     case EFFECT_LASER_FOCUS:
         if (aiData->abilities[battlerAtk] == ABILITY_SUPER_LUCK
+         || PokemonHasClassAndLevel(CLASS_WARLOCK, battlerAtk, CLASS_LEVEL_DUE)
          || aiData->abilities[battlerAtk] == ABILITY_SNIPER
          || aiData->holdEffects[battlerAtk] == HOLD_EFFECT_SCOPE_LENS
          || HasMoveWithFlag(battlerAtk, GetMoveCriticalHitStage))

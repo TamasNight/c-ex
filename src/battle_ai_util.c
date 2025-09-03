@@ -1791,6 +1791,7 @@ bool32 ShouldSetSandstorm(u32 battler, u32 ability, enum ItemHoldEffect holdEffe
      || ability == ABILITY_OVERCOAT
      || ability == ABILITY_MAGIC_GUARD
      || PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE)
+     || PokemonHasClassAndLevel(CLASS_RANGER, battler, CLASS_LEVEL_UNO)
      || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
      || IS_BATTLER_ANY_TYPE(battler, TYPE_ROCK, TYPE_GROUND, TYPE_STEEL)
      || HasMoveWithEffect(battler, EFFECT_SHORE_UP)
@@ -1812,6 +1813,7 @@ bool32 ShouldSetHail(u32 battler, u32 ability, enum ItemHoldEffect holdEffect)
      || ability == ABILITY_SLUSH_RUSH
      || ability == ABILITY_MAGIC_GUARD
      || PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE)
+     || PokemonHasClassAndLevel(CLASS_RANGER, battler, CLASS_LEVEL_UNO)
      || ability == ABILITY_OVERCOAT
      || holdEffect == HOLD_EFFECT_SAFETY_GOGGLES
      || IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
@@ -2906,7 +2908,7 @@ static u32 GetWeatherDamage(u32 battlerId)
     {
         if (BattlerAffectedBySandstorm(battlerId, ability)
           && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
+          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && !PokemonHasClassAndLevel(CLASS_RANGER, battlerId, CLASS_LEVEL_UNO))
         {
             damage = GetNonDynamaxMaxHP(battlerId) / 16;
             if (damage == 0)
@@ -2917,7 +2919,7 @@ static u32 GetWeatherDamage(u32 battlerId)
     {
         if (BattlerAffectedByHail(battlerId, ability)
           && !(gStatuses3[battlerId] & (STATUS3_UNDERGROUND | STATUS3_UNDERWATER))
-          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
+          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && PokemonHasClassAndLevel(CLASS_RANGER, battlerId, CLASS_LEVEL_UNO))
         {
             damage = GetNonDynamaxMaxHP(battlerId) / 16;
             if (damage == 0)

@@ -1848,13 +1848,19 @@ static void Cmd_ppreduce(void)
     {
         for (i = 0; i < gBattlersCount; i++)
         {
-            if (!IsBattlerAlly(i, gBattlerAttacker) && IsBattlerAlive(i))
+            if (!IsBattlerAlly(i, gBattlerAttacker) && IsBattlerAlive(i)) {
                 ppToDeduct += (GetBattlerAbility(i) == ABILITY_PRESSURE);
+                if (PokemonHasClassAndLevel(CLASS_WARLOCK, i, CLASS_LEVEL_UNO)) {
+                    ppToDeduct++;
+                }
+            }
         }
     }
     else if (moveTarget != MOVE_TARGET_OPPONENTS_FIELD)
     {
         if (gBattlerAttacker != gBattlerTarget && GetBattlerAbility(gBattlerTarget) == ABILITY_PRESSURE)
+             ppToDeduct++;
+        if (gBattlerAttacker != gBattlerTarget && PokemonHasClassAndLevel(CLASS_WARLOCK, i, CLASS_LEVEL_UNO))
              ppToDeduct++;
     }
 
@@ -1959,6 +1965,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + GetHoldEffectCritChanceIncrease(battlerAtk, holdEffectAtk)
                     + 2 * (B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS)
                     + (abilityAtk == ABILITY_SUPER_LUCK)
+                    + PokemonHasClassAndLevel(CLASS_WARLOCK, battlerAtk, CLASS_LEVEL_DUE)
                     + gBattleStruct->bonusCritStages[gBattlerAttacker];
 
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
@@ -14548,6 +14555,8 @@ static void Cmd_recoverbasedonsunlight(void)
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
             else if (gBattleWeather & B_WEATHER_SUN)
                 gBattleStruct->moveDamage[gBattlerAttacker] = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
+            else if (PokemonHasClassAndLevel(CLASS_RANGER, gBattlerAttacker, CLASS_LEVEL_UNO))
+                gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
             else // not sunny weather
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
         }

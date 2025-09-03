@@ -9274,11 +9274,15 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageCalculationData *damageCal
     {
         if (moveType != TYPE_FIRE && moveType != TYPE_WATER)
             return UQ_4_12(1.0);
+        if (moveType == TYPE_FIRE && PokemonHasClassAndLevel(CLASS_RANGER, gBattlerAttacker, CLASS_LEVEL_UNO))
+            return UQ_4_12(1.0);
         return (moveType == TYPE_FIRE) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
     if (weather & B_WEATHER_SUN)
     {
         if (moveType != TYPE_FIRE && moveType != TYPE_WATER)
+            return UQ_4_12(1.0);
+        if (moveType == TYPE_WATER && PokemonHasClassAndLevel(CLASS_RANGER, gBattlerAttacker, CLASS_LEVEL_UNO))
             return UQ_4_12(1.0);
         return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }

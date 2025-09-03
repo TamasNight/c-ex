@@ -1588,37 +1588,42 @@ static s32 GetSwitchinWeatherImpact(void)
 {
     s32 weatherImpact = 0, maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP, ability = gAiLogicData->switchinCandidate.battleMon.ability;
     enum ItemHoldEffect holdEffect = GetItemHoldEffect(gAiLogicData->switchinCandidate.battleMon.item);
+    u32 class = gAiLogicData->switchinCandidate.battleMon.class, level = gAiLogicData->switchinCandidate.battleMon.level;
 
     if (HasWeatherEffect())
     {
-        // Damage TODO aggiungere anche conoscenza dell'immunità del paladino
+        // Damage
         if (holdEffect != HOLD_EFFECT_SAFETY_GOGGLES && ability != ABILITY_MAGIC_GUARD && ability != ABILITY_OVERCOAT)
         {
-            if ((gBattleWeather & B_WEATHER_HAIL)
-             && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ICE || gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ICE)
-             && ability != ABILITY_SNOW_CLOAK && ability != ABILITY_ICE_BODY)
-            {
-                weatherImpact = maxHP / 16;
+            if (!(class == CLASS_PALADIN && level >= CLASS_LEVEL_DUE)
+            && !(class == CLASS_RANGER && level >= CLASS_LEVEL_UNO)) {
+                if ((gBattleWeather & B_WEATHER_HAIL)
+                    && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ICE ||
+                        gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ICE)
+                    && ability != ABILITY_SNOW_CLOAK && ability != ABILITY_ICE_BODY) {
+                    weatherImpact = maxHP / 16;
+                    if (weatherImpact == 0)
+                        weatherImpact = 1;
+                } else if ((gBattleWeather & B_WEATHER_SANDSTORM)
+                           && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_GROUND &&
+                               gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_GROUND
+                               && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ROCK &&
+                               gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ROCK
+                               && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_STEEL &&
+                               gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_STEEL
+                               && ability != ABILITY_SAND_VEIL && ability != ABILITY_SAND_RUSH &&
+                               ability != ABILITY_SAND_FORCE)) {
+                    weatherImpact = maxHP / 16;
+                    if (weatherImpact == 0)
+                        weatherImpact = 1;
+                }
+            }
+            if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
+                && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN)) {
+                weatherImpact = maxHP / 8;
                 if (weatherImpact == 0)
                     weatherImpact = 1;
             }
-            else if ((gBattleWeather & B_WEATHER_SANDSTORM)
-                && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_GROUND && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_GROUND
-                && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_ROCK && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_ROCK
-                && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_STEEL && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_STEEL
-                && ability != ABILITY_SAND_VEIL && ability != ABILITY_SAND_RUSH && ability != ABILITY_SAND_FORCE))
-            {
-                weatherImpact = maxHP / 16;
-                if (weatherImpact == 0)
-                    weatherImpact = 1;
-            }
-        }
-        if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
-         && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN))
-        {
-            weatherImpact = maxHP / 8;
-            if (weatherImpact == 0)
-                weatherImpact = 1;
         }
 
         // Healing
@@ -1687,8 +1692,8 @@ static u32 GetSwitchinRecurringDamage(void)
     u32 passiveDamage = 0, maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP, ability = gAiLogicData->switchinCandidate.battleMon.ability;
     enum ItemHoldEffect holdEffect = GetItemHoldEffect(gAiLogicData->switchinCandidate.battleMon.item);
 
-    // Items TODO aggiungere anche info su immunità del paladino
-    if (ability != ABILITY_MAGIC_GUARD && ability != ABILITY_KLUTZ)
+    // Items
+    if (ability != ABILITY_MAGIC_GUARD && ability != ABILITY_KLUTZ && gAiLogicData->switchinCandidate.battleMon.class != CLASS_PALADIN)
     {
         if (holdEffect == HOLD_EFFECT_BLACK_SLUDGE && gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_POISON && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_POISON)
         {
@@ -1721,8 +1726,9 @@ static u32 GetSwitchinStatusDamage(u32 battler)
     u32 status = gAiLogicData->switchinCandidate.battleMon.status1, ability = gAiLogicData->switchinCandidate.battleMon.ability, maxHP = gAiLogicData->switchinCandidate.battleMon.maxHP;
     u32 statusDamage = 0;
 
-    // Status condition damage TODO aggiungere info su immunità del Paladino
-    if ((status != 0) && gAiLogicData->switchinCandidate.battleMon.ability != ABILITY_MAGIC_GUARD)
+    // Status condition damage
+    if ((status != 0) && gAiLogicData->switchinCandidate.battleMon.ability != ABILITY_MAGIC_GUARD
+    && gAiLogicData->switchinCandidate.battleMon.class != CLASS_PALADIN)
     {
         if (status & STATUS1_BURN)
         {
