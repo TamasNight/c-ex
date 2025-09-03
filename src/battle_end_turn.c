@@ -76,6 +76,7 @@ enum FirstEventBlock
     FIRST_EVENT_BLOCK_THRASH, // Thrash isn't handled here in vanilla but for now it is that best place for it.
     FIRST_EVENT_BLOCK_GRASSY_TERRAIN_HEAL,
     FIRST_EVENT_BLOCK_ABILITIES,
+    FIRST_EVENT_BLOCK_CLASSES,
     FIRST_EVENT_BLOCK_HEAL_ITEMS,
 };
 
@@ -435,7 +436,7 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
     bool32 effect = FALSE;
 
     u32 side;
-
+    // TODO aggiungere blocco per verificare se abilità CLERIC si attiva
     switch (gBattleStruct->eventBlockCounter)
     {
     case FIRST_EVENT_BLOCK_GMAX_MOVE_RESIDUAL: // TODO: Has to be split into 3 statuses and needs a queue
@@ -517,6 +518,14 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
             break;
+        }
+        gBattleStruct->eventBlockCounter++;
+        break;
+    }
+    case FIRST_EVENT_BLOCK_CLASSES:
+    {
+        if (ClassBattleEffects(battler, CLASS_CLERIC, CLASS_LEVEL_DUE)) {
+            effect = TRUE;
         }
         gBattleStruct->eventBlockCounter++;
         break;

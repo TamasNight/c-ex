@@ -345,6 +345,7 @@ extern const u8 BattleScript_StatUpMsg[];
 extern const u8 BattleScript_AbilityRaisesDefenderStat[];
 extern const u8 BattleScript_PowderMoveNoEffect[];
 extern const u8 BattleScript_GrassyTerrainHeals[];
+extern const u8 BattleScript_ClericHeals[]; // Tamas Class System
 extern const u8 BattleScript_VCreateStatLoss[];
 extern const u8 BattleScript_SpikyShieldEffect[];
 extern const u8 BattleScript_KingsShieldEffect[];

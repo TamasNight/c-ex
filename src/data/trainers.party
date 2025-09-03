@@ -5946,10 +5946,19 @@ Class: Youngster
 Pic: Youngster
 Gender: Male
 Music: Male
-Double Battle: No
+Double Battle: Yes
 AI: Check Bad Move
 
-Poochyena
+Shiftry
+Level: 50
+Class: 3
+IVs: 12 HP / 12 Atk / 12 Def / 28 SpA / 12 SpD / 12 Spe
+- Giga Drain
+- Synthesis
+- Double Team
+- Swagger
+
+Zigzagoon
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

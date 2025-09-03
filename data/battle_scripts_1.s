@@ -8147,6 +8147,15 @@ BattleScript_GrassyTerrainHeals::
 	bicword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
 	end2
 
+BattleScript_ClericHeals::
+    printstring STRINGID_CLERICHEALS
+    waitmessage B_WAIT_TIME_LONG
+    orword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
+    healthbarupdate BS_ATTACKER
+    datahpupdate BS_ATTACKER
+    bicword gHitMarker, HITMARKER_IGNORE_BIDE | HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
+    end2
+
 BattleScript_AbilityNoSpecificStatLoss::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp

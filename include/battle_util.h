@@ -388,4 +388,5 @@ void UpdateStallMons(void);
 bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId);
 bool32 AttackerHasClass(u32 class, u32 battler);
 bool32 PokemonHasClassAndLevel(u32 class, u32 battler, u32 level);
+u32 ClassBattleEffects(u32 battler, u32 class, u32 level);
 #endif // GUARD_BATTLE_UTIL_H

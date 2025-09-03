@@ -8750,8 +8750,14 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
         modifier = uq4_12_multiply(modifier, UQ_4_12(WARLOCK_ALL_DAMAGE_MULTIPLIER));
     }
     if (AttackerHasClass(CLASS_PALADIN, battlerAtk)) {
-        // DebugPrintf("PALADIN Boosted OK");
-        modifier = uq4_12_multiply(modifier, GetSupremeOverlordModifier(battlerAtk));
+        DebugPrintf("PALADIN Boosted OK: %d", GetBattlerSideFaintCounter(battlerAtk));
+        modifier = uq4_12_multiply(modifier, (UQ_4_12(1.0) + (PercentToUQ4_12(GetBattlerSideFaintCounter(battlerAtk) * 10))));
+    }
+    if (PokemonHasClassAndLevel(CLASS_CLERIC, battlerAtk, CLASS_LEVEL_UNO)) {
+        if (GetMoveEffect(move) == EFFECT_ABSORB) {
+            DebugPrintf("CLERIC Lv1 Boosted OK");
+            modifier = uq4_12_multiply(modifier, UQ_4_12(CLERIC_ABSORB_DAMAGE_MULTIPLIER));
+        }
     }
 
 
@@ -11654,16 +11660,27 @@ bool32 AttackerHasClass(u32 class, u32 battler)
 {
     // TODO check for 2vs2 battle
     struct Pokemon *party = GetBattlerParty(battler);
-    u32 i = 1;
-    if (GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT
-        || GetBattlerPosition(battler) == B_POSITION_OPPONENT_LEFT) {
-        i = 0;
-    }
-    u32 monClass = GetMonData(&party[i], MON_DATA_CLASS);
-    bool32 ret = monClass == class;
-    return ret;
+    u32 partyIndex = gBattlerPartyIndexes[battler];
+    u32 monClass = GetMonData(&party[partyIndex], MON_DATA_CLASS);
+    return monClass == class;
 }
 
 bool32 PokemonHasClassAndLevel(u32 class, u32 battler, u32 level) {
     return AttackerHasClass(class, battler) && gBattleMons[battler].level >= level;
+}
+
+u32 ClassBattleEffects(u32 battler, u32 class, u32 level) {
+    u32 effect = 0;
+    if (PokemonHasClassAndLevel(class, battler, level)
+        && !IsBattlerAtMaxHp(battler)
+        && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
+    {
+        BattleScriptExecute(BattleScript_ClericHeals);
+        gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
+        if (gBattleStruct->moveDamage[battler] == 0)
+            gBattleStruct->moveDamage[battler] = 1;
+        gBattleStruct->moveDamage[battler] *= -1;
+        effect++;
+    }
+    return effect;
 }

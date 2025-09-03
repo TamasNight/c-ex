@@ -2529,6 +2529,18 @@ static u32 GetWeather(void)
 
 u16 GetMoveRealPower(u32 battlerAtk, u32 moveId) {
     u32 battlerDef = gBattlerTarget;
+    if (battlerAtk == battlerDef && gBattlersCount == 2) {
+        battlerDef = 1;
+    }
+    if (gBattlersCount != 2) {
+        DebugPrintf("Target: %d", gMultiUsePlayerCursor);
+        battlerDef = gMultiUsePlayerCursor;
+    }
+    if (battlerDef == 255 && IsBattlerAlive(1)) {
+        battlerDef = 1;
+    } else {
+        battlerDef = 3;
+    }
     enum ItemHoldEffect holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
 
     u32 abilityAtk = GetBattlerAbility(battlerAtk);
