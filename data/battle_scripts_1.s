@@ -2879,6 +2879,13 @@ BattleScript_MistyTerrainPrevents::
 	setmoveresultflags MOVE_RESULT_FAILED
 	goto BattleScript_MoveEnd
 
+BattleScript_DruidPowerPrevents::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_DRUIDPOWERPREVENTS
+	waitmessage B_WAIT_TIME_LONG
+	setmoveresultflags MOVE_RESULT_FAILED
+	goto BattleScript_MoveEnd
+
 BattleScript_FlowerVeilProtectsRet::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
@@ -3405,6 +3412,7 @@ BattleScript_EffectConfuse::
 	jumpifsubstituteblocks BattleScript_ButItFailed
 	jumpifstatus2 BS_TARGET, STATUS2_CONFUSION, BattleScript_AlreadyConfused
 	jumpifterrainaffected BS_TARGET, STATUS_FIELD_MISTY_TERRAIN, BattleScript_MistyTerrainPrevents
+    unused_0x9f BS_TARGET, CLASS_DRUID, CLASS_LEVEL_DUE, BattleScript_DruidPowerPrevents
 	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
 	jumpifsafeguard BattleScript_SafeguardProtected
 	attackanimation

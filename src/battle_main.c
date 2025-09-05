@@ -3406,6 +3406,7 @@ const u8* FaintClearSetData(u32 battler)
                 // Don't use CanBeConfused here, since it can cause issues in edge cases.
                 if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_OWN_TEMPO
                     || gBattleMons[otherSkyDropper].status2 & STATUS2_CONFUSION
+                    || PokemonHasClassAndLevel(CLASS_DRUID, otherSkyDropper, CLASS_LEVEL_DUE)
                     || IsBattlerTerrainAffected(otherSkyDropper, STATUS_FIELD_MISTY_TERRAIN)))
                 {
                     gBattleMons[otherSkyDropper].status2 |= STATUS2_CONFUSION_TURN(((Random()) % 4) + 2);
@@ -4715,6 +4716,7 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
     // weather abilities
     if (HasWeatherEffect())
     {
+        u32 baseSpeed = speed;
         if (ability == ABILITY_SWIFT_SWIM       && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_RAIN)
             speed *= 2;
         else if (ability == ABILITY_CHLOROPHYLL && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA && gBattleWeather & B_WEATHER_SUN)
@@ -4723,6 +4725,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
             speed *= 2;
         else if (ability == ABILITY_SLUSH_RUSH  && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
             speed *= 2;
+        if (baseSpeed != speed && PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_UNO))
+            speed = (speed * DRUID_WEATHER_SPEED_BOOST_MULTIPLIER) / 100;
     }
 
     // other abilities
@@ -4733,7 +4737,10 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, u32 ability, enum ItemHoldEffect h
     else if (ability == ABILITY_SLOW_START && gDisableStructs[battler].slowStartTimer != 0)
         speed /= 2;
     else if (ability == ABILITY_PROTOSYNTHESIS && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED) && ((gBattleWeather & B_WEATHER_SUN && HasWeatherEffect()) || gDisableStructs[battler].boosterEnergyActivates))
-        speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
+        if (PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_UNO))
+            speed = (GetHighestStatId(battler) == STAT_SPEED) ? speed * DRUID_WEATHER_SPEED_BOOST2_MULTIPLIER : speed;
+        else
+            speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_QUARK_DRIVE && !(gBattleMons[battler].status2 & STATUS2_TRANSFORMED) && (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN || gDisableStructs[battler].boosterEnergyActivates))
         speed = (GetHighestStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_UNBURDEN && gDisableStructs[battler].unburdenActive)

@@ -1560,6 +1560,7 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
             && !(hazardFlags & SIDE_STATUS_SAFEGUARD)
             && !IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL)
             && !IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN)
+            && !PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_DUE)
             && !IsAbilityStatusProtected(battler, ability)
             && heldItemEffect != HOLD_EFFECT_CURE_PSN && heldItemEffect != HOLD_EFFECT_CURE_STATUS
             && IsMonGrounded(heldItemEffect, ability, defType1, defType2)))
@@ -1617,12 +1618,12 @@ static s32 GetSwitchinWeatherImpact(void)
                     if (weatherImpact == 0)
                         weatherImpact = 1;
                 }
-            }
-            if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
-                && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN)) {
-                weatherImpact = maxHP / 8;
-                if (weatherImpact == 0)
-                    weatherImpact = 1;
+                if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
+                    && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN)) {
+                    weatherImpact = maxHP / 8;
+                    if (weatherImpact == 0)
+                        weatherImpact = 1;
+                }
             }
         }
 
@@ -1631,20 +1632,20 @@ static s32 GetSwitchinWeatherImpact(void)
         {
             if (ability == ABILITY_DRY_SKIN)
             {
-                weatherImpact = -(maxHP / 8);
+                weatherImpact = -(maxHP / (class == CLASS_DRUID && level >= CLASS_LEVEL_UNO) ? DRUID_WEATHER_CURE_MULTIPLIER / 2 : 8;
                 if (weatherImpact == 0)
                     weatherImpact = -1;
             }
             else if (ability == ABILITY_RAIN_DISH)
             {
-                weatherImpact = -(maxHP / 16);
+                weatherImpact = -(maxHP / (class == CLASS_DRUID && level >= CLASS_LEVEL_UNO) ? DRUID_WEATHER_CURE_MULTIPLIER : 16);
                 if (weatherImpact == 0)
                     weatherImpact = -1;
             }
         }
         if (((gBattleWeather & B_WEATHER_HAIL) || (gBattleWeather & B_WEATHER_SNOW)) && ability == ABILITY_ICE_BODY)
         {
-            weatherImpact = -(maxHP / 16);
+            weatherImpact = -(maxHP / (class == CLASS_DRUID && level >= CLASS_LEVEL_UNO) ? DRUID_WEATHER_CURE_MULTIPLIER : 16);
             if (weatherImpact == 0)
                 weatherImpact = -1;
         }

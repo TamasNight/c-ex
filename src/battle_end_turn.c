@@ -438,7 +438,6 @@ static bool32 HandleEndTurnFirstEventBlock(u32 battler)
     bool32 effect = FALSE;
 
     u32 side;
-    // TODO aggiungere blocco per verificare se abilità CLERIC si attiva
     switch (gBattleStruct->eventBlockCounter)
     {
     case FIRST_EVENT_BLOCK_GMAX_MOVE_RESIDUAL: // TODO: Has to be split into 3 statuses and needs a queue

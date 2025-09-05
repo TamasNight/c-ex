@@ -1633,11 +1633,11 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
     {
     case ABILITY_SAND_VEIL:
         if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM)
-            calc = (calc * 80) / 100; // 1.2 sand veil loss
+            calc = (calc * (PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_UNO) ? DRUID_WEATHER_EVASION_MULTIPLIER : 80)) / 100; // 1.2 sand veil loss
         break;
     case ABILITY_SNOW_CLOAK:
         if (HasWeatherEffect() && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
-            calc = (calc * 80) / 100; // 1.2 snow cloak loss
+            calc = (calc * (PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_UNO) ? DRUID_WEATHER_EVASION_MULTIPLIER : 80)) / 100; // 1.2 snow cloak loss
         break;
     case ABILITY_TANGLED_FEET:
         if (gBattleMons[battlerDef].status2 & STATUS2_CONFUSION)
@@ -7548,7 +7548,7 @@ static void Cmd_moveend(void)
 
             gBattleScripting.moveendState++;
             break;
-        case MOVEEND_DANCER:
+        case MOVEEND_DANCER: // TODO puntare qui per esecuzione Bard Lv1
             if (gCurrentMove == MOVE_NONE)
                 originallyUsedMove = gChosenMove; // Fallback to chosen move in case attacker is switched out in the middle of an attack resolution (eg red card)
             else
@@ -11857,7 +11857,7 @@ static void Cmd_tryhealhalfhealth(void)
         gBattlerTarget = gBattlerAttacker;
 
     gBattleStruct->moveDamage[gBattlerTarget] = GetNonDynamaxMaxHP(gBattlerTarget) / 2;
-    // Tamas Class System TODO controllo
+    // Tamas Class System
     if (AttackerHasClass(CLASS_CLERIC, gBattlerAttacker)) {
         gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
     }
@@ -12049,6 +12049,10 @@ static void Cmd_trysetrest(void)
     else if (IsBattlerTerrainAffected(gBattlerTarget, STATUS_FIELD_MISTY_TERRAIN))
     {
         gBattlescriptCurrInstr = BattleScript_MistyTerrainPrevents;
+    }
+    else if (PokemonHasClassAndLevel(CLASS_DRUID, gBattlerTarget, CLASS_LEVEL_DUE))
+    {
+        gBattlescriptCurrInstr = BattleScript_DruidPowerPrevents;
     }
     else
     {
@@ -13471,7 +13475,6 @@ static void Cmd_unused_0x9f(void)
         gBattlescriptCurrInstr = jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;
-    // TODO controllo
 }
 
 static void Cmd_unused_0xA0(void)
@@ -14565,7 +14568,7 @@ static void Cmd_recoverbasedonsunlight(void)
             else // not sunny weather
                 gBattleStruct->moveDamage[gBattlerAttacker] = GetNonDynamaxMaxHP(gBattlerAttacker) / 4;
         }
-        // Tamas Class System TODO controllo
+        // Tamas Class System
         if (AttackerHasClass(CLASS_CLERIC, gBattlerAttacker)) {
             gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
         }
@@ -15168,6 +15171,10 @@ static void Cmd_setyawn(void)
         // When Yawn is used while Misty Terrain is set and drowsiness is set from Yawn being used against target in the previous turn:
         // "But it failed" will display first.
         gBattlescriptCurrInstr = BattleScript_MistyTerrainPrevents;
+    }
+    else if (PokemonHasClassAndLevel(CLASS_DRUID, gBattlerTarget, CLASS_LEVEL_DUE))
+    {
+        gBattlescriptCurrInstr = BattleScript_DruidPowerPrevents;
     }
     else
     {
@@ -17701,7 +17708,7 @@ void BS_TryHealPulse(void)
             gBattleStruct->moveDamage[gBattlerTarget] = -(GetNonDynamaxMaxHP(gBattlerTarget) * 2 / 3);
         else
             gBattleStruct->moveDamage[gBattlerTarget] = -(GetNonDynamaxMaxHP(gBattlerTarget) / 2);
-        // Tamas Class System TODO controllo
+        // Tamas Class System
         if (AttackerHasClass(CLASS_CLERIC, gBattlerAttacker)) {
             gBattleStruct->moveDamage[gBattlerAttacker] += (GetNonDynamaxMaxHP(gBattlerAttacker) / 10);
         }

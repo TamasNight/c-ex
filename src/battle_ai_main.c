@@ -1224,7 +1224,7 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (IsNonVolatileStatusMove(move) || IsConfusionMoveEffect(moveEffect))
                 RETURN_SCORE_MINUS(20);
         }
-
+        // TODO aggiungere controllo per druid lv2
         if (IsBattlerTerrainAffected(battlerAtk, STATUS_FIELD_PSYCHIC_TERRAIN) && atkPriority > 0)
         {
             RETURN_SCORE_MINUS(20);

@@ -1788,7 +1788,6 @@ static void MoveSelectionDisplayMoveDescription(u32 battler)
     u16 move = moveInfo->moves[gMoveSelectionCursor[battler]];
     u16 pwr = GetMoveRealPower(battler, move); //GetMovePower(move);
     u16 acc = GetMoveAccuracy(move);
-    // TODO controllo
     u8 pwr_num[3], acc_num[3];
     u8 cat_desc[7] = _("CAT: ");
     u8 pwr_desc[7] = _("PWR: ");

@@ -1046,7 +1046,8 @@ const u8 *CheckSkyDropState(u32 battler, enum SkyDropState skyDropState)
         // Don't use CanBeConfused, can cause issues in edge cases.
         if (!(GetBattlerAbility(otherSkyDropper) == ABILITY_OWN_TEMPO
             || gBattleMons[otherSkyDropper].status2 & STATUS2_CONFUSION
-            || IsBattlerTerrainAffected(otherSkyDropper, STATUS_FIELD_MISTY_TERRAIN)))
+            || IsBattlerTerrainAffected(otherSkyDropper, STATUS_FIELD_MISTY_TERRAIN))
+            || PokemonHasClassAndLevel(CLASS_DRUID, otherSkyDropper, CLASS_LEVEL_DUE))
         {
             // Set confused status
             gBattleMons[otherSkyDropper].status2 |= STATUS2_CONFUSION_TURN(((Random()) % 4) + 2);
@@ -4159,7 +4160,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                  && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_IceBodyHeal);
-                    gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 16;
+                    gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / (PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_UNO) ? DRUID_WEATHER_CURE_MULTIPLIER : 16);
                     if (gBattleStruct->moveDamage[battler] == 0)
                         gBattleStruct->moveDamage[battler] = 1;
                     gBattleStruct->moveDamage[battler] *= -1;
@@ -4176,7 +4177,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                  && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
                 {
                     BattleScriptPushCursorAndCallback(BattleScript_RainDishActivates);
-                    gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / (gLastUsedAbility == ABILITY_RAIN_DISH ? 16 : 8);
+                    gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) /
+                            (gLastUsedAbility == ABILITY_RAIN_DISH ?
+                             (PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_UNO) ? DRUID_WEATHER_CURE_MULTIPLIER : 16) :
+                             (PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_UNO) ? (DRUID_WEATHER_CURE_MULTIPLIER / 2) : 8));
                     if (gBattleStruct->moveDamage[battler] == 0)
                         gBattleStruct->moveDamage[battler] = 1;
                     gBattleStruct->moveDamage[battler] *= -1;
@@ -4277,11 +4281,14 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
                 {
                 SOLAR_POWER_HP_DROP:
-                    BattleScriptPushCursorAndCallback(BattleScript_SolarPowerActivates);
-                    gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 8;
-                    if (gBattleStruct->moveDamage[battler] == 0)
-                        gBattleStruct->moveDamage[battler] = 1;
-                    effect++;
+                    if (!PokemonHasClassAndLevel(CLASS_RANGER, battler, CLASS_LEVEL_UNO)
+                        && !PokemonHasClassAndLevel(CLASS_PALADIN, battler, CLASS_LEVEL_DUE)) {
+                        BattleScriptPushCursorAndCallback(BattleScript_SolarPowerActivates);
+                        gBattleStruct->moveDamage[battler] = GetNonDynamaxMaxHP(battler) / 8;
+                        if (gBattleStruct->moveDamage[battler] == 0)
+                            gBattleStruct->moveDamage[battler] = 1;
+                        effect++;
+                    }
                 }
                 break;
             case ABILITY_HEALER:
@@ -5009,7 +5016,7 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
         switch (GetBattlerAbility(battler))
         {
-        case ABILITY_DANCER:
+        case ABILITY_DANCER: // TODO copiare per BARD
             if (IsBattlerAlive(battler)
              && IsDanceMove(move)
              && !gSpecialStatuses[battler].dancerUsedMove
@@ -5780,6 +5787,10 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u
     {
         battleScript = BattleScript_MistyTerrainPrevents;
     }
+    else if (PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_DUE))
+    {
+        battleScript = BattleScript_DruidPowerPrevents;
+    }
     else if (IsLeafGuardProtected(battlerDef, abilityDef))
     {
         abilityAffected = TRUE;
@@ -5855,7 +5866,8 @@ bool32 CanBeConfused(u32 battler)
 {
     if (GetBattlerAbility(battler) == ABILITY_OWN_TEMPO
      || gBattleMons[battler].status2 & STATUS2_CONFUSION
-     || IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN))
+     || IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN)
+     || PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_DUE))
         return FALSE;
     return TRUE;
 }
@@ -8468,7 +8480,7 @@ u32 CalcMoveBasePowerAfterModifiers(struct DamageCalculationData *damageCalcData
     case ABILITY_SAND_FORCE:
         if ((moveType == TYPE_STEEL || moveType == TYPE_ROCK || moveType == TYPE_GROUND)
             && weather & B_WEATHER_SANDSTORM)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+           modifier = uq4_12_multiply(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerAtk, CLASS_LEVEL_UNO) ? DRUID_WEATHER_MOVES2_MULTIPLIER : UQ_4_12(1.3)));
         break;
     case ABILITY_RIVALRY:
         if (AreBattlersOfSameGender(battlerAtk, battlerDef))
@@ -8876,7 +8888,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         break;
     case ABILITY_SOLAR_POWER:
         if (IsBattleMoveSpecial(move) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerAtk, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5)));
         break;
     case ABILITY_DEFEATIST:
         if (gBattleMons[battlerAtk].hp <= (gBattleMons[battlerAtk].maxHP / 2))
@@ -8922,7 +8934,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         break;
     case ABILITY_FLOWER_GIFT:
         if (gBattleMons[battlerAtk].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN) && IsBattleMovePhysical(move))
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerAtk, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5)));
         break;
     case ABILITY_HUSTLE:
         if (IsBattleMovePhysical(move))
@@ -8964,7 +8976,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             if (((weather & B_WEATHER_SUN) && HasWeatherEffect()) || gDisableStructs[battlerAtk].boosterEnergyActivates)
             {
                 if ((IsBattleMovePhysical(move) && atkHighestStat == STAT_ATK) || (IsBattleMoveSpecial(move) && atkHighestStat == STAT_SPATK))
-                    modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+                    modifier = uq4_12_multiply(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerAtk, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES2_MULTIPLIER) : UQ_4_12(1.3)));
             }
         }
         break;
@@ -8981,7 +8993,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         break;
     case ABILITY_ORICHALCUM_PULSE:
         if ((weather & B_WEATHER_SUN) && HasWeatherEffect() && IsBattleMovePhysical(move))
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3333));
+           modifier = uq4_12_multiply(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerAtk, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES2_MULTIPLIER) : UQ_4_12(1.3333)));
         break;
     case ABILITY_HADRON_ENGINE:
         if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN && IsBattleMoveSpecial(move))
@@ -9009,7 +9021,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
         {
         case ABILITY_FLOWER_GIFT:
             if (gBattleMons[BATTLE_PARTNER(battlerAtk)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerAtk), B_WEATHER_SUN) && IsBattleMovePhysical(move))
-                modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+                modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, BATTLE_PARTNER(battlerAtk), CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5)));
             break;
         }
     }
@@ -9158,7 +9170,7 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
         break;
     case ABILITY_FLOWER_GIFT:
         if (gBattleMons[battlerDef].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN) && !usesDefStat)
-            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+            modifier = uq4_12_multiply_half_down(modifier, PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5));
         break;
     case ABILITY_PURIFYING_SALT:
         if (moveType == TYPE_GHOST)
@@ -9173,7 +9185,7 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
         {
         case ABILITY_FLOWER_GIFT:
             if (gBattleMons[BATTLE_PARTNER(battlerDef)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(BATTLE_PARTNER(battlerDef), B_WEATHER_SUN) && !usesDefStat)
-                modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+                modifier = uq4_12_multiply_half_down(modifier, PokemonHasClassAndLevel(CLASS_DRUID, BATTLE_PARTNER(battlerDef), CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5));
             break;
         }
     }
@@ -9217,10 +9229,10 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
 
     // sandstorm sp.def boost for rock types
     if (B_SANDSTORM_SPDEF_BOOST >= GEN_4 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ROCK) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SANDSTORM) && !usesDefStat)
-        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_UNO) ? DRUID_WEATHER_MOVES_MULTIPLIER : UQ_4_12(1.5)));
     // snow def boost for ice types
     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && usesDefStat)
-        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
+        modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerAtk, CLASS_LEVEL_UNO) ? DRUID_WEATHER_MOVES_MULTIPLIER : UQ_4_12(1.5)));
 
     // The offensive stats of a Player's Pokémon are boosted by x1.1 (+10%) if they have the corresponding flags set (eg. Badges)
     if (ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_DEFENSE, battlerDef) && IsBattleMovePhysical(move))
@@ -9275,7 +9287,7 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageCalculationData *damageCal
     if (weather == B_WEATHER_NONE)
         return UQ_4_12(1.0);
     if (GetMoveEffect(move) == EFFECT_HYDRO_STEAM && (weather & B_WEATHER_SUN) && holdEffectAtk != HOLD_EFFECT_UTILITY_UMBRELLA)
-        return UQ_4_12(1.5);
+        return PokemonHasClassAndLevel(CLASS_DRUID, gBattlerAttacker, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5);
     if (holdEffectDef == HOLD_EFFECT_UTILITY_UMBRELLA)
         return UQ_4_12(1.0);
 
@@ -9285,7 +9297,7 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageCalculationData *damageCal
             return UQ_4_12(1.0);
         if (moveType == TYPE_FIRE && PokemonHasClassAndLevel(CLASS_RANGER, gBattlerAttacker, CLASS_LEVEL_UNO))
             return UQ_4_12(1.0);
-        return (moveType == TYPE_FIRE) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+        return (moveType == TYPE_FIRE) ? UQ_4_12(0.5) : (PokemonHasClassAndLevel(CLASS_DRUID, gBattlerAttacker, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5));
     }
     if (weather & B_WEATHER_SUN)
     {
@@ -9293,7 +9305,7 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageCalculationData *damageCal
             return UQ_4_12(1.0);
         if (moveType == TYPE_WATER && PokemonHasClassAndLevel(CLASS_RANGER, gBattlerAttacker, CLASS_LEVEL_UNO))
             return UQ_4_12(1.0);
-        return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+        return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : (PokemonHasClassAndLevel(CLASS_DRUID, gBattlerAttacker, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5);
     }
     return UQ_4_12(1.0);
 }
@@ -11169,6 +11181,7 @@ static bool32 CanBeInfinitelyConfused(u32 battler)
 {
     if  (GetBattlerAbility(battler) == ABILITY_OWN_TEMPO
          || IsBattlerTerrainAffected(battler, STATUS_FIELD_MISTY_TERRAIN)
+         || PokemonHasClassAndLevel(CLASS_DRUID, battler, CLASS_LEVEL_DUE)
          || gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_SAFEGUARD)
     {
         return FALSE;
@@ -11671,7 +11684,6 @@ bool32 TryRestoreHPBerries(u32 battler, enum ItemCaseId caseId)
 // Controlla se il Pokemon attaccante ha una certa classe
 bool32 AttackerHasClass(u32 class, u32 battler)
 {
-    // TODO check for 2vs2 battle
     struct Pokemon *party = GetBattlerParty(battler);
     u32 partyIndex = gBattlerPartyIndexes[battler];
     u32 monClass = GetMonData(&party[partyIndex], MON_DATA_CLASS);

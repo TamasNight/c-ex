@@ -2903,6 +2903,7 @@ static u32 GetWeatherDamage(u32 battlerId)
     u32 weather = AI_GetWeather();
     if (!weather)
         return 0;
+    // TODO aggiungere immunità paladino e ranger
 
     if (weather & B_WEATHER_SANDSTORM)
     {
@@ -3385,6 +3386,7 @@ bool32 AI_CanBeConfused(u32 battlerAtk, u32 battlerDef, u32 move, u32 ability)
      || (ability == ABILITY_OWN_TEMPO && !DoesBattlerIgnoreAbilityChecks(battlerAtk, gAiLogicData->abilities[battlerAtk], move))
      || IsBattlerTerrainAffected(battlerDef, STATUS_FIELD_MISTY_TERRAIN)
      || gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD
+     || PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_DUE)
      || DoesSubstituteBlockMove(battlerAtk, battlerDef, move))
         return FALSE;
     return TRUE;
