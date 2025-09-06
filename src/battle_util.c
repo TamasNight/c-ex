@@ -5014,9 +5014,12 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
         }
         break;
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
+        if (PokemonHasClassAndLevel(CLASS_BARD, battler, CLASS_LEVEL_UNO))
+            goto DANCER;
         switch (GetBattlerAbility(battler))
         {
-        case ABILITY_DANCER: // TODO copiare per BARD
+        case ABILITY_DANCER: // Tamas Class System - BARD
+        DANCER:
             if (IsBattlerAlive(battler)
              && IsDanceMove(move)
              && !gSpecialStatuses[battler].dancerUsedMove
@@ -5038,7 +5041,10 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
                 if (IsBattlerAlly(gBattlerTarget, gBattlerAttacker))
                     gBattlerTarget = (gBattleScripting.savedBattler & 0xF0) >> 4;
                 gHitMarker &= ~HITMARKER_ATTACKSTRING_PRINTED;
-                BattleScriptExecute(BattleScript_DancerActivates);
+                if (PokemonHasClassAndLevel(CLASS_BARD, battler, CLASS_LEVEL_UNO))
+                    BattleScriptExecute(BattleScript_BardActivates);
+                else
+                    BattleScriptExecute(BattleScript_DancerActivates);
                 effect++;
             }
             break;
@@ -9025,6 +9031,10 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
             break;
         }
     }
+
+    // Tamas Class System
+    if ((PokemonHasClassAndLevel(CLASS_BARD, BATTLE_PARTNER(battlerAtk), CLASS_LEVEL_DUE))
+        modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(BARD_ALLY_DAMAGE_MULTIPLIER));
 
     // field abilities
     if (IsAbilityOnField(ABILITY_VESSEL_OF_RUIN) && atkAbility != ABILITY_VESSEL_OF_RUIN && IsBattleMoveSpecial(move))

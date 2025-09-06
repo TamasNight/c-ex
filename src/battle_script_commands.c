@@ -7548,7 +7548,7 @@ static void Cmd_moveend(void)
 
             gBattleScripting.moveendState++;
             break;
-        case MOVEEND_DANCER: // TODO puntare qui per esecuzione Bard Lv1
+        case MOVEEND_DANCER:
             if (gCurrentMove == MOVE_NONE)
                 originallyUsedMove = gChosenMove; // Fallback to chosen move in case attacker is switched out in the middle of an attack resolution (eg red card)
             else

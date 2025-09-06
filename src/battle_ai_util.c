@@ -2903,7 +2903,9 @@ static u32 GetWeatherDamage(u32 battlerId)
     u32 weather = AI_GetWeather();
     if (!weather)
         return 0;
-    // TODO aggiungere immunità paladino e ranger
+    if (PokemonHasClassAndLevel(CLASS_PALADIN, battlerId, CLASS_LEVEL_DUE) ||
+            PokemonHasClassAndLevel(CLASS_RANGER, battlerId, CLASS_LEVEL_UNO))
+        return 0;
 
     if (weather & B_WEATHER_SANDSTORM)
     {

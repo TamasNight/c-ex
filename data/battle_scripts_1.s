@@ -8532,6 +8532,12 @@ BattleScript_DancerActivates::
 	orword gHitMarker, HITMARKER_ALLOW_NO_PP
 	jumptocalledmove TRUE
 
+BattleScript_BardActivates::
+    printstring STRINGID_BARDDANCE
+    waitmessage B_WAIT_TIME_LONG
+	orword gHitMarker, HITMARKER_ALLOW_NO_PP
+	jumptocalledmove TRUE
+
 BattleScript_SynchronizeActivates::
 	waitstate
 	call BattleScript_AbilityPopUp

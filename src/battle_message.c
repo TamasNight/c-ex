@@ -902,8 +902,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_POWERCONSTRUCTPRESENCEOFMANY]         = COMPOUND_STRING("You sense the presence of many!"),
     [STRINGID_POWERCONSTRUCTTRANSFORM]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} transformed into its Complete Forme!"),
     [STRINGID_CLERICHEALS]                          = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is healed by its Cleric Power!"),
-    [STRINGID_ROGUEPROTECT]                         = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s Rogue Power blocks {B_CURRENT_MOVE}!")
+    [STRINGID_ROGUEPROTECT]                         = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s Rogue Power blocks {B_CURRENT_MOVE}!"),
     [STRINGID_DRUIDPOWERPREVENTS]                   = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} surrounds itself with its Druidic protective power!"),
+    [STRINGID_BARDDANCE]                            = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s Bard Power copies {B_CURRENT_MOVE}!")
 };
 
 const u16 gTrainerUsedItemStringIds[] =
