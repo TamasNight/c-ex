@@ -5920,6 +5920,10 @@ static enum ItemEffect HealConfuseBerry(u32 battler, u32 itemId, u32 flavorId, e
             gBattleStruct->moveDamage[battler] *= 2;
             gBattlerAbility = battler;
         }
+        if (PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+        {
+            gBattleStruct->moveDamage[battler] *= 2;
+        }
         gBattleScripting.battler = battler;
         if (caseID == ITEMEFFECT_ON_SWITCH_IN_FIRST_TURN || caseID == ITEMEFFECT_NORMAL)
         {
@@ -5948,10 +5952,15 @@ static enum ItemEffect StatRaiseBerry(u32 battler, u32 itemId, u32 statId, enum 
     {
         BufferStatChange(battler, statId, STRINGID_STATROSE);
         gEffectBattler = gBattleScripting.battler = battler;
-        if (GetBattlerAbility(battler) == ABILITY_RIPEN)
-            SET_STATCHANGER(statId, 2, FALSE);
-        else
-            SET_STATCHANGER(statId, 1, FALSE);
+        if (GetBattlerAbility(battler) == ABILITY_RIPEN || PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+            SET_STATCHANGER(statId, 4, FALSE);
+        else {
+            if (GetBattlerAbility(battler) == ABILITY_RIPEN ||
+                PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+                SET_STATCHANGER(statId, 2, FALSE);
+            else
+                SET_STATCHANGER(statId, 1, FALSE);
+        }
 
         gBattleScripting.animArg1 = STAT_ANIM_PLUS1 + statId;
         gBattleScripting.animArg2 = 0;
@@ -6000,10 +6009,14 @@ static enum ItemEffect RandomStatRaiseBerry(u32 battler, u32 itemId, enum ItemCa
         gBattleTextBuff2[6] = stringId >> 8;
         gBattleTextBuff2[7] = EOS;
         gEffectBattler = battler;
-        if (battlerAbility == ABILITY_RIPEN)
-            SET_STATCHANGER(stat, 4, FALSE);
-        else
-            SET_STATCHANGER(stat, 2, FALSE);
+        if (battlerAbility == ABILITY_RIPEN && PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+            SET_STATCHANGER(stat, 6, FALSE);
+        else {
+            if (battlerAbility == ABILITY_RIPEN || PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+                SET_STATCHANGER(stat, 4, FALSE);
+            else
+                SET_STATCHANGER(stat, 2, FALSE);
+        }
 
         gBattleScripting.animArg1 = STAT_ANIM_PLUS2 + stat;
         gBattleScripting.animArg2 = 0;
@@ -6053,6 +6066,8 @@ static enum ItemEffect TrySetEnigmaBerry(u32 battler)
         gBattleStruct->moveDamage[battler] = (gBattleMons[battler].maxHP * 25 / 100) * -1;
         if (GetBattlerAbility(battler) == ABILITY_RIPEN)
             gBattleStruct->moveDamage[battler] *= 2;
+        if (PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+            gBattleStruct->moveDamage[battler] *= 2;
 
         BattleScriptPushCursor();
         gBattlescriptCurrInstr = BattleScript_ItemHealHP_RemoveItemRet;
@@ -6075,10 +6090,15 @@ static enum ItemEffect DamagedStatBoostBerryEffect(u32 battler, u8 statId, u8 ca
         BufferStatChange(battler, statId, STRINGID_STATROSE);
 
         gEffectBattler = battler;
-        if (GetBattlerAbility(battler) == ABILITY_RIPEN)
-            SET_STATCHANGER(statId, 2, FALSE);
-        else
-            SET_STATCHANGER(statId, 1, FALSE);
+        if (GetBattlerAbility(battler) == ABILITY_RIPEN && PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+            SET_STATCHANGER(statId, 4, FALSE);
+        else {
+            if (GetBattlerAbility(battler) == ABILITY_RIPEN ||
+                PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+                SET_STATCHANGER(statId, 2, FALSE);
+            else
+                SET_STATCHANGER(statId, 1, FALSE);
+        }
 
         gBattleScripting.battler = battler;
         gBattleScripting.animArg1 = STAT_ANIM_PLUS1 + statId;
@@ -6180,6 +6200,10 @@ static u32 ItemRestorePp(u32 battler, u32 itemId, enum ItemCaseId caseID)
                 ppRestored *= 2;
                 gBattlerAbility = battler;
             }
+            if (PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+            {
+                ppRestored *= 2;
+            }
             if (currentPP + ppRestored > maxPP)
                 changedPP = maxPP;
             else
@@ -6219,6 +6243,8 @@ static u32 ItemHealHp(u32 battler, u32 itemId, enum ItemCaseId caseID, bool32 pe
 
         // check ripen
         if (GetItemPocket(itemId) == POCKET_BERRIES && GetBattlerAbility(battler) == ABILITY_RIPEN)
+            gBattleStruct->moveDamage[battler] *= 2;
+        if (GetItemPocket(itemId) == POCKET_BERRIES && PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO)
             gBattleStruct->moveDamage[battler] *= 2;
 
         gBattlerAbility = battler;    // in SWSH, berry juice shows ability pop up but has no effect. This is mimicked here
@@ -7310,6 +7336,8 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                         gBattleStruct->moveDamage[gBattlerAttacker] = 1;
                     if (GetBattlerAbility(battler) == ABILITY_RIPEN)
                         gBattleStruct->moveDamage[gBattlerAttacker] *= 2;
+                    if (PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
+                        gBattleStruct->moveDamage[gBattlerAttacker] *= 2;
 
                     effect = ITEM_HP_CHANGE;
                     BattleScriptPushCursor();
@@ -7330,6 +7358,8 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler, bool32 moveTurn)
                     if (gBattleStruct->moveDamage[gBattlerAttacker] == 0)
                         gBattleStruct->moveDamage[gBattlerAttacker] = 1;
                     if (GetBattlerAbility(battler) == ABILITY_RIPEN)
+                        gBattleStruct->moveDamage[gBattlerAttacker] *= 2;
+                    if (PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
                         gBattleStruct->moveDamage[gBattlerAttacker] *= 2;
 
                     effect = ITEM_HP_CHANGE;
@@ -9541,7 +9571,8 @@ static inline uq4_12_t GetDefenderItemsModifier(struct DamageCalculationData *da
         {
             if (damageCalcData->updateFlags)
                 gSpecialStatuses[battlerDef].berryReduced = TRUE;
-            return (abilityDef == ABILITY_RIPEN) ? UQ_4_12(0.25) : UQ_4_12(0.5);
+            if (abilityDef == ABILITY_RIPEN && PokemonHasClassAndLevel(CLASS_ARTIFICER, battlerDef, CLASS_LEVEL_UNO)) return UQ_4_12(0.125);
+            return (abilityDef == ABILITY_RIPEN || PokemonHasClassAndLevel(CLASS_ARTIFICER, battlerDef, CLASS_LEVEL_UNO)) ? UQ_4_12(0.25) : UQ_4_12(0.5);
         }
         break;
     default:

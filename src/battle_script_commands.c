@@ -1676,10 +1676,14 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
 
     if (gBattleStruct->battlerState[battlerAtk].usedMicleBerry)
     {
-        if (atkAbility == ABILITY_RIPEN)
-            calc = (calc * 140) / 100;  // ripen gives 40% acc boost
-        else
-            calc = (calc * 120) / 100;  // 20% acc boost
+        if (atkAbility == ABILITY_RIPEN && PokemonHasClassAndLevel(CLASS_ARTIFICER, battlerAtk, CLASS_LEVEL_UNO))
+            calc = (calc * ARTIFICER_ACCURACY_MULTIPLIER) / 100;
+        else {
+            if (atkAbility == ABILITY_RIPEN || PokemonHasClassAndLevel(CLASS_ARTIFICER, battlerAtk, CLASS_LEVEL_UNO))
+                calc = (calc * 140) / 100;  // ripen gives 40% acc boost
+            else
+                calc = (calc * 120) / 100;  // 20% acc boost
+        }
     }
 
     if (gFieldStatuses & STATUS_FIELD_GRAVITY)

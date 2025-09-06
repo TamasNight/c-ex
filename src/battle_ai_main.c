@@ -4699,7 +4699,7 @@ static u32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move)
             ADJUST_SCORE(WEAK_EFFECT);
         if (IsRecycleEncouragedItem(GetUsedHeldItem(battlerAtk)))
             ADJUST_SCORE(WEAK_EFFECT);
-        if (aiData->abilities[battlerAtk] == ABILITY_RIPEN)
+        if (aiData->abilities[battlerAtk] == ABILITY_RIPEN || PokemonHasClassAndLevel(CLASS_ARTIFICER, battlerAtk, CLASS_LEVEL_UNO))
         {
             u32 item = GetUsedHeldItem(battlerAtk);
             u32 toHeal = (GetItemHoldEffectParam(item) == 10) ? 10 : gBattleMons[battlerAtk].maxHP / GetItemHoldEffectParam(item);
