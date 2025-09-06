@@ -4817,6 +4817,9 @@ s32 GetBattleMovePriority(u32 battler, u32 ability, u32 move)
     {
         priority++;
     }
+    else if (PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_DUE) && IsBattleMoveStatus(move)) {
+        priority++;
+    }
     else if (ability == ABILITY_PRANKSTER && IsBattleMoveStatus(move))
     {
         gProtectStructs[battler].pranksterElevated = 1;
