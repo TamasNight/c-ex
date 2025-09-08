@@ -1864,7 +1864,7 @@ static void Cmd_ppreduce(void)
     {
         if (gBattlerAttacker != gBattlerTarget && GetBattlerAbility(gBattlerTarget) == ABILITY_PRESSURE)
              ppToDeduct++;
-        if (gBattlerAttacker != gBattlerTarget && PokemonHasClassAndLevel(CLASS_WARLOCK, i, CLASS_LEVEL_UNO))
+        if (gBattlerAttacker != gBattlerTarget && PokemonHasClassAndLevel(CLASS_WARLOCK, gBattlerTarget, CLASS_LEVEL_UNO))
              ppToDeduct++;
     }
 

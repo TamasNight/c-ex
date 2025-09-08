@@ -6244,7 +6244,7 @@ static u32 ItemHealHp(u32 battler, u32 itemId, enum ItemCaseId caseID, bool32 pe
         // check ripen
         if (GetItemPocket(itemId) == POCKET_BERRIES && GetBattlerAbility(battler) == ABILITY_RIPEN)
             gBattleStruct->moveDamage[battler] *= 2;
-        if (GetItemPocket(itemId) == POCKET_BERRIES && PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO)
+        if (GetItemPocket(itemId) == POCKET_BERRIES && PokemonHasClassAndLevel(CLASS_ARTIFICER, battler, CLASS_LEVEL_UNO))
             gBattleStruct->moveDamage[battler] *= 2;
 
         gBattlerAbility = battler;    // in SWSH, berry juice shows ability pop up but has no effect. This is mimicked here
@@ -9063,7 +9063,7 @@ static inline u32 CalcAttackStat(struct DamageCalculationData *damageCalcData, u
     }
 
     // Tamas Class System
-    if ((PokemonHasClassAndLevel(CLASS_BARD, BATTLE_PARTNER(battlerAtk), CLASS_LEVEL_DUE))
+    if (PokemonHasClassAndLevel(CLASS_BARD, BATTLE_PARTNER(battlerAtk), CLASS_LEVEL_DUE))
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(BARD_ALLY_DAMAGE_MULTIPLIER));
 
     // field abilities
@@ -9272,7 +9272,7 @@ static inline u32 CalcDefenseStat(struct DamageCalculationData *damageCalcData, 
         modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_UNO) ? DRUID_WEATHER_MOVES_MULTIPLIER : UQ_4_12(1.5)));
     // snow def boost for ice types
     if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_SNOW) && usesDefStat)
-        modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerAtk, CLASS_LEVEL_UNO) ? DRUID_WEATHER_MOVES_MULTIPLIER : UQ_4_12(1.5)));
+        modifier = uq4_12_multiply_half_down(modifier, (PokemonHasClassAndLevel(CLASS_DRUID, battlerDef, CLASS_LEVEL_UNO) ? DRUID_WEATHER_MOVES_MULTIPLIER : UQ_4_12(1.5)));
 
     // The offensive stats of a Player's Pokémon are boosted by x1.1 (+10%) if they have the corresponding flags set (eg. Badges)
     if (ShouldGetStatBadgeBoost(B_FLAG_BADGE_BOOST_DEFENSE, battlerDef) && IsBattleMovePhysical(move))
@@ -9345,7 +9345,7 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageCalculationData *damageCal
             return UQ_4_12(1.0);
         if (moveType == TYPE_WATER && PokemonHasClassAndLevel(CLASS_RANGER, gBattlerAttacker, CLASS_LEVEL_UNO))
             return UQ_4_12(1.0);
-        return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : (PokemonHasClassAndLevel(CLASS_DRUID, gBattlerAttacker, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5);
+        return (moveType == TYPE_WATER) ? UQ_4_12(0.5) : PokemonHasClassAndLevel(CLASS_DRUID, gBattlerAttacker, CLASS_LEVEL_UNO) ? UQ_4_12(DRUID_WEATHER_MOVES_MULTIPLIER) : UQ_4_12(1.5);
     }
     return UQ_4_12(1.0);
 }

@@ -1632,7 +1632,7 @@ static s32 GetSwitchinWeatherImpact(void)
         {
             if (ability == ABILITY_DRY_SKIN)
             {
-                weatherImpact = -(maxHP / (class == CLASS_DRUID && level >= CLASS_LEVEL_UNO) ? DRUID_WEATHER_CURE_MULTIPLIER / 2 : 8;
+                weatherImpact = -(maxHP / (class == CLASS_DRUID && level >= CLASS_LEVEL_UNO) ? DRUID_WEATHER_CURE_MULTIPLIER / 2 : 8);
                 if (weatherImpact == 0)
                     weatherImpact = -1;
             }
