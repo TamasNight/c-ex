@@ -8,9 +8,9 @@ def hex_to_rgb_lines(text: str):
     lines.append("16")
     for token in re.findall(r'0x[0-9a-fA-F]{6,8}', text):
         val = int(token, 16)
-        r = (val >> 16) & 0xFF
+        b = (val >> 16) & 0xFF
         g = (val >> 8) & 0xFF
-        b = val & 0xFF
+        r = val & 0xFF
         lines.append(f"{r} {g} {b}")
     return "\n".join(lines)
 
