@@ -994,10 +994,24 @@
 
 #define ITEM_STRANGE_BALL 828
 
+#define ITEM_CLASS_RING_ARTIFICER  829
+#define ITEM_CLASS_RING_BARBARIAN  830
+#define ITEM_CLASS_RING_BARD       831
+#define ITEM_CLASS_RING_CLERIC     832
+#define ITEM_CLASS_RING_FIGHTER    833
+#define ITEM_CLASS_RING_MONK       834
+#define ITEM_CLASS_RING_RANGER     835
+#define ITEM_CLASS_RING_WIZARD     836
+#define ITEM_CLASS_RING_WARLOCK    837
+#define ITEM_CLASS_RING_SORCERER   838
+#define ITEM_CLASS_RING_PALADIN    839
+#define ITEM_CLASS_RING_ROGUE      840
+#define ITEM_CLASS_RING_DRUID      841
+
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+#define ITEMS_COUNT 842
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

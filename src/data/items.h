@@ -14,6 +14,8 @@
 
 #define TREASURE_FACTOR ((I_SELL_VALUE_FRACTION >= GEN_9) ? 2 : 1)
 
+#include "constants/pokemon_classes.h"
+
 // Shared Item Description entries
 
 static const u8 sFullHealDesc[]       = _("Heals all the\n"
@@ -14140,5 +14142,215 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+
+    // Class Rings
+    [ITEM_CLASS_RING_ARTIFICER] =
+    {
+        .name = _("Artificer Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A enchanted ring,\n"
+            "it can change the\n"
+            "class to Artificer"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_ARTIFICER,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingArtificer,
+    },
+    [ITEM_CLASS_RING_BARBARIAN] =
+    {
+    .name = _("Barbarian Ring"),
+    .price = 1500,
+    .description = COMPOUND_STRING(
+        "A fierce ring,\n"
+        "it can change the\n"
+        "class to Barbarian"),
+    .pocket = POCKET_ITEMS,
+    .type = ITEM_USE_PARTY_MENU,
+    .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+    .secondaryId = CLASS_BARBARIAN,
+    .flingPower = 10,
+    .iconPic = gItemIcon_ClassRing,
+    .iconPalette = gItemIconPalette_ClassRingBarbarian,
+    },
+    [ITEM_CLASS_RING_BARD] =
+    {
+        .name = _("Bard Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A melodious ring,\n"
+            "it can change the\n"
+            "class to Bard"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_BARD,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingBard,
+    },
+    [ITEM_CLASS_RING_CLERIC] =
+    {
+        .name = _("Cleric Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A sacred ring,\n"
+            "it can change the\n"
+            "class to Cleric"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_CLERIC,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingCleric,
+    },
+    [ITEM_CLASS_RING_FIGHTER] =
+    {
+        .name = _("Fighter Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A sturdy ring,\n"
+            "it can change the\n"
+            "class to Fighter"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_FIGHTER,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingFighter,
+    },
+    [ITEM_CLASS_RING_MONK] =
+    {
+        .name = _("Monk Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A disciplined ring,\n"
+            "it can change the\n"
+            "class to Monk"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_MONK,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingMonk,
+    },
+    [ITEM_CLASS_RING_RANGER] =
+    {
+        .name = _("Ranger Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A wild ring,\n"
+            "it can change the\n"
+            "class to Ranger"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_RANGER,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingRanger,
+    },
+    [ITEM_CLASS_RING_WIZARD] =
+    {
+        .name = _("Wizard Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "An arcane ring,\n"
+            "it can change the\n"
+            "class to Wizard"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_WIZARD,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingWizard,
+    },
+    [ITEM_CLASS_RING_WARLOCK] =
+    {
+        .name = _("Warlock Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A dark ring,\n"
+            "it can change the\n"
+            "class to Warlock"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_WARLOCK,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingWarlock,
+    },
+    [ITEM_CLASS_RING_SORCERER] =
+    {
+        .name = _("Sorcerer Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A mystical ring,\n"
+            "it can change the\n"
+            "class to Sorcerer"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_SORCERER,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingSorcerer,
+    },
+    [ITEM_CLASS_RING_PALADIN] =
+    {
+        .name = _("Paladin Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A holy ring,\n"
+            "it can change the\n"
+            "class to Paladin"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_PALADIN,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingPaladin,
+    },
+    [ITEM_CLASS_RING_ROGUE] =
+    {
+        .name = _("Rogue Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A sly ring,\n"
+            "it can change the\n"
+            "class to Rogue"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_ROGUE,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingRogue,
+    },
+    [ITEM_CLASS_RING_DRUID] =
+    {
+        .name = _("Druid Ring"),
+        .price = 1500,
+        .description = COMPOUND_STRING(
+            "A natural ring,\n"
+            "it can change the\n"
+            "class to Druid"),
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ClassRing,
+        .secondaryId = CLASS_DRUID,
+        .flingPower = 10,
+        .iconPic = gItemIcon_ClassRing,
+        .iconPalette = gItemIconPalette_ClassRingDruid,
     },
 };

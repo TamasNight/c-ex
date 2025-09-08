@@ -1740,6 +1740,23 @@ extern const u16 gItemIconPalette_SwapSnack[];
 extern const u32 gItemIcon_TwiceSpicedRadish[];
 extern const u16 gItemIconPalette_TwiceSpicedRadish[];
 
+// Class Ring
+extern const u32 gItemIcon_ClassRing[];
+extern const u16 gItemIconPalette_ClassRingArtificer[];
+extern const u16 gItemIconPalette_ClassRingBarbarian[];
+extern const u16 gItemIconPalette_ClassRingBard[];
+extern const u16 gItemIconPalette_ClassRingCleric[];
+extern const u16 gItemIconPalette_ClassRingFighter[];
+extern const u16 gItemIconPalette_ClassRingMonk[];
+extern const u16 gItemIconPalette_ClassRingRanger[];
+extern const u16 gItemIconPalette_ClassRingWizard[];
+extern const u16 gItemIconPalette_ClassRingWarlock[];
+extern const u16 gItemIconPalette_ClassRingSorcerer[];
+extern const u16 gItemIconPalette_ClassRingPaladin[];
+extern const u16 gItemIconPalette_ClassRingRogue[];
+extern const u16 gItemIconPalette_ClassRingDruid[];
+
+
 extern const u32 gItemIcon_ReturnToFieldArrow[];
 extern const u16 gItemIconPalette_ReturnToFieldArrow[];
 

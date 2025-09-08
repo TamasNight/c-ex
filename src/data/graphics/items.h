@@ -2099,3 +2099,18 @@ const u16 gItemIconPalette_SwapSnack[] = INCBIN_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_TwiceSpicedRadish[] = INCBIN_U32("graphics/items/icons/twice_spiced_radish.4bpp.lz");
 const u16 gItemIconPalette_TwiceSpicedRadish[] = INCBIN_U16("graphics/items/icon_palettes/twice_spiced_radish.gbapal");
+
+const u32 gItemIcon_ClassRing[] = INCBIN_U32("graphics/items/icons/class_ring/class_ring.4bpp.lz");
+const u16 gItemIconPalette_ClassRingArtificer[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_artificer.gbapal");
+const u16 gItemIconPalette_ClassRingBarbarian[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_barbarian.gbapal");
+const u16 gItemIconPalette_ClassRingBard[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_bard.gbapal");
+const u16 gItemIconPalette_ClassRingCleric[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_cleric.gbapal");
+const u16 gItemIconPalette_ClassRingFighter[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_fighter.gbapal");
+const u16 gItemIconPalette_ClassRingMonk[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_monk.gbapal");
+const u16 gItemIconPalette_ClassRingRanger[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_ranger.gbapal");
+const u16 gItemIconPalette_ClassRingWizard[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_wizard.gbapal");
+const u16 gItemIconPalette_ClassRingWarlock[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_warlock.gbapal");
+const u16 gItemIconPalette_ClassRingSorcerer[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_sorcerer.gbapal");
+const u16 gItemIconPalette_ClassRingPaladin[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_paladin.gbapal");
+const u16 gItemIconPalette_ClassRingRogue[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_rogue.gbapal");
+const u16 gItemIconPalette_ClassRingDruid[] = INCBIN_U16("graphics/items/icon_palettes/class_ring/class_ring_druid.gbapal");
