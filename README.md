@@ -14,6 +14,30 @@
 
  [![](https://img.shields.io/github/all-contributors/rh-hideout/pokeemerald-expansion/upcoming)](CREDITS.md)
 
+# About `Better Bag`
+This branch adds 5 new pockets to the bag based on changes to it from later generations:
+* Medicine (HP, PP and status recovery items)
+* Power-Up (Evolution Items, Vitamins, Mints, Candies)
+* Battle Items (X items, Pokédoll/FluffyTail and hold items with battle effects)
+* Mega Stones
+* Z-Crystals
+
+The new order for the pockets is the following:
+* Items
+* Medicine
+* Poké Balls
+* Battle Items
+* Berries
+* Power-Up
+* Mega Stones
+* Z-Crystals
+* TMs & HMs
+* Key Items
+
+However, it reuses the original pocket sprites.
+
+# pokeemerald Expansion
+
 If you use **`pokeemerald-expansion`**, please credit **RHH (Rom Hacking Hideout)**. Optionally, include the version number for clarity.
 
 ```
