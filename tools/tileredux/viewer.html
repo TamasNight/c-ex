@@ -6,6 +6,8 @@
     <style>
         body { font-family: sans-serif; margin: 1em; }
         canvas { border: 1px solid #333; margin: 0.5em 0; image-rendering: pixelated; }
+        #details { margin-top: 1em; white-space: pre; font-family: monospace; }
+        .highlight { outline: 2px solid red; }
     </style>
 </head>
 <body>
@@ -14,31 +16,36 @@
 <input type="file" id="jsonInput" accept=".json">
 <input type="file" id="atlasInput" accept="image/png">
 <div id="info"></div>
+
 <h2>Atlas Compatto</h2>
 <canvas id="atlasCanvas"></canvas>
-<h2>Immagine Ricostruita</h2>
+
+<h2>Immagine Ricostruita (griglia 16x16)</h2>
 <canvas id="reconstructedCanvas"></canvas>
+
+<h2>Dettagli blocco selezionato</h2>
+<div id="details">Nessun blocco selezionato.</div>
 
 <script>
     let mappingData = null;
     let atlasImage = null;
+    let blockSize = 8;
+    let reconstructedCanvas = document.getElementById('reconstructedCanvas');
+    let rctx = reconstructedCanvas.getContext('2d');
+    let atlasCanvas = document.getElementById('atlasCanvas');
+    let actx = atlasCanvas.getContext('2d');
+    let detailsDiv = document.getElementById('details');
 
-    const jsonInput = document.getElementById('jsonInput');
-    const atlasInput = document.getElementById('atlasInput');
-    const atlasCanvas = document.getElementById('atlasCanvas');
-    const reconstructedCanvas = document.getElementById('reconstructedCanvas');
-    const infoDiv = document.getElementById('info');
-
-    jsonInput.addEventListener('change', handleJson);
-    atlasInput.addEventListener('change', handleAtlas);
+    document.getElementById('jsonInput').addEventListener('change', handleJson);
+    document.getElementById('atlasInput').addEventListener('change', handleAtlas);
 
     function handleJson(e) {
         const file = e.target.files[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = (ev) => {
+        reader.onload = ev => {
             mappingData = JSON.parse(ev.target.result);
-            infoDiv.innerText = `JSON caricato: ${file.name}`;
+            blockSize = mappingData.block_size;
             tryReconstruct();
         };
         reader.readAsText(file);
@@ -49,47 +56,38 @@
         if (!file) return;
         const url = URL.createObjectURL(file);
         atlasImage = new Image();
-        atlasImage.onload = () => {
-            infoDiv.innerText += `\nAtlas caricato: ${file.name}`;
-            tryReconstruct();
-        };
+        atlasImage.onload = () => tryReconstruct();
         atlasImage.src = url;
     }
 
     function tryReconstruct() {
         if (!mappingData || !atlasImage) return;
 
-        // Disegna l’atlas
+        // Disegna atlas
         atlasCanvas.width = mappingData.atlas.width;
         atlasCanvas.height = mappingData.atlas.height;
-        const actx = atlasCanvas.getContext('2d');
         actx.imageSmoothingEnabled = false;
         actx.drawImage(atlasImage, 0, 0);
 
-        // Crea canvas per l'immagine ricostruita
+        // Ricostruzione
         reconstructedCanvas.width = mappingData.original_image.width;
         reconstructedCanvas.height = mappingData.original_image.height;
-        const rctx = reconstructedCanvas.getContext('2d');
         rctx.imageSmoothingEnabled = false;
-
-        const bs = mappingData.block_size;
+        rctx.clearRect(0, 0, reconstructedCanvas.width, reconstructedCanvas.height);
 
         mappingData.blocks.forEach(block => {
+            const bs = blockSize;
             const sx = block.atlas_bx * bs;
             const sy = block.atlas_by * bs;
 
-            // estrai tile dall’atlas in canvas temporaneo
             const tmpCanvas = document.createElement('canvas');
-            tmpCanvas.width = bs;
-            tmpCanvas.height = bs;
+            tmpCanvas.width = bs; tmpCanvas.height = bs;
             const tctx = tmpCanvas.getContext('2d');
             tctx.imageSmoothingEnabled = false;
             tctx.drawImage(atlasImage, sx, sy, bs, bs, 0, 0, bs, bs);
 
-            // applica flip se richiesto
             const tile = document.createElement('canvas');
-            tile.width = bs;
-            tile.height = bs;
+            tile.width = bs; tile.height = bs;
             const tileCtx = tile.getContext('2d');
             tileCtx.imageSmoothingEnabled = false;
             tileCtx.save();
@@ -98,9 +96,66 @@
             tileCtx.drawImage(tmpCanvas, 0, 0);
             tileCtx.restore();
 
-            // disegna nella posizione originale
             rctx.drawImage(tile, block.orig_bx * bs, block.orig_by * bs);
         });
+
+        // Disegna griglia 16x16 sopra
+        drawGrid();
+        reconstructedCanvas.addEventListener('mousemove', onHover);
+        reconstructedCanvas.addEventListener('click', onHover);
+    }
+
+    function drawGrid() {
+        rctx.strokeStyle = "rgba(0,0,0,0.2)";
+        const step = 16;
+        for (let x = 0; x < reconstructedCanvas.width; x += step) {
+            rctx.beginPath();
+            rctx.moveTo(x, 0);
+            rctx.lineTo(x, reconstructedCanvas.height);
+            rctx.stroke();
+        }
+        for (let y = 0; y < reconstructedCanvas.height; y += step) {
+            rctx.beginPath();
+            rctx.moveTo(0, y);
+            rctx.lineTo(reconstructedCanvas.width, y);
+            rctx.stroke();
+        }
+    }
+
+    function onHover(e) {
+        const rect = reconstructedCanvas.getBoundingClientRect();
+        const x = Math.floor((e.clientX - rect.left) / rect.width * reconstructedCanvas.width);
+        const y = Math.floor((e.clientY - rect.top) / rect.height * reconstructedCanvas.height);
+
+        const bx16 = Math.floor(x / 16);
+        const by16 = Math.floor(y / 16);
+
+        highlightBlock(bx16, by16);
+    }
+
+    function highlightBlock(bx16, by16) {
+        const bs = blockSize;
+        const blocks = mappingData.blocks.filter(b =>
+            Math.floor(b.orig_bx / 2) === bx16 && Math.floor(b.orig_by / 2) === by16
+        );
+
+        // Rinfresca atlas
+        actx.clearRect(0, 0, atlasCanvas.width, atlasCanvas.height);
+        actx.drawImage(atlasImage, 0, 0);
+
+        let text = `Blocco 16x16 in posizione (${bx16}, ${by16}):\n`;
+        blocks.forEach((b, i) => {
+            const sx = b.atlas_bx * bs;
+            const sy = b.atlas_by * bs;
+
+            // evidenzia tile nell'atlas
+            actx.strokeStyle = "red";
+            actx.lineWidth = 2;
+            actx.strokeRect(sx, sy, bs, bs);
+
+            text += `  Tile ${i}: orig=(${b.orig_bx},${b.orig_by}), atlas=(${b.atlas_bx},${b.atlas_by}), flip_x=${b.flip_x}, flip_y=${b.flip_y}\n`;
+        });
+        detailsDiv.innerText = text;
     }
 </script>
 </body>
