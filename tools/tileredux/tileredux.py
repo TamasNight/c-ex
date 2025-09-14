@@ -61,10 +61,12 @@ def process_tileset(img: Image.Image, block_size=8, out_prefix="output/", filena
             unique_first_pos[uid] = idx
 
     num_unique = len(unique_images)
+    fixed_width = 128
+    cols = fixed_width // block_size
     comp_rows = math.ceil(num_unique / cols)
-    atlas_w = cols * block_size
+    atlas_w = fixed_width
     atlas_h = comp_rows * block_size
-    atlas = Image.new("RGBA", (atlas_w, atlas_h), (0,0,0,0))
+    atlas = Image.new("RGBA", (atlas_w, atlas_h), (0, 0, 0, 0))
 
     ordered_uids = sorted(range(num_unique), key=lambda u: unique_first_pos[u])
     uid_to_placement = {uid: pos for pos, uid in enumerate(ordered_uids)}
