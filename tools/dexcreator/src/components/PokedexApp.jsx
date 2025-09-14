@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { Trash} from "lucide-react";
+import {TypeDistributionChart} from "./TypeChart.jsx";
 // Pokedex Web App (single-file React component)
 // Parser aggiornato per file stile gen_X_families.h
 // - Nome Pokémon: [SPECIES_NAME] =
@@ -201,7 +202,7 @@ export default function PokedexApp() {
     }
 
     function addToDex(speciesKey, formName) {
-        const entries = [...dexEntries, { speciesKey, formName }];
+        const entries = [...dexEntries, formName];
         // Aggiungi evoluzioni automatiche
         const species = parsed[speciesKey];
 
@@ -209,8 +210,8 @@ export default function PokedexApp() {
             const form = species.forms.find((f) => f.formName === formName) || species.forms[0];
             if (form && form.evolutions) {
                 form.evolutions.forEach((evo) => {
-                    if (!entries.some((en) => en.speciesKey === evo)) {
-                        entries.push({speciesKey: evo, formName: evo});
+                    if (!entries.includes(evo)) {
+                        entries.push(evo);
                         recursiveEvolutions(parsed[evo]);
                     }
                 });
@@ -229,7 +230,7 @@ export default function PokedexApp() {
 
     function computeTypeDistribution() {
         const typeCounts = {};
-        const speciesAdded = new Set(dexEntries.map((e) => e.speciesKey));
+        const speciesAdded = new Set(dexEntries);
         speciesAdded.forEach((sk) => {
             const s = parsed[sk];
             if (!s) return;
@@ -243,7 +244,7 @@ export default function PokedexApp() {
     function computeSumBaseStats() {
         const sum = { hp:0, atk:0, def:0, spa:0, spd:0, spe:0 };
         dexEntries.forEach((e) => {
-            const s = parsed[e.speciesKey];
+            const s = parsed[e];
             if (!s) return;
             const f = s.forms.find((ff) => ff.formName === e.formName) || s.forms[0];
             if (!f || !f.baseStats) return;
@@ -253,6 +254,16 @@ export default function PokedexApp() {
     }
 
     const filtered = allFormsList.filter((f) => (f.formName || f.speciesName || '').toLowerCase().includes(query.toLowerCase()));
+
+    function getAlternativeImgSrc(e) {
+            const target = e.currentTarget;
+            if (target.src.includes("anim_front.png")) {
+                target.src = target.src.replace("anim_", "");
+            } else {
+                target.onerror = null; // ultima chance
+                target.src = "/pokemon/question_mark.png"; // immagine di default
+        }
+    }
 
     return (
         <div className="p-4 mx-auto w-full">
@@ -277,16 +288,8 @@ export default function PokedexApp() {
                         {filtered.map((f, idx) => (
                             <div key={idx} className="border rounded p-2 text-center">
                                 <img src={f.imagePathGuess} alt={f.formName} className="max-h-16 mx-auto"
-                                     onError={(e) => {
-                                         const target = e.currentTarget;
-                                         if (target.src.includes("anim_front.png")) {
-                                             target.src = target.src.replace("anim_", "");
-                                         } else {
-                                             target.onerror = null; // ultima chance
-                                             target.src = "/pokemon/question_mark.png"; // immagine di default
-                                         }
-                                     }}/>
-                                <div className="text-xs truncate">{f.formName}</div>
+                                     onError={(e) => getAlternativeImgSrc(e)}/>
+                                <div className="text-xs truncate capitalize">{f.formName}</div>
                                 <button className="mt-2 px-2 py-1 text-sm rounded bg-green-500 text-white"
                                         onClick={() => addToDex(f.speciesKey, f.formName)}>Add
                                 </button>
@@ -317,13 +320,13 @@ export default function PokedexApp() {
                     </div>
                     <div className="mt-2 space-y-2">
                         {dexEntries.map((d, i) => {
-                            const s = parsed[d.speciesKey];
-                            const f = s?.forms.find(ff => ff.formName === d.formName) || s?.forms[0] || {};
+                            const s = parsed[d];
+                            const f = s?.forms.find(ff => ff.formName === d) || s?.forms[0] || {};
                             return (
                                 <div key={i} className="flex items-center gap-2 border p-2 rounded">
-                                    <img src={f.imagePathGuess} alt={d.formName} className="w-12 h-12 object-contain"/>
+                                    <img src={f.imagePathGuess} alt={d} onError={e => {getAlternativeImgSrc(e)}} className="w-12 h-12 object-contain"/>
                                     <div className="flex-1 text-sm">
-                                        <div>{d.formName}</div>
+                                        <div className="capitalize">{d}</div>
                                         <div className="text-xs text-gray-600">{(f.types || []).join(', ')}</div>
                                     </div>
                                     <button onClick={() => removeFromDex(i)}
@@ -338,9 +341,7 @@ export default function PokedexApp() {
                     <div className="mt-4">
                         <h3 className="font-semibold">Statistics</h3>
                         <div className="mt-2">
-                            {Object.entries(computeTypeDistribution()).map(([t, c]) => (
-                                <div key={t} className="text-sm">{t}: {c}</div>
-                            ))}
+                            <TypeDistributionChart typeCounts={computeTypeDistribution()} />
                             <div className="mt-3 text-sm">
                                 {(() => {
                                     const s = computeSumBaseStats();
