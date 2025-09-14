@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Tileset Viewer</title>
+    <style>
+        body { font-family: sans-serif; margin: 1em; }
+        canvas { border: 1px solid #333; margin: 0.5em 0; image-rendering: pixelated; }
+    </style>
+</head>
+<body>
+<h1>Tileset Viewer</h1>
+<p>Carica i file JSON e PNG generati dallo script Python:</p>
+<input type="file" id="jsonInput" accept=".json">
+<input type="file" id="atlasInput" accept="image/png">
+<div id="info"></div>
+<h2>Atlas Compatto</h2>
+<canvas id="atlasCanvas"></canvas>
+<h2>Immagine Ricostruita</h2>
+<canvas id="reconstructedCanvas"></canvas>
+
+<script>
+    let mappingData = null;
+    let atlasImage = null;
+
+    const jsonInput = document.getElementById('jsonInput');
+    const atlasInput = document.getElementById('atlasInput');
+    const atlasCanvas = document.getElementById('atlasCanvas');
+    const reconstructedCanvas = document.getElementById('reconstructedCanvas');
+    const infoDiv = document.getElementById('info');
+
+    jsonInput.addEventListener('change', handleJson);
+    atlasInput.addEventListener('change', handleAtlas);
+
+    function handleJson(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            mappingData = JSON.parse(ev.target.result);
+            infoDiv.innerText = `JSON caricato: ${file.name}`;
+            tryReconstruct();
+        };
+        reader.readAsText(file);
+    }
+
+    function handleAtlas(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+        const url = URL.createObjectURL(file);
+        atlasImage = new Image();
+        atlasImage.onload = () => {
+            infoDiv.innerText += `\nAtlas caricato: ${file.name}`;
+            tryReconstruct();
+        };
+        atlasImage.src = url;
+    }
+
+    function tryReconstruct() {
+        if (!mappingData || !atlasImage) return;
+
+        // Disegna l’atlas
+        atlasCanvas.width = mappingData.atlas.width;
+        atlasCanvas.height = mappingData.atlas.height;
+        const actx = atlasCanvas.getContext('2d');
+        actx.imageSmoothingEnabled = false;
+        actx.drawImage(atlasImage, 0, 0);
+
+        // Crea canvas per l'immagine ricostruita
+        reconstructedCanvas.width = mappingData.original_image.width;
+        reconstructedCanvas.height = mappingData.original_image.height;
+        const rctx = reconstructedCanvas.getContext('2d');
+        rctx.imageSmoothingEnabled = false;
+
+        const bs = mappingData.block_size;
+
+        mappingData.blocks.forEach(block => {
+            const sx = block.atlas_bx * bs;
+            const sy = block.atlas_by * bs;
+
+            // estrai tile dall’atlas in canvas temporaneo
+            const tmpCanvas = document.createElement('canvas');
+            tmpCanvas.width = bs;
+            tmpCanvas.height = bs;
+            const tctx = tmpCanvas.getContext('2d');
+            tctx.imageSmoothingEnabled = false;
+            tctx.drawImage(atlasImage, sx, sy, bs, bs, 0, 0, bs, bs);
+
+            // applica flip se richiesto
+            const tile = document.createElement('canvas');
+            tile.width = bs;
+            tile.height = bs;
+            const tileCtx = tile.getContext('2d');
+            tileCtx.imageSmoothingEnabled = false;
+            tileCtx.save();
+            tileCtx.translate(block.flip_x ? bs : 0, block.flip_y ? bs : 0);
+            tileCtx.scale(block.flip_x ? -1 : 1, block.flip_y ? -1 : 1);
+            tileCtx.drawImage(tmpCanvas, 0, 0);
+            tileCtx.restore();
+
+            // disegna nella posizione originale
+            rctx.drawImage(tile, block.orig_bx * bs, block.orig_by * bs);
+        });
+    }
+</script>
+</body>
+</html>
