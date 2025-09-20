@@ -94,8 +94,9 @@ def process_tileset(img: Image.Image, block_size=8, out_prefix="output/", filena
         })
 
     os.makedirs(os.path.dirname(out_prefix+"/"), exist_ok=True)
-    atlas_path = f"{out_prefix}/{filename}_atlas.png"
-    json_path = f"{out_prefix}/{filename}_map.json"
+    out_name = filename.replace(".png", "")
+    atlas_path = f"{out_prefix}/{out_name}_atlas.png"
+    json_path = f"{out_prefix}/{out_name}_map.json"
     atlas.save(atlas_path)
 
     mapping_json = {

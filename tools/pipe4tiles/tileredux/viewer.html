@@ -5,9 +5,12 @@
     <title>Tileset Viewer</title>
     <style>
         body { font-family: sans-serif; margin: 1em; }
-        canvas { border: 1px solid #333; margin: 0.5em 0; image-rendering: pixelated; }
+        canvas { border: 1px solid #333; margin: 0.5em 0; image-rendering: pixelated; width: 400px;}
         #details { margin-top: 1em; white-space: pre; font-family: monospace; }
         .highlight { outline: 2px solid red; }
+		.box {display: flex; justify-content: space-between;}
+		.box div{overflow-y: scroll; height: 100vh;}
+		#atlasCanvas {width: 300px;}
     </style>
 </head>
 <body>
@@ -16,15 +19,17 @@
 <input type="file" id="jsonInput" accept=".json">
 <input type="file" id="atlasInput" accept="image/png">
 <div id="info"></div>
-
+<div class="box">
+<div>
 <h2>Atlas Compatto</h2>
 <canvas id="atlasCanvas"></canvas>
-
-<h2>Immagine Ricostruita (griglia 16x16)</h2>
-<canvas id="reconstructedCanvas"></canvas>
-
 <h2>Dettagli blocco selezionato</h2>
 <div id="details">Nessun blocco selezionato.</div>
+</div>
+<div>
+<h2>Immagine Ricostruita (griglia 16x16)</h2>
+<canvas id="reconstructedCanvas"></canvas>
+</div>
 
 <script>
     let mappingData = null;
