@@ -631,6 +631,7 @@ void InitTilesetAnim_Building(void)
 
 static void TilesetAnim_General(u16 timer)
 {
+    /* TODO aggiustare animazioni
     if (timer % 16 == 0)
         QueueAnimTiles_General_Flower(timer / 16);
     if (timer % 16 == 1)
@@ -640,7 +641,7 @@ static void TilesetAnim_General(u16 timer)
     if (timer % 16 == 3)
         QueueAnimTiles_General_Waterfall(timer / 16);
     if (timer % 16 == 4)
-        QueueAnimTiles_General_LandWaterEdge(timer / 16);
+        QueueAnimTiles_General_LandWaterEdge(timer / 16);*/
 }
 
 static void TilesetAnim_Building(u16 timer)
