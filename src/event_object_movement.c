@@ -9793,12 +9793,19 @@ static void SetObjectEventSpriteOamTableForLongGrass(struct ObjectEvent *objEven
 {
     if (objEvent->disableCoveringGroundEffects)
         return;
-
+        // Cambio per Long Grass usata come parte bassa della Tall Grass
     if (!MetatileBehavior_IsLongGrass(objEvent->currentMetatileBehavior))
         return;
 
     if (!MetatileBehavior_IsLongGrass(objEvent->previousMetatileBehavior))
         return;
+
+    if (MetatileBehavior_IsLongGrass(objEvent->currentMetatileBehavior))
+        return;
+
+    if (MetatileBehavior_IsLongGrass(objEvent->previousMetatileBehavior))
+        return;
+
 
     sprite->subspriteTableNum = 4;
 
