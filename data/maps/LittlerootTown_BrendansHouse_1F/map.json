@@ -98,7 +98,7 @@
     {
       "local_id": "LOCALID_RIVALS_HOUSE_1F_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL",
-      "x": 8,
+      "x": 7,
       "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -112,14 +112,14 @@
   ],
   "warp_events": [
     {
-      "x": 9,
+      "x": 8,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "1"
     },
     {
-      "x": 8,
+      "x": 7,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
@@ -136,7 +136,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 8,
+      "x": 7,
       "y": 8,
       "elevation": 0,
       "var": "VAR_LITTLEROOT_INTRO_STATE",
