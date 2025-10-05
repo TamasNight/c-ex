@@ -2,3 +2,5 @@
 *.png
 *.pal
 palopt/tiles/*.pal
+!outend/*
+!outend/*/*
