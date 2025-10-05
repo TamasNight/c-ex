@@ -145,7 +145,7 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 7,
+      "x": 6,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
@@ -246,8 +246,8 @@
     },
     {
       "type": "sign",
-      "x": 6,
-      "y": 17,
+      "x": 9,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "LittlerootTown_EventScript_BirchsLabSign"
@@ -262,7 +262,7 @@
     },
     {
       "type": "sign",
-      "x": 12,
+      "x": 11,
       "y": 8,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
