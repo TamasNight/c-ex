@@ -215,7 +215,7 @@ ContestHall_EventScript_RandomAudiencePokefanF::
 	return
 
 ContestHall_EventScript_RandomAudienceMan1::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_FARMER_M_1
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_MAN_1
 	return
 
 ContestHall_EventScript_RandomAudienceWoman2::
