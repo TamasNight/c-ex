@@ -23,7 +23,7 @@
 #define OBJ_EVENT_GFX_WOMAN_1                     16
 #define OBJ_EVENT_GFX_FAT_MAN                     17
 #define OBJ_EVENT_GFX_POKEFAN_F                   18
-#define OBJ_EVENT_GFX_MAN_1                       19
+#define OBJ_EVENT_GFX_FARMER_M_1                       19
 #define OBJ_EVENT_GFX_WOMAN_2                     20
 #define OBJ_EVENT_GFX_EXPERT_M                    21
 #define OBJ_EVENT_GFX_EXPERT_F                    22
@@ -348,11 +348,11 @@
 #define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION       0x1102
 #define OBJ_EVENT_PAL_TAG_NPC_1                   0x1103
 #define OBJ_EVENT_PAL_TAG_NPC_2                   0x1104
-#define OBJ_EVENT_PAL_TAG_NPC_3                   0x1105
+#define OBJ_EVENT_PAL_TAG_FARMER_M                0x1105
 #define OBJ_EVENT_PAL_TAG_NPC_4                   0x1106
 #define OBJ_EVENT_PAL_TAG_NPC_1_REFLECTION        0x1107
 #define OBJ_EVENT_PAL_TAG_NPC_2_REFLECTION        0x1108
-#define OBJ_EVENT_PAL_TAG_NPC_3_REFLECTION        0x1109
+#define OBJ_EVENT_PAL_TAG_FARMER_M_REFLECTION     0x1109
 #define OBJ_EVENT_PAL_TAG_NPC_4_REFLECTION        0x110A
 #define OBJ_EVENT_PAL_TAG_QUINTY_PLUMP            0x110B
 #define OBJ_EVENT_PAL_TAG_QUINTY_PLUMP_REFLECTION 0x110C
