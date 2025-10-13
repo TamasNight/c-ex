@@ -242,6 +242,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight;
 // Medieval - Tamas Class System
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_M;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_F;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bandit_M;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bandit_F;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Knight_M;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Knight_F;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Painter_M;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
@@ -495,6 +501,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_FARMER_M_1] =               &gObjectEventGraphicsInfo_Farmer_M,
+    [OBJ_EVENT_GFX_FARMER_F_1] =               &gObjectEventGraphicsInfo_Farmer_F,
+    [OBJ_EVENT_GFX_BANDIT_M_1] =               &gObjectEventGraphicsInfo_Bandit_M,
+    [OBJ_EVENT_GFX_BANDIT_F_1] =               &gObjectEventGraphicsInfo_Bandit_F,
+    [OBJ_EVENT_GFX_KNIGHT_M_1] =               &gObjectEventGraphicsInfo_Knight_M,
+    [OBJ_EVENT_GFX_KNIGHT_F_1] =               &gObjectEventGraphicsInfo_Knight_F,
+    [OBJ_EVENT_GFX_PAINTER_M]  =               &gObjectEventGraphicsInfo_Painter_M,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

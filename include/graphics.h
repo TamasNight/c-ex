@@ -3366,6 +3366,11 @@ extern const u16 gObjectEventPal_RubySapphireMay[];
 
 // Medieval - Tamas Class System
 extern const u16 gObjectEventPal_Farmer_M[];
+extern const u16 gObjectEventPal_Farmer_F[];
+extern const u16 gObjectEventPal_Bandit_M[];
+extern const u16 gObjectEventPal_Bandit_F[];
+extern const u16 gObjectEventPal_Knight[];
+extern const u16 gObjectEventPal_Painter_M[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];

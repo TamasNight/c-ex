@@ -465,3 +465,14 @@ const u16 gFieldEffectObjectPalette_CaveDust[] = INCBIN_U16("graphics/field_effe
 
 const u16 gObjectEventPal_Farmer_M[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/farmer_M.gbapal");
 const u32 gObjectEventPic_Farmer_M[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/farmer_M.4bpp");
+const u16 gObjectEventPal_Farmer_F[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/farmer_F.gbapal");
+const u32 gObjectEventPic_Farmer_F[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/farmer_F.4bpp");
+const u16 gObjectEventPal_Bandit_M[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/bandit_M.gbapal");
+const u32 gObjectEventPic_Bandit_M[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/bandit_M.4bpp");
+const u16 gObjectEventPal_Bandit_F[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/bandit_F.gbapal");
+const u32 gObjectEventPic_Bandit_F[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/bandit_F.4bpp");
+const u16 gObjectEventPal_Knight[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/knight.gbapal");
+const u32 gObjectEventPic_Knight_M[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/knight_M.4bpp");
+const u32 gObjectEventPic_Knight_F[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/knight_F.4bpp");
+const u16 gObjectEventPal_Painter_M[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/painter_M.gbapal");
+const u32 gObjectEventPic_Painter_M[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/painter_M.4bpp");
