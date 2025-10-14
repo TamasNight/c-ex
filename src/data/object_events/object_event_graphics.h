@@ -476,3 +476,5 @@ const u32 gObjectEventPic_Knight_M[] = INCBIN_U32("graphics/object_events/pics/p
 const u32 gObjectEventPic_Knight_F[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/knight_F.4bpp");
 const u16 gObjectEventPal_Painter_M[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/painter_M.gbapal");
 const u32 gObjectEventPic_Painter_M[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/painter_M.4bpp");
+const u16 gObjectEventPal_Shopkeeper_M[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/shopkeeper_M.gbapal");
+const u32 gObjectEventPic_Shopkeeper_M[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/shopkeeper_M.4bpp");

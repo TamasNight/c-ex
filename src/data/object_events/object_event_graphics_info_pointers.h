@@ -248,6 +248,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bandit_F;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Knight_M;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Knight_F;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Painter_M;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shopkeeper_M;
 
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Bard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hipster;
@@ -507,6 +508,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_KNIGHT_M_1] =               &gObjectEventGraphicsInfo_Knight_M,
     [OBJ_EVENT_GFX_KNIGHT_F_1] =               &gObjectEventGraphicsInfo_Knight_F,
     [OBJ_EVENT_GFX_PAINTER_M]  =               &gObjectEventGraphicsInfo_Painter_M,
+    [OBJ_EVENT_GFX_SHOPKEEPER_M]  =            &gObjectEventGraphicsInfo_Shopkeeper_M,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

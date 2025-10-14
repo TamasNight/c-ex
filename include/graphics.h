@@ -3371,6 +3371,7 @@ extern const u16 gObjectEventPal_Bandit_M[];
 extern const u16 gObjectEventPal_Bandit_F[];
 extern const u16 gObjectEventPal_Knight[];
 extern const u16 gObjectEventPal_Painter_M[];
+extern const u16 gObjectEventPal_Shopkeeper_M[];
 
 // Mail
 extern const u16 gMailPalette_Orange[];

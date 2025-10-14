@@ -426,6 +426,9 @@ $(OBJEVENTGFXDIR)/peoplemedieval/knight_F.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/peoplemedieval/painter_M.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
+$(OBJEVENTGFXDIR)/peoplemedieval/shopkeeper_M.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 
 $(OBJEVENTGFXDIR)/pokemon_old/azumarill.4bpp: %.4bpp: %.png
