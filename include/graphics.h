@@ -3365,6 +3365,8 @@ extern const u16 gObjectEventPal_RubySapphireBrendan[];
 extern const u16 gObjectEventPal_RubySapphireMay[];
 
 // Medieval - Tamas Class System
+extern const u16 gObjectEventPal_Blacksmith_m[];
+extern const u16 gObjectEventPal_Innkeeper_f[];
 extern const u16 gObjectEventPal_Farmer_M[];
 extern const u16 gObjectEventPal_Farmer_F[];
 extern const u16 gObjectEventPal_Bandit_M[];

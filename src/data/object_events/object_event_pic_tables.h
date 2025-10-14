@@ -1388,3 +1388,11 @@ static const struct SpriteFrameImage sPicTable_Painter_M[] = {
 static const struct SpriteFrameImage sPicTable_Shopkeeper_M[] = {
         overworld_ascending_frames(gObjectEventPic_Shopkeeper_M, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Innkeeper_f[] = {
+        overworld_ascending_frames(gObjectEventPic_Innkeeper_f, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Blacksmith_m[] = {
+        overworld_ascending_frames(gObjectEventPic_Blacksmith_m, 2, 4),
+};
