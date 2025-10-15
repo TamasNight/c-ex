@@ -484,3 +484,6 @@ const u32 gObjectEventPic_Innkeeper_f[] = INCBIN_U32("graphics/object_events/pic
 
 const u16 gObjectEventPal_Blacksmith_m[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/blacksmith_M.gbapal");
 const u32 gObjectEventPic_Blacksmith_m[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/blacksmith_M.4bpp");
+
+const u16 gObjectEventPal_Elder_f[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/elder_F.gbapal");
+const u32 gObjectEventPic_Elder_f[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/elder_F.4bpp");
