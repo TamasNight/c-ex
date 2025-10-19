@@ -309,7 +309,7 @@
 #line 194
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 195
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 196
 F_TRAINER_FEMALE | 
@@ -26184,7 +26184,7 @@ F_TRAINER_FEMALE |
 #line 10049
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 10050
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 10051
 F_TRAINER_FEMALE | 
@@ -26361,7 +26361,7 @@ F_TRAINER_FEMALE |
 #line 10113
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 10114
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 10115
 F_TRAINER_FEMALE | 
@@ -26456,7 +26456,7 @@ F_TRAINER_FEMALE |
 #line 10146
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 10147
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 10148
 F_TRAINER_FEMALE | 
@@ -26551,7 +26551,7 @@ F_TRAINER_FEMALE |
 #line 10179
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 10180
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 10181
 F_TRAINER_FEMALE | 
@@ -26646,7 +26646,7 @@ F_TRAINER_FEMALE |
 #line 10212
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 10213
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 10214
 F_TRAINER_FEMALE | 
@@ -36841,7 +36841,7 @@ F_TRAINER_FEMALE |
 #line 14083
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 14084
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 14085
 F_TRAINER_FEMALE | 
@@ -43193,7 +43193,7 @@ F_TRAINER_FEMALE |
 #line 16589
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 16590
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 16591
 F_TRAINER_FEMALE | 
@@ -43288,7 +43288,7 @@ F_TRAINER_FEMALE |
 #line 16622
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 16623
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 16624
 F_TRAINER_FEMALE | 
@@ -43383,7 +43383,7 @@ F_TRAINER_FEMALE |
 #line 16655
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 16656
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 16657
 F_TRAINER_FEMALE | 
@@ -43478,7 +43478,7 @@ F_TRAINER_FEMALE |
 #line 16688
         .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
 #line 16689
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_F,
+        .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
 #line 16690
 F_TRAINER_FEMALE | 
