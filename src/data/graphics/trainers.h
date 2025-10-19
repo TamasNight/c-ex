@@ -4,11 +4,14 @@
 const u32 gTrainerFrontPic_Farmer_M[] = INCBIN_U32("graphics/trainers/medieval/farmer_M.4bpp.lz");
 const u16 gTrainerPalette_Farmer_M[] = INCBIN_U16("graphics/trainers/medieval/palettes/farmer_M.gbapal");
 
-const u32 gTrainerFrontPic_AquaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/aqua_grunt_m.4bpp.lz");
-const u16 gTrainerPalette_AquaGruntM[] = INCBIN_U16("graphics/trainers/front_pics/aqua_grunt_m.gbapal");
-
 const u32 gTrainerFrontPic_Farmer_F[] = INCBIN_U32("graphics/trainers/medieval/farmer_F.4bpp.lz");
 const u16 gTrainerPalette_Farmer_F[] = INCBIN_U16("graphics/trainers/medieval/palettes/farmer_F.gbapal");
+
+const u32 gTrainerFrontPic_Bandit_M[] = INCBIN_U32("graphics/trainers/medieval/bandit_M.4bpp.lz");
+const u16 gTrainerPalette_Bandit_M[] = INCBIN_U16("graphics/trainers/medieval/palettes/bandit_M.gbapal");
+
+const u32 gTrainerFrontPic_AquaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/aqua_grunt_m.4bpp.lz");
+const u16 gTrainerPalette_AquaGruntM[] = INCBIN_U16("graphics/trainers/front_pics/aqua_grunt_m.gbapal");
 
 const u32 gTrainerFrontPic_CoolTrainerM[] = INCBIN_U32("graphics/trainers/front_pics/cooltrainer_m.4bpp.lz");
 const u16 gTrainerPalette_CoolTrainerM[] = INCBIN_U16("graphics/trainers/front_pics/cooltrainer_m.gbapal");
@@ -96,9 +99,6 @@ const u16 gTrainerPalette_Picnicker[] = INCBIN_U16("graphics/trainers/front_pics
 
 const u32 gTrainerFrontPic_BugManiac[] = INCBIN_U32("graphics/trainers/front_pics/bug_maniac.4bpp.lz");
 const u16 gTrainerPalette_BugManiac[] = INCBIN_U16("graphics/trainers/front_pics/bug_maniac.gbapal");
-
-const u32 gTrainerFrontPic_PokemonBreederM[] = INCBIN_U32("graphics/trainers/front_pics/pokemon_breeder_m.4bpp.lz");
-const u16 gTrainerPalette_PokemonBreederM[] = INCBIN_U16("graphics/trainers/front_pics/pokemon_breeder_m.gbapal");
 
 const u32 gTrainerFrontPic_PsychicM[] = INCBIN_U32("graphics/trainers/front_pics/psychic_m.4bpp.lz");
 const u16 gTrainerPalette_PsychicM[] = INCBIN_U16("graphics/trainers/front_pics/psychic_m.gbapal");
@@ -340,7 +340,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_CAMPER, gTrainerFrontPic_Camper, gTrainerPalette_Camper),
     TRAINER_SPRITE(TRAINER_PIC_PICNICKER, gTrainerFrontPic_Picnicker, gTrainerPalette_Picnicker),
     TRAINER_SPRITE(TRAINER_PIC_BUG_MANIAC, gTrainerFrontPic_BugManiac, gTrainerPalette_BugManiac),
-    TRAINER_SPRITE(TRAINER_PIC_POKEMON_BREEDER_M, gTrainerFrontPic_PokemonBreederM, gTrainerPalette_PokemonBreederM),
+    TRAINER_SPRITE(TRAINER_PIC_BANDIT_M, gTrainerFrontPic_Bandit_M, gTrainerPalette_Bandit_M),
     TRAINER_SPRITE(TRAINER_PIC_PSYCHIC_M, gTrainerFrontPic_PsychicM, gTrainerPalette_PsychicM),
     TRAINER_SPRITE(TRAINER_PIC_PSYCHIC_F, gTrainerFrontPic_PsychicF, gTrainerPalette_PsychicF),
     TRAINER_SPRITE(TRAINER_PIC_GENTLEMAN, gTrainerFrontPic_Gentleman, gTrainerPalette_Gentleman),

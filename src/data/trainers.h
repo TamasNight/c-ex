@@ -307,7 +307,7 @@
 #line 193
         .trainerName = _("GABRIELLE"),
 #line 194
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 195
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -25625,9 +25625,9 @@ F_TRAINER_FEMALE |
 #line 9845
         .trainerName = _("ISAAC"),
 #line 9846
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BANDIT,
 #line 9847
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
+        .trainerPic = TRAINER_PIC_BANDIT_M,
         .encounterMusic_gender =
 #line 9849
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -25810,9 +25810,9 @@ F_TRAINER_FEMALE |
 #line 9916
         .trainerName = _("ISAAC"),
 #line 9917
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BANDIT,
 #line 9918
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
+        .trainerPic = TRAINER_PIC_BANDIT_M,
         .encounterMusic_gender =
 #line 9920
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -25903,9 +25903,9 @@ F_TRAINER_FEMALE |
 #line 9949
         .trainerName = _("ISAAC"),
 #line 9950
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BANDIT,
 #line 9951
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
+        .trainerPic = TRAINER_PIC_BANDIT_M,
         .encounterMusic_gender =
 #line 9953
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -25996,9 +25996,9 @@ F_TRAINER_FEMALE |
 #line 9982
         .trainerName = _("ISAAC"),
 #line 9983
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BANDIT,
 #line 9984
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
+        .trainerPic = TRAINER_PIC_BANDIT_M,
         .encounterMusic_gender =
 #line 9986
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -26089,9 +26089,9 @@ F_TRAINER_FEMALE |
 #line 10015
         .trainerName = _("ISAAC"),
 #line 10016
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BANDIT,
 #line 10017
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
+        .trainerPic = TRAINER_PIC_BANDIT_M,
         .encounterMusic_gender =
 #line 10019
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -26182,7 +26182,7 @@ F_TRAINER_FEMALE |
 #line 10048
         .trainerName = _("LYDIA"),
 #line 10049
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 10050
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -26359,7 +26359,7 @@ F_TRAINER_FEMALE |
 #line 10112
         .trainerName = _("LYDIA"),
 #line 10113
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 10114
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -26454,7 +26454,7 @@ F_TRAINER_FEMALE |
 #line 10145
         .trainerName = _("LYDIA"),
 #line 10146
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 10147
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -26549,7 +26549,7 @@ F_TRAINER_FEMALE |
 #line 10178
         .trainerName = _("LYDIA"),
 #line 10179
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 10180
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -26644,7 +26644,7 @@ F_TRAINER_FEMALE |
 #line 10211
         .trainerName = _("LYDIA"),
 #line 10212
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 10213
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -36746,9 +36746,9 @@ F_TRAINER_FEMALE |
 #line 14049
         .trainerName = _("MYLES"),
 #line 14050
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_BANDIT,
 #line 14051
-        .trainerPic = TRAINER_PIC_POKEMON_BREEDER_M,
+        .trainerPic = TRAINER_PIC_BANDIT_M,
         .encounterMusic_gender =
 #line 14053
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -36839,7 +36839,7 @@ F_TRAINER_FEMALE |
 #line 14082
         .trainerName = _("PAT"),
 #line 14083
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 14084
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -43191,7 +43191,7 @@ F_TRAINER_FEMALE |
 #line 16588
         .trainerName = _("GABRIELLE"),
 #line 16589
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16590
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -43286,7 +43286,7 @@ F_TRAINER_FEMALE |
 #line 16621
         .trainerName = _("GABRIELLE"),
 #line 16622
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16623
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -43381,7 +43381,7 @@ F_TRAINER_FEMALE |
 #line 16654
         .trainerName = _("GABRIELLE"),
 #line 16655
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16656
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =
@@ -43476,7 +43476,7 @@ F_TRAINER_FEMALE |
 #line 16687
         .trainerName = _("GABRIELLE"),
 #line 16688
-        .trainerClass = TRAINER_CLASS_PKMN_BREEDER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16689
         .trainerPic = TRAINER_PIC_FARMER_F,
         .encounterMusic_gender =

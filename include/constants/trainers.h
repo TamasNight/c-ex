@@ -47,7 +47,7 @@
 #define TRAINER_PIC_CAMPER                29
 #define TRAINER_PIC_PICNICKER             30
 #define TRAINER_PIC_BUG_MANIAC            31
-#define TRAINER_PIC_POKEMON_BREEDER_M     32
+#define TRAINER_PIC_BANDIT_M     32
 #define TRAINER_PIC_PSYCHIC_M             33
 #define TRAINER_PIC_PSYCHIC_F             34
 #define TRAINER_PIC_GENTLEMAN             35
@@ -289,7 +289,7 @@
 #define TRAINER_CLASS_PKMN_TRAINER_2 0x1  // Unused
 #define TRAINER_CLASS_FARMER         0x2
 #define TRAINER_CLASS_TEAM_AQUA      0x3
-#define TRAINER_CLASS_PKMN_BREEDER   0x4
+#define TRAINER_CLASS_BANDIT         0x4
 #define TRAINER_CLASS_COOLTRAINER    0x5
 #define TRAINER_CLASS_BIRD_KEEPER    0x6
 #define TRAINER_CLASS_COLLECTOR      0x7
