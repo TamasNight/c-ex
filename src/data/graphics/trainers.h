@@ -1,8 +1,8 @@
 #include "constants/trainers.h"
 #include "data.h"
 
-const u32 gTrainerFrontPic_Hiker[] = INCBIN_U32("graphics/trainers/front_pics/hiker.4bpp.lz");
-const u16 gTrainerPalette_Hiker[] = INCBIN_U16("graphics/trainers/front_pics/hiker.gbapal");
+const u32 gTrainerFrontPic_Farmer_M[] = INCBIN_U32("graphics/trainers/medieval/farmer_M.4bpp.lz");
+const u16 gTrainerPalette_Farmer_M[] = INCBIN_U16("graphics/trainers/medieval/palettes/farmer_M.gbapal");
 
 const u32 gTrainerFrontPic_AquaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/aqua_grunt_m.4bpp.lz");
 const u16 gTrainerPalette_AquaGruntM[] = INCBIN_U16("graphics/trainers/front_pics/aqua_grunt_m.gbapal");
@@ -293,8 +293,8 @@ const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
 
 // The first two parameters invoke a front pic and palette by
-// calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
-// gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
+// calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_FARMER_M), and
+// gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Farmer_M" and "gTrainerPalette_Farmer_M").
 // The last three parameters control the X and Y coordinates and rotation of the mugshot on the screen.
 // They default to 0, 0, and 0x200 which are default values used by the majority of the game's trainer sprites.
 #define TRAINER_SPRITE(trainerPic, picFile, paletteFile, ...)                  \
@@ -308,7 +308,7 @@ const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pic
 
 const struct TrainerSprite gTrainerSprites[] =
 {
-    TRAINER_SPRITE(TRAINER_PIC_HIKER, gTrainerFrontPic_Hiker, gTrainerPalette_Hiker),
+    TRAINER_SPRITE(TRAINER_PIC_FARMER_M, gTrainerFrontPic_Farmer_M, gTrainerPalette_Farmer_M),
     TRAINER_SPRITE(TRAINER_PIC_AQUA_GRUNT_M, gTrainerFrontPic_AquaGruntM, gTrainerPalette_AquaGruntM),
     TRAINER_SPRITE(TRAINER_PIC_POKEMON_BREEDER_F, gTrainerFrontPic_PokemonBreederF, gTrainerPalette_PokemonBreederF),
     TRAINER_SPRITE(TRAINER_PIC_COOLTRAINER_M, gTrainerFrontPic_CoolTrainerM, gTrainerPalette_CoolTrainerM),

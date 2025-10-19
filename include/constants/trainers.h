@@ -15,7 +15,7 @@
 #define TRAINER_LINK_OPPONENT               2048
 #define TRAINER_UNION_ROOM                  3072
 
-#define TRAINER_PIC_HIKER                  0
+#define TRAINER_PIC_FARMER_M                  0
 #define TRAINER_PIC_AQUA_GRUNT_M           1
 #define TRAINER_PIC_POKEMON_BREEDER_F      2
 #define TRAINER_PIC_COOLTRAINER_M          3
@@ -287,7 +287,7 @@
 
 #define TRAINER_CLASS_PKMN_TRAINER_1 0x0  // Unused
 #define TRAINER_CLASS_PKMN_TRAINER_2 0x1  // Unused
-#define TRAINER_CLASS_HIKER          0x2
+#define TRAINER_CLASS_FARMER          0x2
 #define TRAINER_CLASS_TEAM_AQUA      0x3
 #define TRAINER_CLASS_PKMN_BREEDER   0x4
 #define TRAINER_CLASS_COOLTRAINER    0x5

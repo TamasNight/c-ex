@@ -76,15 +76,15 @@ Comments can be added as C comment blocks
 === TRAINER_NONE ===
 Name:
 Class: Pkmn Trainer 1
-Pic: Hiker
+Pic: Farmer M
 Gender: Male
 Music: Male
 Double Battle: No
 
 === TRAINER_SAWYER_1 ===
 Name: SAWYER
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -5942,8 +5942,8 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
 === TRAINER_CALVIN_1 ===
 Name: CALVIN
-Class: Youngster
-Pic: Youngster
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Male
 Double Battle: Yes
@@ -9154,8 +9154,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_ELI ===
 Name: ELI
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -10563,8 +10563,8 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MARC ===
 Name: MARC
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11459,8 +11459,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_BRICE ===
 Name: BRICE
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11476,8 +11476,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TRENT_1 ===
 Name: TRENT
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11497,8 +11497,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LENNY ===
 Name: LENNY
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11514,8 +11514,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LUCAS_1 ===
 Name: LUCAS
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11531,8 +11531,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALAN ===
 Name: ALAN
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11552,8 +11552,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CLARK ===
 Name: CLARK
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11565,8 +11565,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ERIC ===
 Name: ERIC
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11582,8 +11582,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LUCAS_2 ===
 Name: LUCAS
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11597,8 +11597,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MIKE_1 ===
 Name: MIKE
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11618,8 +11618,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MIKE_2 ===
 Name: MIKE
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11639,8 +11639,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TRENT_2 ===
 Name: TRENT
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11664,8 +11664,8 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_TRENT_3 ===
 Name: TRENT
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11689,8 +11689,8 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_TRENT_4 ===
 Name: TRENT
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -11714,8 +11714,8 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_TRENT_5 ===
 Name: TRENT
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -13862,8 +13862,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DEVAN ===
 Name: DEVAN
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -16506,8 +16506,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_SAWYER_2 ===
 Name: SAWYER
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -16523,8 +16523,8 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_SAWYER_3 ===
 Name: SAWYER
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -16544,8 +16544,8 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_SAWYER_4 ===
 Name: SAWYER
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No
@@ -16565,8 +16565,8 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_SAWYER_5 ===
 Name: SAWYER
-Class: Hiker
-Pic: Hiker
+Class: Farmer
+Pic: Farmer M
 Gender: Male
 Music: Hiker
 Double Battle: No

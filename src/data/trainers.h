@@ -14,7 +14,7 @@
 #line 78
         .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
 #line 79
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 81
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -31,9 +31,9 @@
 #line 85
         .trainerName = _("SAWYER"),
 #line 86
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 87
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 89
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -15327,9 +15327,9 @@ F_TRAINER_FEMALE |
 #line 5944
         .trainerName = _("CALVIN"),
 #line 5945
-        .trainerClass = TRAINER_CLASS_YOUNGSTER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 5946
-        .trainerPic = TRAINER_PIC_YOUNGSTER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 5948
             TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -23803,9 +23803,9 @@ F_TRAINER_FEMALE |
 #line 9156
         .trainerName = _("ELI"),
 #line 9157
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 9158
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 9160
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -27592,9 +27592,9 @@ F_TRAINER_FEMALE |
 #line 10565
         .trainerName = _("MARC"),
 #line 10566
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 10567
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 10569
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -29986,9 +29986,9 @@ F_TRAINER_FEMALE |
 #line 11461
         .trainerName = _("BRICE"),
 #line 11462
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11463
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11465
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30031,9 +30031,9 @@ F_TRAINER_FEMALE |
 #line 11478
         .trainerName = _("TRENT"),
 #line 11479
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11480
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11482
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30088,9 +30088,9 @@ F_TRAINER_FEMALE |
 #line 11499
         .trainerName = _("LENNY"),
 #line 11500
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11501
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11503
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30133,9 +30133,9 @@ F_TRAINER_FEMALE |
 #line 11516
         .trainerName = _("LUCAS"),
 #line 11517
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11518
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11520
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30178,9 +30178,9 @@ F_TRAINER_FEMALE |
 #line 11533
         .trainerName = _("ALAN"),
 #line 11534
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11535
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11537
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30235,9 +30235,9 @@ F_TRAINER_FEMALE |
 #line 11554
         .trainerName = _("CLARK"),
 #line 11555
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11556
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11558
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30268,9 +30268,9 @@ F_TRAINER_FEMALE |
 #line 11567
         .trainerName = _("ERIC"),
 #line 11568
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11569
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11571
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30313,9 +30313,9 @@ F_TRAINER_FEMALE |
 #line 11584
         .trainerName = _("LUCAS"),
 #line 11585
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11586
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11588
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30351,9 +30351,9 @@ F_TRAINER_FEMALE |
 #line 11599
         .trainerName = _("MIKE"),
 #line 11600
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11601
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11603
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30406,9 +30406,9 @@ F_TRAINER_FEMALE |
 #line 11620
         .trainerName = _("MIKE"),
 #line 11621
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11622
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11624
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30463,9 +30463,9 @@ F_TRAINER_FEMALE |
 #line 11641
         .trainerName = _("TRENT"),
 #line 11642
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11643
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11645
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30532,9 +30532,9 @@ F_TRAINER_FEMALE |
 #line 11666
         .trainerName = _("TRENT"),
 #line 11667
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11668
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11670
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30601,9 +30601,9 @@ F_TRAINER_FEMALE |
 #line 11691
         .trainerName = _("TRENT"),
 #line 11692
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11693
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11695
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -30670,9 +30670,9 @@ F_TRAINER_FEMALE |
 #line 11716
         .trainerName = _("TRENT"),
 #line 11717
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 11718
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 11720
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -36256,9 +36256,9 @@ F_TRAINER_FEMALE |
 #line 13864
         .trainerName = _("DEVAN"),
 #line 13865
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 13866
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 13868
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -42975,9 +42975,9 @@ F_TRAINER_FEMALE |
 #line 16508
         .trainerName = _("SAWYER"),
 #line 16509
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16510
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 16512
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -43020,9 +43020,9 @@ F_TRAINER_FEMALE |
 #line 16525
         .trainerName = _("SAWYER"),
 #line 16526
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16527
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 16529
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -43077,9 +43077,9 @@ F_TRAINER_FEMALE |
 #line 16546
         .trainerName = _("SAWYER"),
 #line 16547
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16548
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 16550
             TRAINER_ENCOUNTER_MUSIC_HIKER,
@@ -43134,9 +43134,9 @@ F_TRAINER_FEMALE |
 #line 16567
         .trainerName = _("SAWYER"),
 #line 16568
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_FARMER,
 #line 16569
-        .trainerPic = TRAINER_PIC_HIKER,
+        .trainerPic = TRAINER_PIC_FARMER_M,
         .encounterMusic_gender =
 #line 16571
             TRAINER_ENCOUNTER_MUSIC_HIKER,
