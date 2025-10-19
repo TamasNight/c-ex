@@ -10,6 +10,9 @@ const u16 gTrainerPalette_Farmer_F[] = INCBIN_U16("graphics/trainers/medieval/pa
 const u32 gTrainerFrontPic_Bandit_M[] = INCBIN_U32("graphics/trainers/medieval/bandit_M.4bpp.lz");
 const u16 gTrainerPalette_Bandit_M[] = INCBIN_U16("graphics/trainers/medieval/palettes/bandit_M.gbapal");
 
+const u32 gTrainerFrontPic_Bandit_F[] = INCBIN_U32("graphics/trainers/medieval/bandit_F.4bpp.lz");
+const u16 gTrainerPalette_Bandit_F[] = INCBIN_U16("graphics/trainers/medieval/palettes/bandit_F.gbapal");
+
 const u32 gTrainerFrontPic_AquaGruntM[] = INCBIN_U32("graphics/trainers/front_pics/aqua_grunt_m.4bpp.lz");
 const u16 gTrainerPalette_AquaGruntM[] = INCBIN_U16("graphics/trainers/front_pics/aqua_grunt_m.gbapal");
 
@@ -63,9 +66,6 @@ const u16 gTrainerPalette_TuberF[] = INCBIN_U16("graphics/trainers/front_pics/tu
 
 const u32 gTrainerFrontPic_TuberM[] = INCBIN_U32("graphics/trainers/front_pics/tuber_m.4bpp.lz");
 const u16 gTrainerPalette_TuberM[] = INCBIN_U16("graphics/trainers/front_pics/tuber_m.gbapal");
-
-const u32 gTrainerFrontPic_CoolTrainerF[] = INCBIN_U32("graphics/trainers/front_pics/cooltrainer_f.4bpp.lz");
-const u16 gTrainerPalette_CoolTrainerF[] = INCBIN_U16("graphics/trainers/front_pics/cooltrainer_f.gbapal");
 
 const u32 gTrainerFrontPic_Lady[] = INCBIN_U32("graphics/trainers/front_pics/lady.4bpp.lz");
 const u16 gTrainerPalette_Lady[] = INCBIN_U16("graphics/trainers/front_pics/lady.gbapal");
@@ -328,7 +328,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_INTERVIEWER, gTrainerFrontPic_Interviewer, gTrainerPalette_Interviewer),
     TRAINER_SPRITE(TRAINER_PIC_TUBER_F, gTrainerFrontPic_TuberF, gTrainerPalette_TuberF),
     TRAINER_SPRITE(TRAINER_PIC_TUBER_M, gTrainerFrontPic_TuberM, gTrainerPalette_TuberM),
-    TRAINER_SPRITE(TRAINER_PIC_COOLTRAINER_F, gTrainerFrontPic_CoolTrainerF, gTrainerPalette_CoolTrainerF),
+    TRAINER_SPRITE(TRAINER_PIC_BANDIT_F, gTrainerFrontPic_Bandit_F, gTrainerPalette_Bandit_F),
     TRAINER_SPRITE(TRAINER_PIC_LADY, gTrainerFrontPic_Lady, gTrainerPalette_Lady),
     TRAINER_SPRITE(TRAINER_PIC_BEAUTY, gTrainerFrontPic_Beauty, gTrainerPalette_Beauty),
     TRAINER_SPRITE(TRAINER_PIC_RICH_BOY, gTrainerFrontPic_RichBoy, gTrainerPalette_RichBoy),

@@ -35,7 +35,7 @@
 #define TRAINER_PIC_INTERVIEWER           17
 #define TRAINER_PIC_TUBER_F               18
 #define TRAINER_PIC_TUBER_M               19
-#define TRAINER_PIC_COOLTRAINER_F         20
+#define TRAINER_PIC_BANDIT_F         20
 #define TRAINER_PIC_LADY                  21
 #define TRAINER_PIC_BEAUTY                22
 #define TRAINER_PIC_RICH_BOY              23
