@@ -33,6 +33,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/trainer_types.h"
+#include "constants/flags.h"
 
 #define NUM_FORCED_MOVEMENTS 18
 #define NUM_ACRO_BIKE_COLLISIONS 5
@@ -1497,6 +1498,8 @@ u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
+    if (FlagGet(FLAG_PLAYER_IS_FARMER) == TRUE)
+        return OBJ_EVENT_GFX_PLAYER_FARMER_M;
     return sPlayerAvatarGfxIds[state][gender];
 }
 

@@ -204,10 +204,12 @@ Route101_Movement_Unused2:
 	step_end
 
 Route101_EventScript_Youngster::
+    setflag FLAG_PLAYER_IS_FARMER
 	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
 	end
 
 Route101_EventScript_Boy::
+    clearflag FLAG_PLAYER_IS_FARMER
 	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
 	end
 
