@@ -487,3 +487,12 @@ const u32 gObjectEventPic_Blacksmith_m[] = INCBIN_U32("graphics/object_events/pi
 
 const u16 gObjectEventPal_Elder_f[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/elder_F.gbapal");
 const u32 gObjectEventPic_Elder_f[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/elder_F.4bpp");
+
+const u16 gObjectEventPal_Knight_s[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/knight_S.gbapal");
+const u32 gObjectEventPic_Knight_s[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/knight_S.4bpp");
+
+const u16 gObjectEventPal_Iacopo[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/iacopo.gbapal");
+const u32 gObjectEventPic_Iacopo[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/iacopo.4bpp");
+
+const u16 gObjectEventPal_Player_farmer_m[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/player_farmer_M.gbapal");
+const u32 gObjectEventPic_Player_farmer_m[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/player_farmer_M.4bpp");

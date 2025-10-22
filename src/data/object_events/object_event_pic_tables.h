@@ -1400,3 +1400,15 @@ static const struct SpriteFrameImage sPicTable_Blacksmith_m[] = {
 static const struct SpriteFrameImage sPicTable_Elder_f[] = {
         overworld_ascending_frames(gObjectEventPic_Elder_f, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Knight_s[] = {
+        overworld_ascending_frames(gObjectEventPic_Knight_s, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Iacopo[] = {
+        overworld_ascending_frames(gObjectEventPic_Iacopo, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Player_farmer_m[] = {
+        overworld_ascending_frames(gObjectEventPic_Player_farmer_m, 2, 4),
+};
