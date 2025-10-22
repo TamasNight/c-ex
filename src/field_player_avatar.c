@@ -1498,7 +1498,7 @@ u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
-    if (FlagGet(FLAG_PLAYER_IS_FARMER) == TRUE)
+    if (FlagGet(FLAG_PLAYER_IS_KNIGHT) == FALSE)
         return OBJ_EVENT_GFX_PLAYER_FARMER_M;
     return sPlayerAvatarGfxIds[state][gender];
 }
