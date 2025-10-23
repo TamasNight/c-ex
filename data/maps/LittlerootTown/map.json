@@ -129,16 +129,16 @@
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCH"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 8,
-      "y": 4,
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
+      "x": 7,
+      "y": 24,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_CHERI_2",
-      "script": "BerryTreeScript",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LittlerootTown_EventScript_Boy",
       "flag": "0"
     },
     {
@@ -177,8 +177,8 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 6,
-      "y": 10,
+      "x": 4,
+      "y": 38,
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
       "dest_warp_id": "1"
