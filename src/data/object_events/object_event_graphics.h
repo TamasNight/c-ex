@@ -496,3 +496,6 @@ const u32 gObjectEventPic_Iacopo[] = INCBIN_U32("graphics/object_events/pics/peo
 
 const u16 gObjectEventPal_Player_farmer_m[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/player_farmer_M.gbapal");
 const u32 gObjectEventPic_Player_farmer_m[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/player_farmer_M.4bpp");
+
+const u16 gObjectEventPal_Farmer_2_m[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/farmer_2_M.gbapal");
+const u32 gObjectEventPic_Farmer_2_m[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/farmer_2_M.4bpp");
