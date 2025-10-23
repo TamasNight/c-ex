@@ -6358,6 +6358,11 @@ u8 GetCollisionAtCoords(struct ObjectEvent *objectEvent, s16 x, s16 y, u32 dir)
 
     objectEvent->directionOverwrite = DIR_NONE;
 
+    if (MetatileBehavior_IsOmnidirectionalJump(currentBehavior)) {
+        if (MapGridGetElevationAt(x, y) != 1)
+            return COLLISION_ELEVATION_MISMATCH;
+    }
+
     //sideways stairs checks
     if (MetatileBehavior_IsSidewaysStairsLeftSideTop(nextBehavior) && dir == DIR_EAST)
         return COLLISION_IMPASSABLE;    //moving onto left-side top edge east from regular ground -> nope
@@ -9788,6 +9793,10 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
 
     u8 behavior;
     u8 index = direction;
+    u8 mapElevation;
+    u8 playerDirection;
+    s16 x1 = 0;
+    s16 y1 = 0;
 
     if (index == DIR_NONE)
         return DIR_NONE;
@@ -9795,9 +9804,34 @@ u8 GetLedgeJumpDirection(s16 x, s16 y, u8 direction)
         index -= DIR_EAST;
 
     index--;
+
+    playerDirection = GetPlayerFacingDirection();
+    switch (playerDirection) {
+        case DIR_SOUTH:
+            x1 = x;
+            y1 = y - 1;
+            break;
+        case DIR_NORTH:
+            x1 = x;
+            y1 = y + 1;
+            break;
+        case DIR_WEST:
+            x1 = x + 1;
+            y1 = y;
+            break;
+        case DIR_EAST:
+            x1 = x - 1;
+            y1 = y;
+            break;
+    }
+
+    mapElevation = MapGridGetElevationAt(x1, y1);
     behavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    if (ledgeBehaviorFuncs[index](behavior) == TRUE)
+    if (mapElevation == 1 && MetatileBehavior_IsOmnidirectionalJump(behavior))
+        return DIR_NONE;
+
+    if (ledgeBehaviorFuncs[index](behavior) == TRUE || MetatileBehavior_IsOmnidirectionalJump(behavior))
         return index + 1;
 
     return DIR_NONE;

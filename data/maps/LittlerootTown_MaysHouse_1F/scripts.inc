@@ -138,7 +138,7 @@ RivalsHouse_1F_EventScript_GoHomeEverySoOften::
 RivalsHouse_1F_EventScript_RivalSibling::
 	lock
 	faceplayer
-	special GetPlayerBigGuyGirlString
+	setflag FLAG_PLAYER_IS_KNIGHT
 	msgbox RivalsHouse_1F_Text_DoYouHavePokemon, MSGBOX_DEFAULT
 	release
 	end
@@ -400,6 +400,5 @@ RivalsHouse_1F_Text_BrendanWhoAreYou:
 	.string "Some other time, okay?$"
 
 RivalsHouse_1F_Text_DoYouHavePokemon:
-	.string "Hi, neighbor!\p"
-	.string "Do you already have your\n"
-	.string "own POKéMON?$"
+	.string "Hi, {PLAYER}!\p"
+	.string "Take this armor.$"
