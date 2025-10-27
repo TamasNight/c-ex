@@ -59,3 +59,4 @@ tools/compresSmol/compresSmolTilemap
 __pycache__
 sprites
 *.bak
+public

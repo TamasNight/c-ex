@@ -44,7 +44,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_Boy",
+      "script": "PascoliDelLago_EventScript_Dad",
       "flag": "0"
     },
     {
@@ -58,8 +58,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_Mom",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_MOM_OUTSIDE"
+      "script": "NULL",
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_LITTLEROOT_RIVAL",
@@ -72,7 +72,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "NULL",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_RIVAL"
     },
     {
@@ -86,7 +86,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "0x0",
+      "script": "NULL",
       "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCH"
     },
     {
@@ -99,7 +99,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LittlerootTown_EventScript_Boy",
+      "script": "PascoliDelLago_EventScript_Miltank",
       "flag": "0"
     },
     {
@@ -112,7 +112,7 @@
       "movement_range_y": 3,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PascoliDelLago_EventScript_Miltank",
       "flag": "0"
     },
     {
@@ -125,7 +125,7 @@
       "movement_range_y": 2,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PascoliDelLago_EventScript_Miltank",
       "flag": "0"
     }
   ],
@@ -160,7 +160,7 @@
       "y": 47,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_TownSign"
+      "script": "PascoliDelLago_EventScript_TownSign"
     },
     {
       "type": "sign",
@@ -168,7 +168,7 @@
       "y": 35,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_BirchsLabSign"
+      "script": "PascoliDelLago_EventScript_PlayersGrampasHouseSign"
     },
     {
       "type": "sign",
@@ -176,15 +176,7 @@
       "y": 42,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_BrendansHouseSign"
-    },
-    {
-      "type": "sign",
-      "x": 17,
-      "y": 14,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_MaysHouseSign"
+      "script": "PascoliDelLago_EventScript_PlayersHouseSign"
     }
   ]
 }

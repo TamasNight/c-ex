@@ -1,5 +1,5 @@
 PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet::
-	setvar VAR_LITTLEROOT_INTRO_STATE, 5
+	setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 5
 	return
 
 PlayersHouse_1F_EventScript_EnterHouseMovingIn::
@@ -10,7 +10,7 @@ PlayersHouse_1F_EventScript_EnterHouseMovingIn::
 	call_if_eq VAR_0x8005, FEMALE, PlayersHouse_1F_EventScript_MomFacePlayerMovingInFemale
 	msgbox PlayersHouse_1F_Text_MoversPokemonGoSetClock, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_LITTLEROOT_INTRO_STATE, 4
+	setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 4
 	applymovement LOCALID_PLAYER, PlayersHouse_1F_Movement_PlayerWalkIn
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
@@ -57,7 +57,7 @@ PlayersHouse_2F_EventScript_WallClock::
 	msgbox PlayersHouse_2F_Text_ClockIsStopped, MSGBOX_DEFAULT
 	call PlayersHouse_2F_EventScript_SetWallClock
 	delay 30
-	setvar VAR_LITTLEROOT_INTRO_STATE, 6
+	setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 6
 	setflag FLAG_SET_WALL_CLOCK
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_1
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2
@@ -140,7 +140,7 @@ PlayersHouse_2F_Movement_MomExitsFemale:
 	step_end
 
 PlayersHouse_1F_EventScript_SetWatchedBroadcast::
-	setvar VAR_LITTLEROOT_INTRO_STATE, 7
+	setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 7
 	releaseall
 	end
 
@@ -306,7 +306,7 @@ PlayersHouse_1F_EventScript_Mom::
 	goto_if_set FLAG_HAS_MATCH_CALL, PlayersHouse_1F_EventScript_TryRegisterMom
 	goto_if_set FLAG_RESCUED_BIRCH, PlayersHouse_1F_EventScript_MomHealsParty
 	goto_if_eq VAR_TEMP_1, 1, PlayersHouse_1F_EventScript_SeeYouHoney
-	goto_if_eq VAR_LITTLEROOT_INTRO_STATE, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
+	goto_if_eq VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 7, PlayersHouse_1F_EventScript_DidYouMeetProfBirch
 	msgbox PlayersHouse_1F_Text_IsntItNiceInHere, MSGBOX_DEFAULT
 	release
 	end
@@ -488,13 +488,13 @@ PlayersHouse_1F_EventScript_AirLatiBroadcast::
 PlayersHouse_1F_EventScript_SetUpObjectEventVarsMale::
 	setvar VAR_0x8008, MALE
 	setvar VAR_0x8009, LOCALID_PLAYERS_HOUSE_1F_DAD
-	setvar VAR_0x800A, LOCALID_PLAYERS_HOUSE_1F_MOM
+	setvar VAR_0x800A, LOCALID_PLAYERS_HOUSE_MOM
 	return
 
 PlayersHouse_1F_EventScript_SetUpObjectEventVarsFemale::
 	setvar VAR_0x8008, FEMALE
 	setvar VAR_0x8009, LOCALID_PLAYERS_HOUSE_1F_DAD
-	setvar VAR_0x800A, LOCALID_PLAYERS_HOUSE_1F_MOM
+	setvar VAR_0x800A, LOCALID_PLAYERS_HOUSE_MOM
 	return
 
 PlayersHouse_1F_EventScript_DadApproachPlayerMale::
