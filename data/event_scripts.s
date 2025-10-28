@@ -616,7 +616,7 @@ EventScript_AfterWhiteOutHealMsg::
 
 EventScript_AfterWhiteOutMomHeal::
 	lockall
-	applymovement LOCALID_PLAYERS_HOUSE_MOM, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_PLAYERS_HOUSE_GRANDMA, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox gText_HadQuiteAnExperienceTakeRest
 	call Common_EventScript_OutOfCenterPartyHeal

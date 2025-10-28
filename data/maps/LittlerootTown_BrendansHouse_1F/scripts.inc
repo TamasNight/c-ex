@@ -10,27 +10,59 @@ PascoliDelLago_PlayersHouse_OnFrame:
 PascoliDelLago_PlayersHouse_EventScript_WakeUp::
 	lockall
 	delay 16
-	clearflag FLAG_HIDE_MOM_AFTER_INTRO_IN_HOUSE
-	addobject LOCALID_PLAYERS_HOUSE_MOM
-	applymovement LOCALID_PLAYERS_HOUSE_MOM, Common_Movement_WalkInPlaceFasterUp
-	msgbox PascoliDelLago_PlayersHouse_Text_WakeUp, MSGBOX_DEFAULT
+	setflag FLAG_SYS_QUEST_MENU_GET
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
 	delay 16
-	applymovement LOCALID_PLAYERS_HOUSE_MOM, Common_Movement_WalkInPlaceFasterDown
-	removeobject LOCALID_PLAYERS_HOUSE_MOM
-	setflag FLAG_HIDE_MOM_AFTER_INTRO_IN_HOUSE
+	msgbox PascoliDelLago_PlayersHouse_Text_WakeUp, MSGBOX_DEFAULT
+	delay 8
+	msgbox PascoliDelLago_PlayersHouse_Text_YesGrandma, MSGBOX_DEFAULT
+	msgbox PascoliDelLago_PlayersHouse_Text_BeAMan, MSGBOX_DEFAULT
+	delay 8
+	msgbox PascoliDelLago_PlayersHouse_Text_FinallyGo, MSGBOX_DEFAULT
+	closemessage
 	setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 1
+	startquest QUEST_START_JOURNEY
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_START_JOURNEY SUB_QUEST_START_JOURNEY_1
 	releaseall
 	end
 
+PascoliDelLago_PlayersHouse_EventScript_Grandma::
+    goto_if_eq VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 1, PascoliDelLago_PlayersHouse_EventScript_StillHere
+    end
+
+PascoliDelLago_PlayersHouse_EventScript_StillHere::
+    msgbox PascoliDelLago_PlayersHouse_Text_WakeUp, MSGBOX_NPC
+    end
+
 
 PascoliDelLago_PlayersHouse_Text_WakeUp:
-    .string "You're finally awake...\p"
-	.string "Your father and I have been cutting\n"
-	.string "hay all morning. Winter is coming, and we\l"
-	.string "have to be ready when the cold weather\l"
-	.string "arrives!\p"
-    .string "Don't delay any longer. Go and help your\l"
-    .string "father.$"
+    .string "{COLOR}{RED}Grandma{COLOR}{02}: You got up late, kid...\p"
+    .string "{COLOR}{BLUE}Miltank {COLOR}{02}won't wait, and neither will the\n"
+    .string "sun...\p"
+    .string "Go check the stables before your dad\n"
+    .string "gets mad.$"
+
+PascoliDelLago_PlayersHouse_Text_YesGrandma:
+    .string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: I'm sorry, Grandma, you're\n"
+    .string "right...\p"
+    .string "But I had a very strange dream about a\n"
+    .string "shadow stretching over the farm.$"
+
+PascoliDelLago_PlayersHouse_Text_BeAMan:
+	.string "{COLOR}{RED}Grandma{COLOR}{02}: Don't make excuses. Your\n"
+	.string "grandfather always said: every day\l"
+	.string "that the earth sees you working, you\l"
+	.string "become a little more of a man.\p"
+	.string "But maybe you don't want to be like him.$"
+
+PascoliDelLago_PlayersHouse_Text_FinallyGo:
+	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: It wasn't an excuse...\n"
+	.string "anyway, I'm going now.$"
+
+PascoliDelLago_PlayersHouse_Text_StillHere:
+	.string "{COLOR}{RED}Grandma{COLOR}{DARK_GRAY}: What are you still doing here?\n"
+	.string "Go on!$"
 
 
 PlayersHouse_1F_Text_IsntItNiceInHere:

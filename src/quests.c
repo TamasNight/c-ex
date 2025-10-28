@@ -237,6 +237,7 @@ static const u8 sText_DotSpace[] = _(". ");
 static const u8 sText_Close[] = _("Close");
 static const u8 sText_ColorGreen[] = _("{COLOR}{GREEN}");
 static const u8 sText_AZ[] = _(" A-Z");
+static const u8 sText_None[] = _(" ");
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -246,13 +247,13 @@ static const u8 sText_AZ[] = _(" A-Z");
 static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
-	      gText_SubQuest1_Name1,
-	      gText_SubQuest1_Desc1,
-	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+		SUB_QUEST_START_JOURNEY_1,
+		gText_SubQuest1_Name1,
+		gText_SubQuest1_Desc1,
+		gText_SideQuestMap1,
+		SPECIES_MILTANK,
+		PKMN,
+		sText_None
 	),
 
 	sub_quest(
@@ -566,10 +567,10 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_1,
 	      gText_SideQuestDoneDesc_1,
 	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_ELDER_F,
 	      OBJECT,
-	      NULL,
-	      0
+		  sSubQuests1,
+		  QUEST_1_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_2,
@@ -578,8 +579,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestMap2,
 	      OBJ_EVENT_GFX_WALLY,
 	      OBJECT,
-	      sSubQuests1,
-	      QUEST_1_SUB_COUNT
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_3,

@@ -15,7 +15,7 @@
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
 
 // quest number defines
-#define QUEST_1          0
+#define QUEST_START_JOURNEY          0
 #define QUEST_2          1
 #define QUEST_3          2
 #define QUEST_4          3
@@ -47,7 +47,7 @@
 #define QUEST_30        29
 #define QUEST_COUNT     (QUEST_30 + 1)
 
-#define SUB_QUEST_1          0
+#define SUB_QUEST_START_JOURNEY_1          0
 #define SUB_QUEST_2          1
 #define SUB_QUEST_3          2
 #define SUB_QUEST_4          3

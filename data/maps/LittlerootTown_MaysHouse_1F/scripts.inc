@@ -30,18 +30,18 @@ LittlerootTown_MaysHouse_1F_OnTransition:
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_MoveMomToStairs::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_MOM, 2, 4
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_GRANDMA, 2, 4
+	setobjectmovementtype LOCALID_PLAYERS_HOUSE_GRANDMA, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_MOM, 6, 5
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_GRANDMA, 6, 5
+	setobjectmovementtype LOCALID_PLAYERS_HOUSE_GRANDMA, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_MaysHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_MOM, 1, 8
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PLAYERS_HOUSE_GRANDMA, 1, 8
+	setobjectmovementtype LOCALID_PLAYERS_HOUSE_GRANDMA, MOVEMENT_TYPE_FACE_UP
 	return
 
 @ Many of the below scripts have no gender check because they assume youre in the correct house
@@ -58,7 +58,7 @@ LittlerootTown_MaysHouse_1F_EventScript_GoUpstairsToSetClock::
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
-	applymovement LOCALID_PLAYERS_HOUSE_MOM, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
+	applymovement LOCALID_PLAYERS_HOUSE_GRANDMA, LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs
 	waitmovement 0
 	warp MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F, 1, 1
 	waitstate
@@ -71,7 +71,7 @@ LittlerootTown_MaysHouse_1F_Movement_PushTowardStairs:
 
 LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
 	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_MOM
+	setvar VAR_0x8004, LOCALID_PLAYER
 	setvar VAR_0x8005, FEMALE
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
@@ -79,19 +79,19 @@ LittlerootTown_MaysHouse_1F_EventScript_EnterHouseMovingIn::
 LittlerootTown_MaysHouse_1F_EventScript_PetalburgGymReport::
 	lockall
 	setvar VAR_0x8004, FEMALE
-	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_MOM
+	setvar VAR_0x8005, LOCALID_PLAYER
 	goto PlayersHouse_1F_EventScript_PetalburgGymReportFemale
 	end
 
 LittlerootTown_MaysHouse_1F_EventScript_YoureNewNeighbor::
 	lockall
 	playse SE_PIN
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_ExclamationMark
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, Common_Movement_Delay48
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
 	waitmovement 0
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	applymovement LOCALID_RIVALS_HOUSE_1F_MOM, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
+	applymovement LOCALID_PLAYER, LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach
 	waitmovement 0
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_OhYoureTheNewNeighbor, MSGBOX_DEFAULT
@@ -145,7 +145,7 @@ RivalsHouse_1F_EventScript_RivalSibling::
 
 LittlerootTown_MaysHouse_1F_EventScript_GoSeeRoom::
 	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_MOM
+	setvar VAR_0x8004, LOCALID_PLAYER
 	setvar VAR_0x8005, FEMALE
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
