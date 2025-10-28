@@ -16,9 +16,9 @@
   "object_events": [
     {
       "local_id": "LOCALID_PLAYERS_HOUSE_MOM",
-      "graphics_id": "OBJ_EVENT_GFX_FARMER_F_1",
-      "x": 4,
-      "y": 7,
+      "graphics_id": "OBJ_EVENT_GFX_ELDER_F",
+      "x": 5,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -31,7 +31,7 @@
     {
       "local_id": "LOCALID_RIVALS_HOUSE_1F_MOM2",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": -1,
+      "x": 0,
       "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -45,7 +45,7 @@
     {
       "local_id": "LOCALID_PLAYERS_HOUSE_1F_DAD2",
       "graphics_id": "OBJ_EVENT_GFX_NORMAN",
-      "x": -1,
+      "x": 0,
       "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -59,7 +59,7 @@
     {
       "local_id": "LOCALID_RIVALS_HOUSE_1F_RIVAL2",
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL",
-      "x": 4,
+      "x": 0,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -85,13 +85,6 @@
       "elevation": 0,
       "dest_map": "MAP_LITTLEROOT_TOWN",
       "dest_warp_id": "1"
-    },
-    {
-      "x": 5,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
