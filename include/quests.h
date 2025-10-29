@@ -33,7 +33,7 @@ struct SubQuest
     const u8 *map;
     const u16 sprite;
     const u8 spritetype;
-    const u8 *type;
+    const u8 *(*type)(void);
 };
 
 struct SideQuest
