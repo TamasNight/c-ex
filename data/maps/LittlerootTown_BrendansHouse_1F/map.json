@@ -1,5 +1,5 @@
 {
-  "id": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+  "id": "MAP_PASCOLI_DEL_LAGO_BRENDANS_HOUSE_1F",
   "name": "LittlerootTown_BrendansHouse_1F",
   "layout": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
   "music": "MUS_LITTLEROOT",
@@ -34,14 +34,14 @@
       "x": 5,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO",
       "dest_warp_id": "0"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO",
       "dest_warp_id": "0"
     }
   ],

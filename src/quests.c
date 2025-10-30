@@ -249,6 +249,11 @@ static const u8 *sText_SubQuestDisplay_2(void) {
 	return *questState == 2 ? sText_Active : sText_Complete;
 };
 
+static const u8 *sText_SubQuestDisplay_3(void) {
+	u16 *questState = GetVarPointer(VAR_PASCOLI_DEL_LAGO_INTRO_STATE);
+	return *questState == 4 ? sText_Active : sText_Complete;
+};
+
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
 
@@ -277,13 +282,13 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      2,
+          SUB_QUEST_START_JOURNEY_3,
 	      gText_SubQuest1_Name3,
 	      gText_SubQuest1_Desc3,
-	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-		  &sText_SubQuestDisplay_1
+	      gText_SideQuestMap2,
+	      SPECIES_HOUNDOUR,
+	      PKMN,
+		  &sText_SubQuestDisplay_3
 	),
 
 	sub_quest(

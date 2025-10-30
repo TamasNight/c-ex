@@ -1416,8 +1416,8 @@ const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
 
 //map
 const u8 gText_SideQuestMap1[] = _("Pascoli Del Lago");
-const u8 gText_SideQuestMap2[] = _("Map 2");
-const u8 gText_SideQuestMap3[] = _("Map 3");
+const u8 gText_SideQuestMap2[] = _("Bosco Dei Larici");
+const u8 gText_SideQuestMap3[] = _("Map 3"); // Unused
 const u8 gText_SideQuestMap4[] = _("Map 4");
 const u8 gText_SideQuestMap5[] = _("Map 5");
 const u8 gText_SideQuestMap6[] = _("Map 6");
@@ -1449,7 +1449,7 @@ const u8 gText_SideQuestMap30[] = _("Map 30");
 //subquests
 const u8 gText_SubQuest1_Name1[] = _("Quick feed");
 const u8 gText_SubQuest1_Name2[] = _("Help for Mom");
-const u8 gText_SubQuest1_Name3[] = _("Part 3");
+const u8 gText_SubQuest1_Name3[] = _("Save Tauros");
 const u8 gText_SubQuest1_Name4[] = _("Part 4");
 const u8 gText_SubQuest1_Name5[] = _("Part 5");
 const u8 gText_SubQuest1_Name6[] = _("Part 6");
@@ -1481,7 +1481,7 @@ const u8 gText_SubQuest2_Name20[] = _("Part 20");
 
 const u8 gText_SubQuest1_Desc1[] = _("Feed the Miltank in the stable.");
 const u8 gText_SubQuest1_Desc2[] = _("Join your mother in the pasture and\nassist her in mowing it.");
-const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
+const u8 gText_SubQuest1_Desc3[] = _("After being attacked by two Houndour\nTauros, he fled into the woods.\nFind him before they do.");
 const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
 const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
 const u8 gText_SubQuest1_Desc6[] = _("Description Sub 6");

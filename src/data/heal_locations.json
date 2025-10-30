@@ -2,7 +2,7 @@
   "heal_locations": [
     {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
-      "map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+      "map": "MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_2F",
       "x": 4,
       "y": 2
     },
@@ -62,13 +62,13 @@
     },
     {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE",
-      "map": "MAP_LITTLEROOT_TOWN",
+      "map": "MAP_PASCOLI_DEL_LAGO",
       "x": 8,
       "y": 43
     },
     {
       "id": "HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE",
-      "map": "MAP_LITTLEROOT_TOWN",
+      "map": "MAP_PASCOLI_DEL_LAGO",
       "x": 20,
       "y": 15
     },

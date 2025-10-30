@@ -49,7 +49,7 @@
 
 #define SUB_QUEST_START_JOURNEY_1          0
 #define SUB_QUEST_START_JOURNEY_2          1
-#define SUB_QUEST_3          2
+#define SUB_QUEST_START_JOURNEY_3          2
 #define SUB_QUEST_4          3
 #define SUB_QUEST_5          4
 #define SUB_QUEST_6          5

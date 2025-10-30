@@ -1,5 +1,5 @@
 {
-  "id": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+  "id": "MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_2F",
   "name": "LittlerootTown_MaysHouse_2F",
   "layout": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
   "music": "MUS_LITTLEROOT",
@@ -230,7 +230,7 @@
       "x": 1,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_1F",
       "dest_warp_id": "2"
     }
   ],

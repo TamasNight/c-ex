@@ -1,5 +1,5 @@
 {
-  "id": "MAP_LITTLEROOT_TOWN",
+  "id": "MAP_2LITTLEROOT_TOWN",
   "name": "PascoliDelLago",
   "layout": "LAYOUT_LITTLEROOT_TOWN",
   "music": "MUS_LITTLEROOT",
@@ -21,7 +21,7 @@
   ],
   "object_events": [
     {
-      "local_id": "LOCALID_LITTLEROOT_TWIN",
+      "local_id": "LOCALID_PASCOLI_DEL_LAGO_MON",
       "graphics_id": "OBJ_EVENT_GFX_FARMER_F_1",
       "x": 38,
       "y": 45,
@@ -134,21 +134,21 @@
       "x": 20,
       "y": 14,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
       "x": 8,
       "y": 42,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO_BRENDANS_HOUSE_1F",
       "dest_warp_id": "1"
     },
     {
       "x": 13,
       "y": 35,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO_PROFESSOR_BIRCHS_LAB",
       "dest_warp_id": "0"
     }
   ],

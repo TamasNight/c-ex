@@ -4,8 +4,8 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
 {
     [HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F - 1] =
     {
-        .mapGroup = MAP_GROUP(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F),
-        .mapNum = MAP_NUM(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F),
+        .mapGroup = MAP_GROUP(MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_1F),
+        .mapNum = MAP_NUM(MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_1F),
         .x = 8,
         .y = 7,
     },
@@ -65,15 +65,15 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
     },
     [HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE - 1] =
     {
-        .mapGroup = MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F),
-        .mapNum = MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F),
+        .mapGroup = MAP_GROUP(MAP_PASCOLI_DEL_LAGO_BRENDANS_HOUSE_1F),
+        .mapNum = MAP_NUM(MAP_PASCOLI_DEL_LAGO_BRENDANS_HOUSE_1F),
         .x = 2,
         .y = 7,
     },
     [HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE - 1] =
     {
-        .mapGroup = MAP_GROUP(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F),
-        .mapNum = MAP_NUM(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F),
+        .mapGroup = MAP_GROUP(MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_1F),
+        .mapNum = MAP_NUM(MAP_PASCOLI_DEL_LAGO_MAYS_HOUSE_1F),
         .x = 8,
         .y = 7,
     },

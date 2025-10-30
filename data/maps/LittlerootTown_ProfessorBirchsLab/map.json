@@ -1,5 +1,5 @@
 {
-  "id": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+  "id": "MAP_PASCOLI_DEL_LAGO_PROFESSOR_BIRCHS_LAB",
   "name": "LittlerootTown_ProfessorBirchsLab",
   "layout": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
   "music": "MUS_BIRCH_LAB",
@@ -104,14 +104,14 @@
       "x": 6,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO",
       "dest_warp_id": "2"
     },
     {
       "x": 7,
       "y": 12,
       "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN",
+      "dest_map": "MAP_PASCOLI_DEL_LAGO",
       "dest_warp_id": "2"
     }
   ],
