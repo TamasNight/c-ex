@@ -1,129 +1,56 @@
 LittlerootTown_BrendansHouse_2F_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_2F_OnTransition
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_BrendansHouse_2F_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PascoliDelLago_Stable_OnFrame
 	.byte 0
 
-LittlerootTown_BrendansHouse_2F_OnTransition:
-	call_if_lt VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan
-	call_if_ge VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos
-	call_if_eq VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
-	call SecretBase_EventScript_SetDecorationFlags
-	setvar VAR_SECRET_BASE_INITIALIZED, 0
-	end
+PascoliDelLago_Stable_OnFrame::
+    map_script_2 VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 1, PascoliDelLago_Stable_EventScript_Finally
+    .2byte 0
 
-LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos::
-	goto_if_set FLAG_MET_RIVAL_LILYCOVE, LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
-	goto_if_ge VAR_BIRCH_LAB_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_Ret
-	goto LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos
+PascoliDelLago_Stable_EventScript_Finally::
+    lockall
+    delay 16
+    applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+    waitmovement 0
+    delay 8
+    applymovement LOCALID_FATHER, Common_Movement_FaceDown
+    waitmovement 0
+    msgbox PascoliDelLago_Stable_Text_Finally, MSGBOX_DEFAULT
+    applymovement LOCALID_PLAYER, Common_Movement_WalkUp2
+    msgbox PascoliDelLago_Stable_Text_Sorry, MSGBOX_DEFAULT
+    waitmovement 0
+    msgbox PascoliDelLago_Stable_Text_AtYourAge, MSGBOX_DEFAULT
+    closemessage
+    setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 2
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_START_JOURNEY SUB_QUEST_START_JOURNEY_2
+    updatequestmsg QUEST_START_JOURNEY
+    releaseall
+    end
 
-LittlerootTown_BrendansHouse_2F_EventScript_TryUpdateBrendanPos::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_Ret
-	@ Odd that the MaysHouse equivalent was used below instead
-	goto_if_ge VAR_DEX_UPGRADE_JOHTO_STARTER_STATE, 2, LittlerootTown_MaysHouse_2F_EventScript_Ret
-	setobjectxyperm LOCALID_RIVALS_HOUSE_2F_RIVAL, 0, 2
-	setobjectmovementtype LOCALID_RIVALS_HOUSE_2F_RIVAL, MOVEMENT_TYPE_FACE_UP
-	return
+PascoliDelLago_Stable_EventScript_TakingBreath::
+    msgbox PascoliDelLago_Stable_Text_TakingBreath, MSGBOX_NPC
+    end
 
-LittlerootTown_BrendansHouse_2F_EventScript_Ret::
-	return
+PascoliDelLago_Stable_Text_Finally:
+    .string "{COLOR}{GREEN}Father{COLOR}{02}: Finally, you show up.\n"
+    .string "Beasts don't feed themselves, you know.$"
 
-LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan::
-	checkplayergender
-	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan
-	return
+PascoliDelLago_Stable_Text_Sorry:
+	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: Yeah, sorry... I didn't sleep\n"
+	.string "well.$"
 
-LittlerootTown_BrendansHouse_2F_EventScript_SetReadyToMeetBrendan::
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 2
-	return
+PascoliDelLago_Stable_Text_AtYourAge:
+    .string "{COLOR}{GREEN}Father{COLOR}{02}: Did you sleep poorly or too\n"
+    .string "much?\p"
+    .string "You know, at your age, I was already\n"
+    .string "taking care of everything on the farm.\p"
+    .string "(sighs)\p"
+    .string "Oh well. We have a long day ahead of us\n"
+    .string "today. I'll finish up here. Go help your\l"
+    .string "mother with the hay.$"
 
-LittlerootTown_BrendansHouse_2F_OnWarp:
-	map_script_2 VAR_SECRET_BASE_INITIALIZED, 0, LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor
-	.2byte 0
-
-LittlerootTown_BrendansHouse_2F_EventScript_CheckInitDecor::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, SecretBase_EventScript_InitDecorations
-	end
-
-LittlerootTown_BrendansHouse_2F_EventScript_RivalsPokeBall::
-	lockall
-	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan
-	msgbox RivalsHouse_2F_Text_ItsRivalsPokeBall, MSGBOX_DEFAULT
-	releaseall
-	end
-
-LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendan::
-	delay 10
-	addobject LOCALID_RIVALS_HOUSE_2F_RIVAL
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters
-	waitmovement 0
-	playse SE_PIN
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, Common_Movement_ExclamationMark
-	waitmovement 0
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, Common_Movement_Delay48
-	waitmovement 0
-	delay 10
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
-	call_if_eq VAR_FACING, DIR_NORTH, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth
-	call_if_eq VAR_FACING, DIR_SOUTH, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth
-	call_if_eq VAR_FACING, DIR_WEST, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest
-	call_if_eq VAR_FACING, DIR_EAST, LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast
-	setvar VAR_LITTLEROOT_RIVAL_STATE, 3
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-	setvar VAR_LITTLEROOT_TOWN_STATE, 1
-	savebgm MUS_DUMMY
-	fadedefaultbgm
-	releaseall
-	end
-
-LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanNorth::
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerNorth
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth
-	waitmovement 0
-	return
-
-LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanSouth::
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerSouth
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth
-	waitmovement 0
-	return
-
-LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanWest::
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerWest
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest
-	waitmovement 0
-	return
-
-LittlerootTown_BrendansHouse_2F_EventScript_MeetBrendanEast::
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerEast
-	waitmovement 0
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
-	waitmovement 0
-	msgbox RivalsHouse_2F_Text_BrendanWhoAreYou, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_RIVALS_HOUSE_2F_RIVAL, LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast
-	waitmovement 0
-	return
+PascoliDelLago_Stable_Text_TakingBreath:
+	.string "{COLOR}{GREEN}Father{COLOR}{02}: Don't worry, I said I'd do it, I'm\n"
+	.string "just catching my breath a little.$"
 
 LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters:
 	walk_down

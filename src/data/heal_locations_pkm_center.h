@@ -2,13 +2,6 @@
 
 static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS - 1] =
 {
-    [HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F - 1] =
-    {
-        .mapGroup = MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F),
-        .mapNum = MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F),
-        .x = 2,
-        .y = 7,
-    },
     [HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F - 1] =
     {
         .mapGroup = MAP_GROUP(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F),
@@ -150,7 +143,6 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
 // In this case the localId is 1.
 static const u8 sHealNpcLocalId[NUM_HEAL_LOCATIONS - 1] =
 {
-    [HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F - 1] = 1,
     [HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F - 1] = 1,
     [HEAL_LOCATION_PETALBURG_CITY - 1] = 1,
     [HEAL_LOCATION_SLATEPORT_CITY - 1] = 1,

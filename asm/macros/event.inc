@@ -2793,3 +2793,13 @@
     subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
+
+    @ Show message that update state the specified quest.
+    .macro updatequestmsg quest:req
+    closemessage
+    delay 30
+    questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+    playfanfare MUS_LEVEL_UP
+    msgbox gText_QuestUpdated, MSGBOX_SIGN
+    waitfanfare
+    .endm

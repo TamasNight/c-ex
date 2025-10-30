@@ -1314,6 +1314,7 @@ const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbec
 //// side quest data
 //generic strings
 const u8 gText_QuestAnnounce[] = _("The quest '{STR_VAR_1}'\nis now {STR_VAR_2}.");
+const u8 gText_QuestUpdated[] = _("The quest '{STR_VAR_1}'\nhas been updated.");
 const u8 gText_QuestComplete[] =_("complete");
 const u8 gText_QuestActive[] =_("active");
 
@@ -1447,7 +1448,7 @@ const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
 const u8 gText_SubQuest1_Name1[] = _("Quick feed");
-const u8 gText_SubQuest1_Name2[] = _("Part 2");
+const u8 gText_SubQuest1_Name2[] = _("Help for Mom");
 const u8 gText_SubQuest1_Name3[] = _("Part 3");
 const u8 gText_SubQuest1_Name4[] = _("Part 4");
 const u8 gText_SubQuest1_Name5[] = _("Part 5");
@@ -1479,7 +1480,7 @@ const u8 gText_SubQuest2_Name19[] = _("Part 19");
 const u8 gText_SubQuest2_Name20[] = _("Part 20");
 
 const u8 gText_SubQuest1_Desc1[] = _("Feed the Miltank in the stable.");
-const u8 gText_SubQuest1_Desc2[] = _("Description Sub 2");
+const u8 gText_SubQuest1_Desc2[] = _("Join your mother in the pasture and\nassist her in mowing it.");
 const u8 gText_SubQuest1_Desc3[] = _("Description Sub 3");
 const u8 gText_SubQuest1_Desc4[] = _("Description Sub 4");
 const u8 gText_SubQuest1_Desc5[] = _("Description Sub 5");
