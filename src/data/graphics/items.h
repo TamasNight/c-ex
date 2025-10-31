@@ -1889,8 +1889,8 @@ const u16 gItemIconPalette_OldSeaMap[] = INCBIN_U16("graphics/items/icon_palette
 
 const u32 gItemIcon_Letter[] = INCBIN_U32("graphics/items/icons/letter.4bpp.lz");
 
-const u32 gItemIcon_DevonParts[] = INCBIN_U32("graphics/items/icons/devon_parts.4bpp.lz");
-const u16 gItemIconPalette_DevonParts[] = INCBIN_U16("graphics/items/icon_palettes/devon_parts.gbapal");
+const u32 gItemIcon_BrokenCollar[] = INCBIN_U32("graphics/items/icons/broken_collar.4bpp.lz");
+const u16 gItemIconPalette_BrokenCollar[] = INCBIN_U16("graphics/items/icon_palettes/broken_collar.gbapal");
 
 const u32 gItemIcon_GoGoggles[] = INCBIN_U32("graphics/items/icons/go_goggles.4bpp.lz");
 const u16 gItemIconPalette_GoGoggles[] = INCBIN_U16("graphics/items/icon_palettes/go_goggles.gbapal");

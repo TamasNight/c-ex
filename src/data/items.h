@@ -12643,21 +12643,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_LavaCookieAndLetter,
     },
 
-    [ITEM_DEVON_PARTS] =
+    [ITEM_BROKEN_COLLAR] =
     {
-        .name = _("Devon Parts"),
-        .pluralName = _("Devon Parts"),
+        .name = _("Broken Collar"),
+        .pluralName = _("Broken Collars"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A package that\n"
-            "contains Devon's\n"
-            "machine parts."),
+            "A strange recovery\n"
+            "made in Bosco Dei\n"
+            "Larici."),
         .importance = 2,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_DevonParts,
-        .iconPalette = gItemIconPalette_DevonParts,
+        .iconPic = gItemIcon_BrokenCollar,
+        .iconPalette = gItemIconPalette_BrokenCollar,
     },
 
     [ITEM_GO_GOGGLES] =

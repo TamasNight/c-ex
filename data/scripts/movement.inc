@@ -166,3 +166,34 @@ Common_Movement_WalkRightFaster::
 Common_Movement_WalkLeftFaster::
     walk_faster_left
     step_end
+
+Common_Movement_WalkLeft6Fast::
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    step_end
+
+Common_Movement_WalkLeft8Fast::
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    walk_fast_left
+    step_end
+
+Common_Movement_WalkRight6Fast::
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    walk_fast_right
+    step_end
+
+

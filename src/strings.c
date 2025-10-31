@@ -1320,7 +1320,7 @@ const u8 gText_QuestActive[] =_("active");
 
 //names
 const u8 gText_SideQuestName_1[] = _("The journey begins");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2");
+const u8 gText_SideQuestName_2[] = _("Shadows in the Woods");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
 const u8 gText_SideQuestName_5[] = _("Side Quest 5");
@@ -1352,7 +1352,7 @@ const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
 const u8 gText_SideQuestDesc_1[] = _("After waking up late, you have to\nget busy helping out on the farm.");
-const u8 gText_SideQuestDesc_2[] = _("Description 2");
+const u8 gText_SideQuestDesc_2[] = _("After defeating the Houndours in the \nBosco Dei Larici, you found a collar...\nCould someone be behind the attack?");
 const u8 gText_SideQuestDesc_3[] = _("Description 3");
 const u8 gText_SideQuestDesc_4[] = _("Description 4");
 const u8 gText_SideQuestDesc_5[] = _("Description 5");
@@ -1383,7 +1383,7 @@ const u8 gText_SideQuestDesc_29[] = _("Description 29");
 const u8 gText_SideQuestDesc_30[] = _("Description 30");
 
 //completed quest description
-const u8 gText_SideQuestDoneDesc_1[] = _("Completed Quest 1");
+const u8 gText_SideQuestDoneDesc_1[] = _("You managed to save Tauros and\nkick some Houndour butt.");
 const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest 2");
 const u8 gText_SideQuestDoneDesc_3[] = _("Completed Quest 3");
 const u8 gText_SideQuestDoneDesc_4[] = _("Completed Quest 4");

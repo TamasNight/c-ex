@@ -78,7 +78,7 @@
       "encounters": [
         {
           "map": "MAP_ROUTE101",
-          "base_label": "gRoute101",
+          "base_label": "gBoscoDeiLarici",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [

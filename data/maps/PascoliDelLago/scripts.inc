@@ -7,7 +7,9 @@ PascoliDelLago_OnTransition:
 	end
 
 PascoliDelLago_EventScript_Miltank::
+    playmoncry SPECIES_MILTANK, CRY_MODE_NORMAL
 	msgbox PascoliDelLago_Text_Miltank, MSGBOX_NPC
+	waitmoncry
 	end
 
 PascoliDelLago_EventScript_Dad::
@@ -51,7 +53,9 @@ PascoliDelLago_EventScript_IHaveToHurry::
     end
 
 PascoliDelLago_EventScript_Tauros::
+    playmoncry SPECIES_TAUROS, CRY_MODE_NORMAL
 	msgbox PascoliDelLago_Text_Tauros, MSGBOX_NPC
+	waitmoncry
 	end
 
 PascoliDelLago_EventScript_MomResqueUpper::

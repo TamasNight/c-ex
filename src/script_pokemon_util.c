@@ -26,6 +26,7 @@
 #include "wild_encounter.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
+#include "constants/pokemon_classes.h"
 #include "constants/battle_frontier.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
@@ -332,7 +333,7 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
-static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel)
+static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, bool8 isShiny, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel, u8 class)
 {
     u16 nationalDexNum;
     int sentToPc;
@@ -430,6 +431,9 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
     SetMonData(&mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(&mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
 
+    if (class != NUM_POKEMON_CLASSES)
+        SetMonData(&mon, MON_DATA_CLASS, &class);
+
     if (slot < PARTY_SIZE)
     {
         if (side == 0)
@@ -479,14 +483,14 @@ u32 ScriptGiveMon(u16 species, u8 level, u16 item)
                                 MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
     u16 moves[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
 
-    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, FALSE, FALSE, NUMBER_OF_MON_TYPES, 0);
+    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, FALSE, FALSE, NUMBER_OF_MON_TYPES, 0, NUM_POKEMON_CLASSES);
 }
 
 #define PARSE_FLAG(n, default_) (flags & (1 << (n))) ? VarGet(ScriptReadHalfword(ctx)) : (default_)
 
 /* Give or create a mon to either player or opponent
  */
-void ScrCmd_createmon(struct ScriptContext *ctx)
+void ScrCmd_createmon(struct ScriptContext *ctx) // TODO aggiungere classe
 {
     u8 side           = ScriptReadByte(ctx);
     u8 slot           = ScriptReadByte(ctx);
@@ -556,6 +560,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     bool8 gmaxFactor  = PARSE_FLAG(22, FALSE);
     u8 teraType       = PARSE_FLAG(23, NUMBER_OF_MON_TYPES);
     u8 dmaxLevel      = PARSE_FLAG(24, 0);
+    u8 class          = PARSE_FLAG(25, NUM_POKEMON_CLASSES);
 
     u8 evs[NUM_STATS]        = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
     u8 ivs[NUM_STATS]        = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
@@ -566,7 +571,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     else
         Script_RequestEffects(SCREFF_V1);
 
-    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, gmaxFactor, teraType, dmaxLevel);
+    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, isShiny, gmaxFactor, teraType, dmaxLevel, class);
 }
 
 #undef PARSE_FLAG

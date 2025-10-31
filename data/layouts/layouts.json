@@ -163,13 +163,13 @@
     },
     {
       "id": "LAYOUT_ROUTE101",
-      "name": "Route101_Layout",
+      "name": "BoscoDeiLarici_Layout",
       "width": 38,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/Route101/border.bin",
-      "blockdata_filepath": "data/layouts/Route101/map.bin"
+      "border_filepath": "data/layouts/BoscoDeiLarici/border.bin",
+      "blockdata_filepath": "data/layouts/BoscoDeiLarici/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE102",

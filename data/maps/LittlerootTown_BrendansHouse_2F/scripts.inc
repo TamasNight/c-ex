@@ -4,6 +4,7 @@ LittlerootTown_BrendansHouse_2F_MapScripts::
 
 PascoliDelLago_Stable_OnFrame::
     map_script_2 VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 1, PascoliDelLago_Stable_EventScript_Finally
+    map_script_2 VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 5, PascoliDelLago_Stable_EventScript_End
     .2byte 0
 
 PascoliDelLago_Stable_EventScript_Finally::
@@ -26,6 +27,19 @@ PascoliDelLago_Stable_EventScript_Finally::
     releaseall
     end
 
+PascoliDelLago_Stable_EventScript_End::
+    lockall
+    turnobject LOCALID_TAUROS_STABLE, DIR_SOUTH
+    applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+    waitmovement 0
+    msgbox PascoliDelLago_Stable_Text_JustRest, MSGBOX_DEFAULT
+    closemessage
+    completequest QUEST_START_JOURNEY
+    setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 6
+    releaseall
+    end
+
+
 PascoliDelLago_Stable_EventScript_TakingBreath::
     msgbox PascoliDelLago_Stable_Text_TakingBreath, MSGBOX_NPC
     end
@@ -37,6 +51,11 @@ PascoliDelLago_Stable_Text_Finally:
 PascoliDelLago_Stable_Text_Sorry:
 	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: Yeah, sorry... I didn't sleep\n"
 	.string "well.$"
+
+PascoliDelLago_Stable_Text_JustRest:
+	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: Now you're out of danger.\n"
+    .string "Rest up, you deserve it.$"
+
 
 PascoliDelLago_Stable_Text_AtYourAge:
     .string "{COLOR}{GREEN}Father{COLOR}{02}: Did you sleep poorly or too\n"

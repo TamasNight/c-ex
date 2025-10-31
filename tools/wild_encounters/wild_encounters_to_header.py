@@ -686,7 +686,7 @@ if __name__ == "__main__":
 #define ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_1 ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_0 + 0
 #define ENCOUNTER_CHANCE_HIDDEN_MONS_TOTAL (ENCOUNTER_CHANCE_HIDDEN_MONS_SLOT_1)
 
-const struct WildPokemon gRoute101_LandMons_Day[] =
+const struct WildPokemon gBoscoDeiLarici_LandMons_Day[] =
 {
     { 2, 2, SPECIES_WURMPLE },
     { 2, 2, SPECIES_POOCHYENA },
@@ -702,7 +702,7 @@ const struct WildPokemon gRoute101_LandMons_Day[] =
     { 3, 3, SPECIES_ZIGZAGOON },
 };
 
-const struct WildPokemonInfo gRoute101_Day_LandMonsInfo= { 20, gRoute101_Day_LandMons };
+const struct WildPokemonInfo gBoscoDeiLarici_Day_LandMonsInfo= { 20, gBoscoDeiLarici_Day_LandMons };
 const struct WildPokemonHeader gWildMonHeaders[] =
 {
     {
@@ -711,7 +711,7 @@ const struct WildPokemonHeader gWildMonHeaders[] =
         .encounterTypes =
             [OW_TIME_OF_DAY_DEFAULT] =
             {
-                .landMonsInfo = &gRoute101_LandMonsInfo,
+                .landMonsInfo = &gBoscoDeiLarici_LandMonsInfo,
                 .waterMonsInfo = NULL,
                 .rockSmashMonsInfo = NULL,
                 .fishingMonsInfo = NULL,
