@@ -47,7 +47,7 @@
 #define FLAG_HIDE_DAD_FROM_STABLE       0x21
 #define FLAG_HIDE_TAUROS_FROM_FIELD     0x22
 #define FLAG_HIDE_MOM_FROM_FIELD        0x23
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
+#define FLAG_HIDE_HOUNDOUR_FROM_WOOD    0x24
 #define FLAG_UNUSED_0x025    0x25 // Unused Flag
 #define FLAG_UNUSED_0x026    0x26 // Unused Flag
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
