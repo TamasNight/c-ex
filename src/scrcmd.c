@@ -60,6 +60,7 @@
 #include "malloc.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "pokemon.h"
 
 typedef u16 (*SpecialFunc)(void);
 typedef void (*NativeFunc)(struct ScriptContext *ctx);
@@ -3356,6 +3357,16 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
             QuestMenu_CopySubquestName(gStringVar1,parentId,childId);
             break;
     }
+
+    return TRUE;
+}
+
+bool8 ScrCmd_RemoveMon(struct ScriptContext *ctx)
+{
+    s32 partyIndex = VarGet(ScriptReadHalfword(ctx));
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    ZeroMonData(&gPlayerParty[partyIndex]);
 
     return TRUE;
 }

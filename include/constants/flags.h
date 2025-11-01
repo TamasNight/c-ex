@@ -49,8 +49,8 @@
 #define FLAG_HIDE_MOM_FROM_FIELD                0x23
 #define FLAG_HIDE_HOUNDOUR_FROM_WOOD            0x24
 #define FLAG_HIDE_SCENE_HOUNDOUR_FROM_WOOD      0x25
-#define FLAG_HIDE_TAUROS_FROM_STABLE            0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
+#define FLAG_HIDE_TAUROS_FROM_STABLE            0x26
+#define FLAG_HIDE_KNIGHT_FROM_FIELD             0x27
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
@@ -98,7 +98,7 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
+#define FLAG_HIDE_FOLLOWER                   0x54
 #define FLAG_UNUSED_0x055                    0x55  // Unused Flag
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly

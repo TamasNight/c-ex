@@ -56,13 +56,11 @@ BoscoDeiLarici_EventScript_FundTauros::
     clearflag FLAG_HIDE_SCENE_HOUNDOUR_FROM_WOOD
     addobject LOCALID_FIRST_HOUNDOUR
     addobject LOCALID_SECOND_HOUNDOUR
-    applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-    applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-    waitmovement 0
+    delay 8
     applymovement LOCALID_FIRST_HOUNDOUR, Common_Movement_WalkLeft6Fast
     applymovement LOCALID_SECOND_HOUNDOUR, Common_Movement_WalkLeft6Fast
     applymovement LOCALID_PLAYER, BoscoDeiLarici_Movement_PlayerSurprised
-    waitmovement 0
+    waitmovement LOCALID_SECOND_HOUNDOUR
     applymovement LOCALID_SECOND_HOUNDOUR, BoscoDeiLarici_Movement_HoundourPositioning
     waitmovement 0
     playmoncry SPECIES_HOUNDOUR, CRY_MODE_NORMAL
@@ -97,6 +95,7 @@ BoscoDeiLarici_EventScript_FundTauros::
     setflag FLAG_HIDE_HOUNDOUR_FROM_WOOD
     setflag FLAG_HIDE_DAD_FROM_STABLE
     clearflag FLAG_HIDE_TAUROS_FROM_STABLE
+    setflag FLAG_HIDE_FOLLOWER
     setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 5
     applymovement LOCALID_TAUROS_WOOD, Common_Movement_FaceLeft
     waitmovement 0
@@ -170,7 +169,7 @@ BoscoDeiLarici_Text_Victory:
     .string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: We did it, let's go home\n"
     .string "before they get too worried.$"
 
-BoscoDeiLarici_Movement_HoundourPositioning::
+BoscoDeiLarici_Movement_HoundourPositioning: @ Check
     walk_fast_up
     walk_fast_left
     step_end
@@ -201,10 +200,11 @@ BoscoDeiLarici_Movement_TaurosSearching::
     delay_16
     step_end
 
-BoscoDeiLarici_Movement_PlayerSurprised::
+BoscoDeiLarici_Movement_PlayerSurprised:
     delay_16
+    delay_16
+    face_right
     emote_question_mark
-    face_left
     step_end
 
 

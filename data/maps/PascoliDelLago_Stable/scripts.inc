@@ -36,6 +36,7 @@ PascoliDelLago_Stable_EventScript_End::
     closemessage
     completequest QUEST_START_JOURNEY
     setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 6
+    removemon 0
     releaseall
     end
 

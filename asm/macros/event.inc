@@ -2805,3 +2805,12 @@
     msgbox gText_QuestUpdated, MSGBOX_SIGN
     waitfanfare
     .endm
+
+@ Tamas Macros
+    @ Remove the th mon from the party.
+    .macro removemon index:req
+    .byte SCR_OP_REMOVEMON
+    .2byte \index
+    .endm
+
+

@@ -1,6 +1,11 @@
 PascoliDelLago_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, PascoliDelLago_OnTransition
-	.byte 0
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, PascoliDelLago_OnFrame
+    .byte 0
+
+PascoliDelLago_OnFrame:
+    map_script_2 VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 6, PascoliDelLago_EventScript_KnightArrive
+    .2byte 0
 
 PascoliDelLago_OnTransition:
 	setflag FLAG_VISITED_PASCOLI_DEL_LAGO
@@ -93,6 +98,31 @@ PascoliDelLago_EventScript_MomResque::
     releaseall
     end
 
+PascoliDelLago_EventScript_KnightArrive::
+    lockall
+    delay 16
+    applymovement LOCALID_PLAYER, PascoliDelLago_Movement_PlayerGoingHome
+    waitmovement 0
+    delay 16
+    msgbox PascoliDelLago_Text_KnightIntroduce, MSGBOX_DEFAULT
+    delay 8
+    msgbox PascoliDelLago_Stable_Text_FatherAnswer, MSGBOX_DEFAULT
+    msgbox PascoliDelLago_Stable_Text_SaverioAnswer, MSGBOX_DEFAULT
+    msgbox PascoliDelLago_Stable_Text_SaverioContinue, MSGBOX_DEFAULT
+    msgbox PascoliDelLago_Stable_Text_FatherWorried, MSGBOX_DEFAULT
+    msgbox PascoliDelLago_Stable_Text_SaverioNoExcuse, MSGBOX_DEFAULT
+    closemessage
+    delay 30
+    applymovement LOCALID_SAVERIO_INTRO, Common_Movement_FaceRight
+    applymovement LOCALID_FATHER_INTRO, Common_Movement_FaceRight
+    applymovement LOCALID_RAPIDASH_INTRO, Common_Movement_FaceRight
+    waitmovement 0
+    msgbox PascoliDelLago_Stable_Text_SaverioSoHereYouAre, MSGBOX_DEFAULT
+    setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 7
+    releaseall
+    end
+
+
 PascoliDelLago_EventScript_ApproachMomLower:
     walk_fast_right
     walk_fast_right
@@ -127,6 +157,36 @@ PascoliDelLago_EventScript_MomLeaves:
     walk_left
     walk_left
     step_end
+
+PascoliDelLago_Text_KnightIntroduce:
+    .string "???: Is it here that {PLAYER}, son of\n"
+	.string "Raimondo, lives?$"
+
+PascoliDelLago_Stable_Text_FatherAnswer:
+    .string "{COLOR}{GREEN}Father{COLOR}{02}: Yes, he lives here, and I am\n"
+    .string "Raimondo, but I would like to know who\l"
+    .string "you are.$"
+
+PascoliDelLago_Stable_Text_SaverioAnswer:
+    .string "???: Fair enough, my name is Saverio.$"
+
+PascoliDelLago_Stable_Text_SaverioContinue:
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: I am a knight of the Duke\n"
+	.string "of Iria, and the Duke has requested\l"
+	.string "the services of your son.$"
+
+PascoliDelLago_Stable_Text_FatherWorried:
+    .string "{COLOR}{GREEN}Father{COLOR}{02}: But... but he's just a lad.$"
+
+PascoliDelLago_Stable_Text_SaverioNoExcuse:
+    .string "{COLOR}{BLUE}Saverio{COLOR}{02}: He will be until someone\n"
+    .string "teaches him how to fight and the\l"
+    .string "meaning of loyalty.\p"
+    .string "The duke needs arms, not excuses.$"
+
+PascoliDelLago_Stable_Text_SaverioSoHereYouAre:
+    .string "{COLOR}{BLUE}Saverio{COLOR}{02}: So you must be {PLAYER}.$"
+
 
 PascoliDelLago_Text_IHaveToHurry:
     .string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: I have to hurry!$"
@@ -189,3 +249,35 @@ PascoliDelLago_Text_TownSign:
 
 PascoliDelLago_Text_PlayersHouse:
 	.string "{PLAYER}'s house$"
+
+PascoliDelLago_Movement_PlayerGoingHome::
+    walk_down
+    walk_right
+    walk_right
+    walk_right
+    walk_right
+    walk_right
+    walk_right
+    walk_right
+    walk_right
+    walk_right
+    delay_8
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    delay_8
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    walk_left
+    emote_exclamation_mark
+    step_end
+
+
+

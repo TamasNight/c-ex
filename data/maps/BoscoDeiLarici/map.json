@@ -68,7 +68,7 @@
     {
       "local_id": "LOCALID_FIRST_HOUNDOUR",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOUNDOUR)",
-      "x": 27,
+      "x": 28,
       "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -82,7 +82,7 @@
     {
       "local_id": "LOCALID_SECOND_HOUNDOUR",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HOUNDOUR)",
-      "x": 28,
+      "x": 29,
       "y": 24,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",

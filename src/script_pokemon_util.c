@@ -490,7 +490,7 @@ u32 ScriptGiveMon(u16 species, u8 level, u16 item)
 
 /* Give or create a mon to either player or opponent
  */
-void ScrCmd_createmon(struct ScriptContext *ctx) // TODO aggiungere classe
+void ScrCmd_createmon(struct ScriptContext *ctx)
 {
     u8 side           = ScriptReadByte(ctx);
     u8 slot           = ScriptReadByte(ctx);
