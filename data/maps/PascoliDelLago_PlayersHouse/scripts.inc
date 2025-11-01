@@ -1,4 +1,4 @@
-LittlerootTown_BrendansHouse_1F_MapScripts::
+PascoliDelLago_PlayersHouse_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PascoliDelLago_PlayersHouse_OnFrame
 	.byte 0
 

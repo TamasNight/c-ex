@@ -533,23 +533,23 @@
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
-      "name": "LittlerootTown_BrendansHouse_1F_Layout",
+      "name": "PascoliDelLago_PlayersHouse_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin"
+      "border_filepath": "data/layouts/PascoliDelLago_PlayersHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PascoliDelLago_PlayersHouse/map.bin"
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
-      "name": "LittlerootTown_BrendansHouse_2F_Layout",
+      "name": "PascoliDelLago_Stable_Layout",
       "width": 11,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
-      "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin"
+      "border_filepath": "data/layouts/PascoliDelLago_Stable/border.bin",
+      "blockdata_filepath": "data/layouts/PascoliDelLago_Stable/map.bin"
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_MAYS_HOUSE_1F",

@@ -40,7 +40,7 @@ PlayersHouse_1F_EventScript_MomGoSeeRoom::
 	releaseall
 	end
 
-LittlerootTown_BrendansHouse_2F_EventScript_WallClock::
+PascoliDelLago_Stable_EventScript_WallClock::
 	lockall
 	setvar VAR_0x8004, MALE
 	goto PlayersHouse_2F_EventScript_WallClock

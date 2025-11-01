@@ -1,4 +1,4 @@
-LittlerootTown_BrendansHouse_2F_MapScripts::
+PascoliDelLago_Stable_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, PascoliDelLago_Stable_OnFrame
 	.byte 0
 
@@ -71,13 +71,13 @@ PascoliDelLago_Stable_Text_TakingBreath:
 	.string "{COLOR}{GREEN}Father{COLOR}{02}: Don't worry, I said I'd do it, I'm\n"
 	.string "just catching my breath a little.$"
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanEnters:
+PascoliDelLago_Stable_Movement_BrendanEnters:
 	walk_down
 	walk_down
 	walk_in_place_faster_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerNorth:
+PascoliDelLago_Stable_Movement_BrendanApproachPlayerNorth:
 	walk_left
 	walk_left
 	walk_down
@@ -85,7 +85,7 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerNorth:
 	walk_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth:
+PascoliDelLago_Stable_Movement_BrendanWalkToPCNorth:
 	walk_up
 	walk_up
 	walk_up
@@ -96,7 +96,7 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCNorth:
 	walk_in_place_faster_up
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth:
+PascoliDelLago_Stable_Movement_PlayerWatchBrendanNorth:
 	delay_16
 	walk_in_place_faster_up
 	delay_16
@@ -106,13 +106,13 @@ LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanNorth:
 	walk_in_place_faster_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerSouth:
+PascoliDelLago_Stable_Movement_BrendanApproachPlayerSouth:
 	walk_left
 	walk_left
 	walk_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth:
+PascoliDelLago_Stable_Movement_BrendanWalkToPCSouth:
 	walk_up
 	walk_left
 	walk_left
@@ -121,7 +121,7 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCSouth:
 	walk_in_place_faster_up
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth:
+PascoliDelLago_Stable_Movement_PlayerWatchBrendanSouth:
 	delay_16
 	walk_in_place_faster_up
 	delay_16
@@ -129,14 +129,14 @@ LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanSouth:
 	walk_in_place_faster_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerWest:
+PascoliDelLago_Stable_Movement_BrendanApproachPlayerWest:
 	walk_left
 	walk_left
 	walk_down
 	walk_in_place_faster_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest:
+PascoliDelLago_Stable_Movement_BrendanWalkToPCWest:
 	walk_up
 	walk_up
 	walk_left
@@ -147,7 +147,7 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCWest:
 	walk_in_place_faster_up
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest:
+PascoliDelLago_Stable_Movement_PlayerWatchBrendanWest:
 	delay_8
 	delay_16
 	walk_in_place_faster_up
@@ -156,7 +156,7 @@ LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanWest:
 	walk_in_place_faster_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerEast:
+PascoliDelLago_Stable_Movement_BrendanApproachPlayerEast:
 	walk_left
 	walk_left
 	walk_left
@@ -165,7 +165,7 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanApproachPlayerEast:
 	walk_in_place_faster_down
 	step_end
 
-LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast:
+PascoliDelLago_Stable_Movement_BrendanWalkToPCEast:
 	walk_up
 	walk_left
 	walk_left
@@ -173,20 +173,20 @@ LittlerootTown_BrendansHouse_2F_Movement_BrendanWalkToPCEast:
 	step_end
 
 @ Unused, the player is already facing this direction so its unneeded
-LittlerootTown_BrendansHouse_2F_Movement_PlayerWatchBrendanEast:
+PascoliDelLago_Stable_Movement_PlayerWatchBrendanEast:
 	delay_16
 	delay_16
 	walk_in_place_faster_left
 	step_end
 
-LittlerootTown_BrendansHouse_2F_EventScript_PC::
+PascoliDelLago_Stable_EventScript_PC::
 	lockall
 	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC
-	goto_if_eq VAR_RESULT, FEMALE, LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC
+	goto_if_eq VAR_RESULT, MALE, PascoliDelLago_Stable_EventScript_CheckPlayersPC
+	goto_if_eq VAR_RESULT, FEMALE, PascoliDelLago_Stable_EventScript_CheckRivalsPC
 	end
 
-LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
+PascoliDelLago_Stable_EventScript_CheckPlayersPC::
 	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
 	special DoPCTurnOnEffect
 	playse SE_PC_ON
@@ -196,14 +196,14 @@ LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
 	releaseall
 	end
 
-LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
+PascoliDelLago_Stable_EventScript_TurnOffPlayerPC::
 	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
 	playse SE_PC_OFF
 	special DoPCTurnOffEffect
 	releaseall
 	end
 
-LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
+PascoliDelLago_Stable_EventScript_CheckRivalsPC::
 	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
 	releaseall
 	end
