@@ -28,13 +28,63 @@ PascoliDelLago_PlayersHouse_EventScript_WakeUp::
 	end
 
 PascoliDelLago_PlayersHouse_EventScript_Grandma::
-    goto_if_eq VAR_PASCOLI_DEL_LAGO_INTRO_STATE, 1, PascoliDelLago_PlayersHouse_EventScript_StillHere
+    goto_if_ge VAR_KNIGHT_WAY_STATE, 1, PascoliDelLago_PlayersHouse_EventScript_RememberHowYouAre
+    msgbox PascoliDelLago_PlayersHouse_Text_StillHere, MSGBOX_NPC
     end
 
-PascoliDelLago_PlayersHouse_EventScript_StillHere::
-    msgbox PascoliDelLago_PlayersHouse_Text_WakeUp, MSGBOX_NPC
+PascoliDelLago_PlayersHouse_EventScript_RememberHowYouAre::
+    msgbox PascoliDelLago_PlayersHouse_Text_RememberHowYouAre, MSGBOX_NPC
     end
 
+PascoliDelLago_PlayersHouse_EventScript_Mom::
+    lockall
+    msgbox PascoliDelLago_PlayersHouse_Text_MomCry, MSGBOX_DEFAULT
+    delay 8
+    msgbox PascoliDelLago_PlayersHouse_Text_MomGoodbye, MSGBOX_NPC
+    releaseall
+    end
+
+PacsoliDelLago_PlayersHouse_EventScript_DadGiftTrigger::
+    applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+    waitmovement 0
+    goto PascoliDelLago_PlayersHouse_EventScript_DadGift
+
+PascoliDelLago_PlayersHouse_EventScript_DadGift::
+    lock
+    goto_if_eq VAR_KNIGHT_WAY_STATE, 2, PascoliDelLago_PlayersHouse_EventScript_DadGiftEnd
+    applymovement LOCALID_FATHER_HOME, Common_Movement_FacePlayer
+    waitmovement 0
+    msgbox PascoliDelLago_PlayersHouse_Text_DadGift, MSGBOX_DEFAULT
+    giveitem ITEM_POTION, 5
+    setvar VAR_KNIGHT_WAY_STATE 2
+    delay 8
+    goto PascoliDelLago_PlayersHouse_EventScript_DadGiftEnd
+
+PascoliDelLago_PlayersHouse_EventScript_DadGiftEnd::
+    lock
+    applymovement LOCALID_FATHER_HOME, Common_Movement_FacePlayer
+    waitmovement 0
+    msgbox PascoliDelLago_PlayersHouse_Text_DadGiftEnd, MSGBOX_DEFAULT
+    release
+    end
+
+PascoliDelLago_PlayersHouse_Text_DadGift:
+    .string "{COLOR}{GREEN}Father{COLOR}{02}: Before you go, I have prepared\n"
+    .string "some of the healing herbs that grow in\n"
+    .string "the Alpi for you.$"
+
+PascoliDelLago_PlayersHouse_Text_DadGiftEnd:
+    .string "{COLOR}{GREEN}Father{COLOR}{02}: Take care of yourself and make\n"
+    .string "us proud.$"
+
+PascoliDelLago_PlayersHouse_Text_MomCry:
+    .string "{COLOR}{RED}Mom{COLOR}{02}: ... ...\p"
+    .string "(sniff)$"
+
+PascoliDelLago_PlayersHouse_Text_MomGoodbye:
+	.string "{COLOR}{RED}Mom{COLOR}{02}: Be brave, my dear... and come back\n"
+	.string "to us... no matter how long the road may\l"
+	.string "be...$"
 
 PascoliDelLago_PlayersHouse_Text_WakeUp:
     .string "{COLOR}{RED}Grandma{COLOR}{02}: You got up late, kid...\p"
@@ -216,3 +266,12 @@ PlayersHouse_1F_Text_WhatColorDidTheySay:
 PlayersHouse_1F_Text_StillUnknownPokemon:
 	.string "MOM: Well, isn't that something!\n"
 	.string "There are still unknown POKéMON.$"
+
+PascoliDelLago_PlayersHouse_Text_RememberHowYouAre:
+	.string "{COLOR}{RED}Grandma{COLOR}{02}: My dear boy...\n"
+	.string "Once you’ve tasted the iron and the\l"
+	.string "blood, it’s easy to forget who you truly\l"
+	.string "are...\p"
+	.string "Promise me you’ll remember - no matter\n"
+	.string "what you see or do, don’t let the world\l"
+	.string "turn your heart cold.$"

@@ -254,6 +254,11 @@ static const u8 *sText_SubQuestDisplay_3(void) {
 	return *questState == 4 ? sText_Active : sText_Complete;
 };
 
+static const u8 *sText_SubQuestDisplay_4(void) {
+	u16 *questState = GetVarPointer(VAR_KNIGHT_WAY_STATE);
+	return *questState < 3 ? sText_Active : sText_Complete;
+};
+
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////BEGIN SUBQUEST CUSTOMIZATION/////////////////////////////
 
@@ -296,13 +301,13 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 {
 
 	sub_quest(
-			3,
+			SUB_QUEST_KNIGHT_WAY_1,
 			gText_SubQuest1_Name4,
 			gText_SubQuest1_Desc4,
-			gText_SideQuestMap4,
-			OBJ_EVENT_GFX_WALLY,
+			gText_SideQuestMap3,
+			OBJ_EVENT_GFX_KNIGHT_S,
 			OBJECT,
-			&sText_SubQuestDisplay_1
+			&sText_SubQuestDisplay_4
 	),
 
 	sub_quest(
@@ -602,7 +607,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_3,
 	      gText_SideQuestDoneDesc_3,
 	      gText_SideQuestMap3,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_KNIGHT_S,
 	      OBJECT,
 	      sSubQuests2,
 	      QUEST_2_SUB_COUNT

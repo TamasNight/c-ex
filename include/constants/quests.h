@@ -17,7 +17,7 @@
 // quest number defines
 #define QUEST_START_JOURNEY          0
 #define QUEST_WOODS_SHADOWS          1
-#define QUEST_3          2
+#define QUEST_KNIGHT_WAY             2
 #define QUEST_4          3
 #define QUEST_5          4
 #define QUEST_6          5
@@ -50,7 +50,7 @@
 #define SUB_QUEST_START_JOURNEY_1          0
 #define SUB_QUEST_START_JOURNEY_2          1
 #define SUB_QUEST_START_JOURNEY_3          2
-#define SUB_QUEST_4          3
+#define SUB_QUEST_KNIGHT_WAY_1             3
 #define SUB_QUEST_5          4
 #define SUB_QUEST_6          5
 #define SUB_QUEST_7          6

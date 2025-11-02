@@ -196,4 +196,21 @@ Common_Movement_WalkRight6Fast::
     walk_fast_right
     step_end
 
+Common_Movement_WalkDown6::
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+
+
+Common_Movement_WalkRight3::
+    walk_right
+    walk_right
+    walk_right
+    step_end
+
+
 

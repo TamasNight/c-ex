@@ -48,48 +48,6 @@
       "flag": "0"
     },
     {
-      "local_id": "LOCALID_LITTLEROOT_MOM",
-      "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 10,
-      "y": 14,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0"
-    },
-    {
-      "local_id": "LOCALID_LITTLEROOT_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 19,
-      "y": 16,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_RIVAL"
-    },
-    {
-      "local_id": "LOCALID_LITTLEROOT_BIRCH",
-      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
-      "x": 20,
-      "y": 16,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCH"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
       "x": 11,
       "y": 28,
@@ -341,6 +299,42 @@
       "var": "VAR_PASCOLI_DEL_LAGO_INTRO_STATE",
       "var_value": "4",
       "script": "PascoliDelLago_EventScript_IHaveToHurry"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_PASCOLI_DEL_LAGO_INTRO_STATE",
+      "var_value": "1",
+      "script": "PascoliDelLago_EventScript_IHaveToHurryToStable"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_PASCOLI_DEL_LAGO_INTRO_STATE",
+      "var_value": "1",
+      "script": "PascoliDelLago_EventScript_IHaveToHurryToStable"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_PASCOLI_DEL_LAGO_INTRO_STATE",
+      "var_value": "2",
+      "script": "PascoliDelLago_EventScript_IHaveToHurryToStable"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 46,
+      "elevation": 0,
+      "var": "VAR_PASCOLI_DEL_LAGO_INTRO_STATE",
+      "var_value": "2",
+      "script": "PascoliDelLago_EventScript_IHaveToHurryToStable"
     }
   ],
   "bg_events": [
