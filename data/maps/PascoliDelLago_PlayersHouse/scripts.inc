@@ -57,6 +57,7 @@ PascoliDelLago_PlayersHouse_EventScript_DadGift::
     msgbox PascoliDelLago_PlayersHouse_Text_DadGift, MSGBOX_DEFAULT
     giveitem ITEM_POTION, 5
     setvar VAR_KNIGHT_WAY_STATE 2
+    clearflag FLAG_HIDE_MILTANK_FROM_FIELD
     delay 8
     goto PascoliDelLago_PlayersHouse_EventScript_DadGiftEnd
 

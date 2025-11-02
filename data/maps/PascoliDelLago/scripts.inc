@@ -40,7 +40,7 @@ PascoliDelLago_EventScript_MomCry::
     closemessage
     setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 3
     removeobject LOCALID_TAUROS_CORNER
-    setflag FLAG_HIDE_TAUROS_FROM_FIELD
+    setflag FLAG_HIDE_MILTANK_FROM_FIELD
     end
 
 PascoliDelLago_EventScript_BetterNotInThisDirection::

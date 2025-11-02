@@ -45,7 +45,7 @@
 
 #define FLAG_PLAYER_IS_KNIGHT                   0x20
 #define FLAG_HIDE_DAD_FROM_STABLE               0x21
-#define FLAG_HIDE_TAUROS_FROM_FIELD             0x22
+#define FLAG_HIDE_MILTANK_FROM_FIELD             0x22
 #define FLAG_HIDE_MOM_FROM_FIELD                0x23
 #define FLAG_HIDE_HOUNDOUR_FROM_WOOD            0x24
 #define FLAG_HIDE_SCENE_HOUNDOUR_FROM_WOOD      0x25

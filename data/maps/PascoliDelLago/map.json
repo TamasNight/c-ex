@@ -75,7 +75,7 @@
     },
     {
       "local_id": "LOCALID_TAUROS_CORNER",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
       "x": 43,
       "y": 39,
       "elevation": 0,
@@ -85,7 +85,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PascoliDelLago_EventScript_Tauros",
-      "flag": "FLAG_HIDE_TAUROS_FROM_FIELD"
+      "flag": "FLAG_HIDE_MILTANK_FROM_FIELD"
     },
     {
       "local_id": "LOCALID_FATHER_INTRO",
