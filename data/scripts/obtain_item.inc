@@ -135,7 +135,7 @@ EventScript_NoRoomForDecor::
 
 Std_FindItem::
 	lock
-	faceplayer
+	@ faceplayer
 	waitse
 	copyvar VAR_0x8006, ITEMID
 	copyvar VAR_0x8004, ITEMID
@@ -151,7 +151,6 @@ Std_FindItem::
 	return
 
 EventScript_PickUpItem::
-	removeobject VAR_LAST_TALKED
 	additem VAR_0x8004, VAR_0x8005
 	copyvar VAR_0x8006 VAR_0x8004
 	specialvar VAR_RESULT, BufferTMHMMoveName
