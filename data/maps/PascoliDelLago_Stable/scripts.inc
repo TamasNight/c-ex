@@ -37,6 +37,7 @@ PascoliDelLago_Stable_EventScript_End::
     completequest QUEST_START_JOURNEY
     setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 6
     removemon 0
+    clearflag FLAG_HIDE_KNIGHT_FROM_FIELD
     releaseall
     end
 

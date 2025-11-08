@@ -25,8 +25,8 @@ ValleFredda_Text_AllenPostBattle:
 	.string "I wish I would win soon…$"
 
 ValleFredda_Text_SaverioDefeated:
-    .string "{COLOR}{BLUE}Saverio{COLOR}{02}: You have controlled the\n"
-	.string "potential of your Pokémon very well.$"
+    .string "You have controlled the potential of\n"
+	.string "your Pokémon very well.$"
 
 ValleFredda_Text_SaverioPostBattlePlayerLost:
 	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: There will be much tougher\n"

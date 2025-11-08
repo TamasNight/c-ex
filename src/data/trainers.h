@@ -29468,7 +29468,7 @@ F_TRAINER_FEMALE |
 #line 11266
         .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 11267
-        .aiFlags = AI_FLAG_CHECK_VIABILITY,
+        .aiFlags = AI_FLAG_CHECK_VIABILITY | AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT,
         .partySize = 2,
         .party = (const struct TrainerMon[])
         {

@@ -18,7 +18,7 @@ ValleFredda_EventScript_PlayerPositioningRight::
 
 ValleFredda_EventScript_PlayerPositioningCenter::
     lockall
-	applymovement LOCALID_PLAYER, Common_Movement_WalkDown4
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown2
 	goto ValleFredda_EventScript_Saverio
 
 ValleFredda_EventScript_Saverio::
@@ -53,8 +53,8 @@ ValleFredda_EventScript_SaverioLessonEnd::
     applymovement LOCALID_SAVERIO_VALLE_FREDDA, Common_Movement_WalkDown6
     waitmovement 0
     setvar VAR_KNIGHT_WAY_STATE, 3
-    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY SUB_QUEST_KNIGHT_WAY_2
-    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY SUB_QUEST_KNIGHT_WAY_3
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY 1
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY 2
     updatequestmsg QUEST_KNIGHT_WAY
     removeobject LOCALID_SAVERIO_VALLE_FREDDA
     removeobject LOCALID_RAPIDASH_VALLE_FREDDA
@@ -116,7 +116,7 @@ ValleFredda_Text_SaverioIntro:
 	.string "for those who think they are ready.$"
 
 ValleFredda_Text_PlayerIntro:
-    .string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}:I'll be ready, teach me!$"
+    .string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}: I'll be ready, teach me!$"
 
 ValleFredda_Text_SaverioBeforeGiveBond:
 	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: First, you need to know how to\n"
@@ -140,37 +140,36 @@ ValleFredda_Text_FirstLesson:
 	.string "it to dominate the battlefield.$"
 
 ValleFredda_Text_SaverioHealingParty:
-	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: Let me heal your Pokémon.$"
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: Great battle, you still have a\n"
+    .string "lot to learn but you're on the right\l"
+    .string "track. Now let me heal your Pokémon.$"
+
 
 ValleFredda_Text_SaverioNextQuest:
-	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: I’ll be waiting for you at the\n"
-	.string "tavern down in the valley.\p"
-	.string "Catch something strong on your way...\n"
-	.string "the road to Fort Giove is long and\l"
-	.string "unforgiving.$"
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: Our next destination will be\n"
+    .string "the tavern at the bottom of the valley.\l"
+    .string "I'll wait for you there. I want you to\l"
+    .string "learn to be independent right away.\p"
+	.string "Practice with {COLOR}{RED}Legami{COLOR}{02} on your way to the\n"
+    .string "tavern. If you catch some good\l"
+    .string "Pokémon, I'll reward you.$"
 
 
 ValleFredda_Movement_PlayerPositioningLeft:
-    walk_left
-    walk_left
-    walk_down
-    walk_down
+    walk_right
+    walk_right
     walk_down
     walk_down
     step_end
 
 ValleFredda_Movement_PlayerPositioningLeft2:
-    walk_left
-    walk_down
-    walk_down
+    walk_right
     walk_down
     walk_down
     step_end
 
 ValleFredda_Movement_PlayerPositioningRight:
-    walk_right
-    walk_down
-    walk_down
+    walk_left
     walk_down
     walk_down
     step_end

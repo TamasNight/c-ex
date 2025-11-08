@@ -174,7 +174,7 @@ PascoliDelLago_EventScript_ReceivedMon::
     applymovement LOCALID_RAPIDASH_INTRO, Common_Movement_WalkDown6
     waitmovement 0
     startquest QUEST_KNIGHT_WAY
-    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY SUB_QUEST_KNIGHT_WAY_1
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY 0
     applymovement LOCALID_FATHER_INTRO, PascoliDelLago_Movement_FatherFinal
     waitmovement 0
     msgbox PascoliDelLago_Text_FatherFinal, MSGBOX_DEFAULT
