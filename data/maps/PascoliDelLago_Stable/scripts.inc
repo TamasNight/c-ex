@@ -38,6 +38,7 @@ PascoliDelLago_Stable_EventScript_End::
     setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 6
     removemon 0
     clearflag FLAG_HIDE_KNIGHT_FROM_FIELD
+    clearflag FLAG_HIDE_PARENTS_INTRO_IN_HOUSE
     releaseall
     end
 

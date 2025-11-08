@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "PascoliDelLago_PlayersHouse_EventScript_DadGift",
       "flag": "FLAG_HIDE_PARENTS_INTRO_IN_HOUSE"
     }
   ],
@@ -80,7 +80,7 @@
       "elevation": 0,
       "var": "VAR_KNIGHT_WAY_STATE",
       "var_value": "1",
-      "script": "PacsoliDelLago_PlayersHouse_EventScript_DadGiftTrigger"
+      "script": "PascoliDelLago_PlayersHouse_EventScript_DadGiftTrigger"
     }
   ],
   "bg_events": []

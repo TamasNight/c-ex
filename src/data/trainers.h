@@ -29474,7 +29474,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 11269
-            .species = SPECIES_ZUBAT,
+            .species = SPECIES_DRATINI,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 11272
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),

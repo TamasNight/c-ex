@@ -54,7 +54,7 @@ PascoliDelLago_PlayersHouse_EventScript_Mom::
     releaseall
     end
 
-PacsoliDelLago_PlayersHouse_EventScript_DadGiftTrigger::
+PascoliDelLago_PlayersHouse_EventScript_DadGiftTrigger::
     applymovement LOCALID_PLAYER, Common_Movement_FaceRight
     waitmovement 0
     goto PascoliDelLago_PlayersHouse_EventScript_DadGift
