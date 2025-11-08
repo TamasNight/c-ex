@@ -147,7 +147,7 @@
         },
         {
           "map": "MAP_ROUTE102",
-          "base_label": "gRoute102",
+          "base_label": "gValleFredda",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [

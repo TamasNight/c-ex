@@ -173,13 +173,13 @@
     },
     {
       "id": "LAYOUT_ROUTE102",
-      "name": "Route102_Layout",
+      "name": "ValleFredda_Layout",
       "width": 56,
       "height": 62,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/Route102/border.bin",
-      "blockdata_filepath": "data/layouts/Route102/map.bin"
+      "border_filepath": "data/layouts/ValleFredda/border.bin",
+      "blockdata_filepath": "data/layouts/ValleFredda/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE103",

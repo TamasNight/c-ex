@@ -352,7 +352,7 @@ Modifies all item ball scripts defined using to original Game Freak method to th
 
 #### [data/scripts/item_ball_scripts.inc](../data/scripts/item_ball_scripts.inc)
 ```diff
-- Route102_EventScript_ItemPotion::
+- ValleFredda_EventScript_ItemPotion::
 -	finditem ITEM_POTION
 + Common_EventScript_FindItem::
 +   callnative GetObjectEventTrainerRangeFromTemplate
@@ -360,7 +360,7 @@ Modifies all item ball scripts defined using to original Game Freak method to th
 	end
 ```
 
-#### [data/maps/Route102/map.json](../data/maps/Route102/map.json)
+#### [data/maps/ValleFredda/map.json](../data/maps/ValleFredda/map.json)
 ```diff
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -372,7 +372,7 @@ Modifies all item ball scripts defined using to original Game Freak method to th
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
 -      "trainer_sight_or_berry_tree_id": "0",
--      "script": "Route102_EventScript_ItemPotion",
+-      "script": "ValleFredda_EventScript_ItemPotion",
 +      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
 +      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_VALLE_FREDDA_POTION"

@@ -1,6 +1,6 @@
 {
   "id": "MAP_ROUTE102",
-  "name": "Route102",
+  "name": "ValleFredda",
   "layout": "LAYOUT_ROUTE102",
   "music": "MUS_ROUTE101",
   "region_map_section": "MAPSEC_ROUTE_102",
@@ -21,6 +21,7 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_SAVERIO_VALLE_FREDDA",
       "graphics_id": "OBJ_EVENT_GFX_KNIGHT_S",
       "x": 17,
       "y": 3,
@@ -30,7 +31,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route102_EventScript_LittleBoy",
+      "script": "NULL",
       "flag": "0"
     },
     {
@@ -43,46 +44,46 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Calvin",
+      "script": "ValleFredda_EventScript_Calvin",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
-      "x": 24,
-      "y": 26,
+      "x": 21,
+      "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route102_EventScript_Rick",
+      "script": "ValleFredda_EventScript_Rick",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 18,
-      "y": 25,
+      "x": 19,
+      "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Tiana",
+      "script": "ValleFredda_EventScript_Tiana",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 28,
-      "y": 19,
+      "x": 18,
+      "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route102_EventScript_Boy",
+      "script": "ValleFredda_EventScript_Boy",
       "flag": "0"
     },
     {
@@ -126,15 +127,15 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
-      "x": 21,
-      "y": 24,
+      "x": 20,
+      "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route102_EventScript_Allen",
+      "script": "ValleFredda_EventScript_Allen",
       "flag": "0"
     },
     {
@@ -151,6 +152,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_RAPIDASH_VALLE_FREDDA",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RAPIDASH)",
       "x": 16,
       "y": 4,
