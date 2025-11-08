@@ -169,7 +169,7 @@ SINGLE_BATTLE_TEST("Red Card does not activate if stolen by a move")
     u32 item;
     bool32 activate;
     PARAMETRIZE { item = ITEM_NONE; activate = FALSE; }
-    PARAMETRIZE { item = ITEM_POTION; activate = TRUE; }
+    PARAMETRIZE { item = ITEM_HEALING_HERBS; activate = TRUE; }
     ASSUME(GetMoveEffect(MOVE_THIEF) == EFFECT_STEAL_ITEM);
 
     GIVEN {
@@ -199,7 +199,7 @@ SINGLE_BATTLE_TEST("Red Card does not activate if stolen by Magician")
     u32 item;
     bool32 activate;
     PARAMETRIZE { item = ITEM_NONE; activate = FALSE; }
-    PARAMETRIZE { item = ITEM_POTION; activate = TRUE; }
+    PARAMETRIZE { item = ITEM_HEALING_HERBS; activate = TRUE; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_RED_CARD); }

@@ -354,10 +354,10 @@ Used when the battler chooses to switch to another Pokémon but not via Switch, 
 
 ### `USE_ITEM`
 `USE_ITEM(battler, itemId, [partyIndex:], [move:])`
-Used when the battler chooses to use an item from the Bag. The item ID (e.g. ITEM_POTION) must be specified, and party index and move slot if applicable, e.g:
+Used when the battler chooses to use an item from the Bag. The item ID (e.g. ITEM_HEALING_HERBS) must be specified, and party index and move slot if applicable, e.g:
 ```
       USE_ITEM(player, ITEM_X_ATTACK);
-      USE_ITEM(player, ITEM_POTION, partyIndex: 0);
+      USE_ITEM(player, ITEM_HEALING_HERBS, partyIndex: 0);
       USE_ITEM(player, ITEM_LEPPA_BERRY, partyIndex: 0, move: MOVE_TACKLE);
 ```
 

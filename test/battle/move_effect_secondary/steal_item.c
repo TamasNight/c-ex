@@ -75,7 +75,7 @@ SINGLE_BATTLE_TEST("Thief and Covet don't steal target's held item if user is ho
     PARAMETRIZE { move = MOVE_THIEF; }
     PARAMETRIZE { move = MOVE_COVET; }
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POTION); }
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_HEALING_HERBS); }
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_HYPER_POTION); }
     } WHEN {
         TURN { MOVE(player, move); }
@@ -84,7 +84,7 @@ SINGLE_BATTLE_TEST("Thief and Covet don't steal target's held item if user is ho
         HP_BAR(opponent);
         NOT ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_ITEM_STEAL, opponent);
     } THEN {
-        EXPECT_EQ(player->item, ITEM_POTION);
+        EXPECT_EQ(player->item, ITEM_HEALING_HERBS);
         EXPECT_EQ(opponent->item, ITEM_HYPER_POTION);
     }
 }

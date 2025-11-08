@@ -11,7 +11,7 @@ SINGLE_BATTLE_TEST("Corrosive Gas destroys the target's item or fails if the tar
     u16 item;
 
     PARAMETRIZE {item = ITEM_NONE; }
-    PARAMETRIZE {item = ITEM_POTION; }
+    PARAMETRIZE {item = ITEM_HEALING_HERBS; }
 
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);
@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Corrosive Gas destroys the target's item or fails if the tar
         TURN { MOVE(player, MOVE_CORROSIVE_GAS); }
     } SCENE {
         MESSAGE("Wobbuffet used Corrosive Gas!");
-        if (item == ITEM_POTION) {
+        if (item == ITEM_HEALING_HERBS) {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_CORROSIVE_GAS, player);
             MESSAGE("Wobbuffet corroded the opposing Wobbuffet's Potion!");
         }

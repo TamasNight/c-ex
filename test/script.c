@@ -40,10 +40,10 @@ TEST("Script_HasNoEffect variables")
         specialvar VAR_RESULT, GetPlayerFacingDirection;
         getplayerxy VAR_0x8000, VAR_0x8001;
         getpartysize;
-        checkitemspace ITEM_POTION, 1;
-        checkitem ITEM_POTION, 1;
-        checkitemtype ITEM_POTION;
-        checkpcitem ITEM_POTION, 1;
+        checkitemspace ITEM_HEALING_HERBS, 1;
+        checkitem ITEM_HEALING_HERBS, 1;
+        checkitemtype ITEM_HEALING_HERBS;
+        checkpcitem ITEM_HEALING_HERBS, 1;
         checkdecorspace DECOR_SNORLAX_DOLL;
         checkdecor DECOR_SNORLAX_DOLL;
         checkpartymove MOVE_CELEBRATE;

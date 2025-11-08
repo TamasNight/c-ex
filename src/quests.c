@@ -33,7 +33,7 @@
 #include "constants/event_objects.h"
 #include "event_object_movement.h"
 #include "pokemon_icon.h"
-
+#include "pokemon.h"
 #include "random.h"
 
 #define tPageItems      data[4]
@@ -219,6 +219,8 @@ static const u8 sText_QuestNumberDisplay[] =
       _("{STR_VAR_1}/{STR_VAR_2}");
 static const u8 sText_Unk[] = _("??????");
 static const u8 sText_Active[] = _("Active");
+static const u8 sText_ActiveOpt[] = _("Optional");
+static const u8 sText_Fail[] = _("Fail");
 static const u8 sText_Reward[] = _("Reward");
 static const u8 sText_Complete[] = _("Done");
 static const u8 sText_ShowLocation[] =
@@ -240,23 +242,36 @@ static const u8 sText_AZ[] = _(" A-Z");
 static const u8 sText_None[] = _(" ");
 
 static const u8 *sText_SubQuestDisplay_1(void) {
-	u16 *questState = GetVarPointer(VAR_PASCOLI_DEL_LAGO_INTRO_STATE);
-	return *questState == 1 ? sText_Active : sText_Complete;
+	u16 questState = VarGet(VAR_PASCOLI_DEL_LAGO_INTRO_STATE);
+	return questState == 1 ? sText_Active : sText_Complete;
 };
 
 static const u8 *sText_SubQuestDisplay_2(void) {
-	u16 *questState = GetVarPointer(VAR_PASCOLI_DEL_LAGO_INTRO_STATE);
-	return *questState == 2 ? sText_Active : sText_Complete;
+	u16 questState = VarGet(VAR_PASCOLI_DEL_LAGO_INTRO_STATE);
+	return questState == 2 ? sText_Active : sText_Complete;
 };
 
 static const u8 *sText_SubQuestDisplay_3(void) {
-	u16 *questState = GetVarPointer(VAR_PASCOLI_DEL_LAGO_INTRO_STATE);
-	return *questState == 4 ? sText_Active : sText_Complete;
+	u16 questState = VarGet(VAR_PASCOLI_DEL_LAGO_INTRO_STATE);
+	return questState == 4 ? sText_Active : sText_Complete;
 };
 
 static const u8 *sText_SubQuestDisplay_4(void) {
-	u16 *questState = GetVarPointer(VAR_KNIGHT_WAY_STATE);
-	return *questState < 3 ? sText_Active : sText_Complete;
+	u16 questState = VarGet(VAR_KNIGHT_WAY_STATE);
+	return questState < 3 ? sText_Active : sText_Complete;
+};
+
+static const u8 *sText_SubQuestDisplay_5(void) {
+	u16 questState = VarGet(VAR_KNIGHT_WAY_STATE);
+	u8 count = CalculatePartyCount(gPlayerParty);
+	if (count >= 2 && questState < 5) return sText_Reward;
+	bool8 doneQuest = FlagGet(FLAG_SUBQUEST_KNIGHT_WAY_REWARD);
+	return questState < 5 ? sText_ActiveOpt : doneQuest == TRUE ? sText_Caught : sText_Fail;
+};
+
+static const u8 *sText_SubQuestDisplay_6(void) {
+	u16 questState = VarGet(VAR_KNIGHT_WAY_STATE);
+	return questState < 5 ? sText_Active : sText_Complete;
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -311,23 +326,23 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	),
 
 	sub_quest(
-			4,
+            SUB_QUEST_KNIGHT_WAY_2,
 			gText_SubQuest1_Name5,
 			gText_SubQuest1_Desc5,
-			gText_SideQuestMap5,
-			OBJ_EVENT_GFX_WALLY,
-			OBJECT,
-			&sText_SubQuestDisplay_1
+			gText_SideQuestMap3,
+			ITEM_BOND,
+			ITEM,
+			&sText_SubQuestDisplay_5
 	),
 
 	sub_quest(
-			5,
+			SUB_QUEST_KNIGHT_WAY_3,
 			gText_SubQuest1_Name6,
 			gText_SubQuest1_Desc6,
-			gText_SideQuestMap6,
-			OBJ_EVENT_GFX_WALLY,
+			gText_SideQuestMap4,
+			OBJ_EVENT_GFX_KNIGHT_S,
 			OBJECT,
-			&sText_SubQuestDisplay_1
+			&sText_SubQuestDisplay_6
 	),
 
 	sub_quest(

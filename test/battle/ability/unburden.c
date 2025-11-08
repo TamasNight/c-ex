@@ -27,7 +27,7 @@ SINGLE_BATTLE_TEST("Unburden doubles speed once user gets their item knocked off
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
-        PLAYER(SPECIES_DRIFBLIM) { Ability(ABILITY_UNBURDEN); Item(ITEM_POTION); Speed(5); }
+        PLAYER(SPECIES_DRIFBLIM) { Ability(ABILITY_UNBURDEN); Item(ITEM_HEALING_HERBS); Speed(5); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(7); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_KNOCK_OFF); }
@@ -47,7 +47,7 @@ SINGLE_BATTLE_TEST("Unburden doesn't activate when item is consumed in Neutraliz
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_U_TURN) == EFFECT_HIT_ESCAPE);
         ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
-        PLAYER(SPECIES_DRIFBLIM) { Ability(ABILITY_UNBURDEN); Item(ITEM_POTION); Speed(5); }
+        PLAYER(SPECIES_DRIFBLIM) { Ability(ABILITY_UNBURDEN); Item(ITEM_HEALING_HERBS); Speed(5); }
         OPPONENT(SPECIES_WEEZING) { Speed(7); Ability(ABILITY_NEUTRALIZING_GAS); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(7); }
     } WHEN {
@@ -74,7 +74,7 @@ SINGLE_BATTLE_TEST("Unburden doubling speed effect is ignored by Neutralizing Ga
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_U_TURN) == EFFECT_HIT_ESCAPE);
         ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
-        PLAYER(SPECIES_DRIFBLIM) { Ability(ABILITY_UNBURDEN); Item(ITEM_POTION); Speed(5); }
+        PLAYER(SPECIES_DRIFBLIM) { Ability(ABILITY_UNBURDEN); Item(ITEM_HEALING_HERBS); Speed(5); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(7); }
         OPPONENT(SPECIES_WEEZING) { Speed(7); Ability(ABILITY_NEUTRALIZING_GAS); }
     } WHEN {

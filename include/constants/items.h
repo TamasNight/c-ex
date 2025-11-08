@@ -4,7 +4,7 @@
 #define ITEM_NONE 0
 
 // Poké Balls
-#define ITEM_POKE_BALL 1
+#define ITEM_BOND 1
 #define ITEM_GREAT_BALL 2
 #define ITEM_ULTRA_BALL 3
 #define ITEM_MASTER_BALL 4
@@ -33,7 +33,7 @@
 #define ITEM_CHERISH_BALL 27
 
 // Medicine
-#define ITEM_POTION 28
+#define ITEM_HEALING_HERBS 28
 #define ITEM_SUPER_POTION 29
 #define ITEM_HYPER_POTION 30
 #define ITEM_MAX_POTION 31

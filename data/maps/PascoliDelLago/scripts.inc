@@ -191,6 +191,15 @@ PascoliDelLago_EventScript_ReceivedMon::
     warp MAP_PASCOLI_DEL_LAGO_BRENDANS_HOUSE_1F, 3, 3
     end
 
+PascoliDelLago_EventScript_Father::
+    msgbox PascoliDelLago_Text_Father, MSGBOX_NPC
+    end
+
+PascoliDelLago_EventScript_Mom::
+    msgbox PascoliDelLago_Text_Mom, MSGBOX_NPC
+    end
+
+
 PascoliDelLago_Movement_FatherFinal:
     walk_down
     walk_right
@@ -413,8 +422,16 @@ PascoliDelLago_Movement_PlayerGoingHome::
     step_end
 
 PascoliDelLago_Text_ReceivedStarter:
-	.string "{PLAYER} received the {STR_VAR_1}\n"
-	.string "from Saverio!$"
+	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02} received {COLOR}{GREEN}{STR_VAR_1}{COLOR}{02}\n"
+	.string "from {COLOR}{BLUE}Saverio{COLOR}{02}!$"
 
+PascoliDelLago_Text_Father:
+	.string "{COLOR}{GREEN}Father{COLOR}{02}: Running the farm without you\n"
+	.string "isn't the same, but if the duke needs\l"
+	.string "you, we have no choice.$"
+
+PascoliDelLago_Text_Mom:
+    .string "{COLOR}{RED}Mom{COLOR}{02}: I'm so happy to see you, please\n"
+    .string "don't leave us again.$"
 
 

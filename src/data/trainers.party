@@ -46,7 +46,7 @@ Optional fields for Pokemon:
           (Order does not matter)
     - EVs (252 HP / 128 Spe / 48 Def, defaults to all 0, is not capped at 512 total)
           (Order does not matter)
-    - Ball (Poke Ball or ITEM_POKE_BALL, defaults to Poke Ball)
+    - Ball (Poke Ball or ITEM_BOND, defaults to Poke Ball)
     - Happiness (Number between 1 and 255)
     - Nature (Rash or NATURE_RASH, defaults to Hardy)
     - Shiny (Yes/No, defaults to No)
@@ -273,7 +273,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ED ===
 Name: ED
 Class: Collector
-Pic: Collector
+Pic: Saverio
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -508,8 +508,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FREDRICK ===
 Name: FREDRICK
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -2533,8 +2533,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MOLLIE ===
 Name: MOLLIE
-Class: Expert
-Pic: Expert F
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -4794,7 +4794,7 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Potion / Potion
+Items: Healing Herbs / Healing Herbs
 Double Battle: No
 AI: Basic Trainer
 
@@ -5759,8 +5759,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_TIMOTHY_1 ===
 Name: TIMOTHY
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -5772,8 +5772,8 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_TIMOTHY_2 ===
 Name: TIMOTHY
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -5789,8 +5789,8 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 === TRAINER_TIMOTHY_3 ===
 Name: TIMOTHY
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -5806,8 +5806,8 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_TIMOTHY_4 ===
 Name: TIMOTHY
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -5823,8 +5823,8 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 
 === TRAINER_TIMOTHY_5 ===
 Name: TIMOTHY
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -5841,7 +5841,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 === TRAINER_VICKY ===
 Name: VICKY
 Class: Winstrate
-Pic: Expert F
+Pic: Knight F
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -5857,8 +5857,8 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_SHELBY_1 ===
 Name: SHELBY
-Class: Expert
-Pic: Expert F
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -5874,8 +5874,8 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_SHELBY_2 ===
 Name: SHELBY
-Class: Expert
-Pic: Expert F
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -5891,8 +5891,8 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 === TRAINER_SHELBY_3 ===
 Name: SHELBY
-Class: Expert
-Pic: Expert F
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -5908,8 +5908,8 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 
 === TRAINER_SHELBY_4 ===
 Name: SHELBY
-Class: Expert
-Pic: Expert F
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -5925,8 +5925,8 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 
 === TRAINER_SHELBY_5 ===
 Name: SHELBY
-Class: Expert
-Pic: Expert F
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Intense
 Double Battle: No
@@ -5940,8 +5940,8 @@ Hariyama
 Level: 39
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
-=== TRAINER_CALVIN_1 ===
-Name: CALVIN
+=== TRAINER_GUIDO_1 ===
+Name: Guido
 Class: Farmer
 Pic: Farmer M
 Gender: Male
@@ -5949,16 +5949,15 @@ Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Shiftry
-Level: 50
-Class: 3
-IVs: 12 HP / 12 Atk / 12 Def / 28 SpA / 12 SpD / 12 Spe
-- Giga Drain
-- Synthesis
-- Double Team
-- Swagger
+Mudbray
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Zigzagoon
+Wurmple
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Mareep
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9240,8 +9239,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_AURON ===
 Name: AURON
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -9322,8 +9321,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CONOR ===
 Name: CONOR
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -9340,7 +9339,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 === TRAINER_EDWIN_1 ===
 Name: EDWIN
 Class: Collector
-Pic: Collector
+Pic: Saverio
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -9357,7 +9356,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_HECTOR ===
 Name: HECTOR
 Class: Collector
-Pic: Collector
+Pic: Saverio
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -9395,7 +9394,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_EDWIN_2 ===
 Name: EDWIN
 Class: Collector
-Pic: Collector
+Pic: Saverio
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -9412,7 +9411,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_EDWIN_3 ===
 Name: EDWIN
 Class: Collector
-Pic: Collector
+Pic: Saverio
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -9429,7 +9428,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_EDWIN_4 ===
 Name: EDWIN
 Class: Collector
-Pic: Collector
+Pic: Saverio
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -9446,7 +9445,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_EDWIN_5 ===
 Name: EDWIN
 Class: Collector
-Pic: Collector
+Pic: Saverio
 Gender: Male
 Music: Suspicious
 Double Battle: No
@@ -10888,8 +10887,8 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_PAXTON ===
 Name: PAXTON
-Class: Expert
-Pic: Expert M
+Class: Knight
+Pic: Knight M
 Gender: Male
 Music: Intense
 Double Battle: No
@@ -11258,21 +11257,23 @@ Wailmer
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_RICK ===
-Name: RICK
-Class: Bug Catcher
-Pic: Bug Catcher
+=== TRAINER_SAVERIO_1 ===
+Name: Saverio
+Class: Knight
+Pic: Saverio
 Gender: Male
 Music: Male
-Double Battle: No
-AI: Check Bad Move
+Double Battle: Yes
+AI: Check Viability
 
-Wurmple
+Zubat
 Level: 4
+Class: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Wurmple
+Hatenna
 Level: 4
+Class: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYLE ===
@@ -13935,8 +13936,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_MAKAYLA ===
 Name: MAKAYLA
-Class: Expert
-Pic: Expert F
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Intense
 Items: Hyper Potion

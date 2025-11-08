@@ -31,12 +31,12 @@ SINGLE_BATTLE_TEST("Embargo blocks an affected Pokémon's trainer from using ite
     // in the action of an NPC using an item in battle.
     KNOWN_FAILING;
     GIVEN {
-        ASSUME(gItemsInfo[ITEM_POTION].battleUsage == EFFECT_ITEM_RESTORE_HP);
+        ASSUME(gItemsInfo[ITEM_HEALING_HERBS].battleUsage == EFFECT_ITEM_RESTORE_HP);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
     } WHEN {
         TURN { MOVE(player, MOVE_EMBARGO); }
-        TURN { USE_ITEM(opponent, ITEM_POTION, partyIndex: 0); }
+        TURN { USE_ITEM(opponent, ITEM_HEALING_HERBS, partyIndex: 0); }
     } SCENE {
         MESSAGE("Wobbuffet used Embargo!");
         MESSAGE("The opposing Wobbuffet can't use items anymore!");

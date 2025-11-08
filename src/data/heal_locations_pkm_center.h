@@ -67,8 +67,8 @@ static const struct HealLocation sHealLocationsPokemonCenter[NUM_HEAL_LOCATIONS 
     {
         .mapGroup = MAP_GROUP(MAP_PASCOLI_DEL_LAGO_BRENDANS_HOUSE_1F),
         .mapNum = MAP_NUM(MAP_PASCOLI_DEL_LAGO_BRENDANS_HOUSE_1F),
-        .x = 2,
-        .y = 7,
+        .x = 5,
+        .y = 6,
     },
     [HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE - 1] =
     {

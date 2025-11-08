@@ -23,17 +23,26 @@ PascoliDelLago_PlayersHouse_EventScript_WakeUp::
 	closemessage
 	setvar VAR_PASCOLI_DEL_LAGO_INTRO_STATE 1
 	startquest QUEST_START_JOURNEY
-    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_START_JOURNEY SUB_QUEST_START_JOURNEY_1
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_START_JOURNEY, SUB_QUEST_START_JOURNEY_1
+    setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE
 	releaseall
 	end
 
 PascoliDelLago_PlayersHouse_EventScript_Grandma::
-    goto_if_ge VAR_KNIGHT_WAY_STATE, 1, PascoliDelLago_PlayersHouse_EventScript_RememberHowYouAre
+    goto_if_ge VAR_KNIGHT_WAY_STATE, 2, PascoliDelLago_PlayersHouse_EventScript_Rest
+    goto_if_eq VAR_KNIGHT_WAY_STATE, 1, PascoliDelLago_PlayersHouse_EventScript_RememberHowYouAre
     msgbox PascoliDelLago_PlayersHouse_Text_StillHere, MSGBOX_NPC
     end
 
+PascoliDelLago_PlayersHouse_EventScript_Rest::
+    setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE
+    msgbox PascoliDelLago_PlayersHouse_Text_Rest, MSGBOX_NPC
+    call Common_EventScript_OutOfCenterPartyHeal
+    return
+
 PascoliDelLago_PlayersHouse_EventScript_RememberHowYouAre::
     msgbox PascoliDelLago_PlayersHouse_Text_RememberHowYouAre, MSGBOX_NPC
+    setflag FLAG_TEMP_2
     end
 
 PascoliDelLago_PlayersHouse_EventScript_Mom::
@@ -41,6 +50,7 @@ PascoliDelLago_PlayersHouse_EventScript_Mom::
     msgbox PascoliDelLago_PlayersHouse_Text_MomCry, MSGBOX_DEFAULT
     delay 8
     msgbox PascoliDelLago_PlayersHouse_Text_MomGoodbye, MSGBOX_NPC
+    setflag FLAG_TEMP_3
     releaseall
     end
 
@@ -51,11 +61,13 @@ PacsoliDelLago_PlayersHouse_EventScript_DadGiftTrigger::
 
 PascoliDelLago_PlayersHouse_EventScript_DadGift::
     lock
+    goto_if_unset FLAG_TEMP_2, PascoliDelLago_PlayersHouse_SpeakToMumAndGrandma
+    goto_if_unset FLAG_TEMP_3, PascoliDelLago_PlayersHouse_SpeakToMumAndGrandma
     goto_if_eq VAR_KNIGHT_WAY_STATE, 2, PascoliDelLago_PlayersHouse_EventScript_DadGiftEnd
     applymovement LOCALID_FATHER_HOME, Common_Movement_FacePlayer
     waitmovement 0
     msgbox PascoliDelLago_PlayersHouse_Text_DadGift, MSGBOX_DEFAULT
-    giveitem ITEM_POTION, 5
+    giveitem ITEM_HEALING_HERBS, 5
     setvar VAR_KNIGHT_WAY_STATE 2
     clearflag FLAG_HIDE_MILTANK_FROM_FIELD
     delay 8
@@ -66,7 +78,14 @@ PascoliDelLago_PlayersHouse_EventScript_DadGiftEnd::
     applymovement LOCALID_FATHER_HOME, Common_Movement_FacePlayer
     waitmovement 0
     msgbox PascoliDelLago_PlayersHouse_Text_DadGiftEnd, MSGBOX_DEFAULT
+    setflag FLAG_HIDE_PARENTS_INTRO_IN_HOUSE
+    clearflag FLAG_HIDE_PARENTS_DURING_INTRO_FIELD
     release
+    end
+
+PascoliDelLago_PlayersHouse_SpeakToMumAndGrandma::
+    msgbox PascoliDelLago_PlayersHouse_Text_SpeakToMumAndGrandma, MSGBOX_DEFAULT
+    releaseall
     end
 
 PascoliDelLago_PlayersHouse_Text_DadGift:
@@ -276,3 +295,14 @@ PascoliDelLago_PlayersHouse_Text_RememberHowYouAre:
 	.string "Promise me you’ll remember - no matter\n"
 	.string "what you see or do, don’t let the world\l"
 	.string "turn your heart cold.$"
+
+PascoliDelLago_PlayersHouse_Text_SpeakToMumAndGrandma:
+    .string "{COLOR}{GREEN}Father{COLOR}{02}: You really want to leave\n"
+	.string "without saying goodbye to everyone...\l"
+	.string "I don't think so.$"
+
+PascoliDelLago_PlayersHouse_Text_Rest:
+    .string "{COLOR}{RED}Grandma{COLOR}{DARK_GRAY}: I'm so glad to see you're safe.\n"
+    .string "Come here and get some rest.$"
+
+

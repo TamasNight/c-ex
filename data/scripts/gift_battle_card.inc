@@ -9,7 +9,7 @@ MysteryGiftScript_BattleCard::
 	vmessage sText_MysteryGiftBattleCountCard_WonPrize
 	waitmessage
 	waitbuttonpress
-	giveitem ITEM_POTION
+	giveitem ITEM_HEALING_HERBS
 	release
 	setflag FLAG_MYSTERY_GIFT_DONE
 	end

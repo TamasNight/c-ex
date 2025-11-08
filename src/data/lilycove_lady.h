@@ -370,7 +370,7 @@ static const u16 sFavorLadyAcceptedItems_Roundish[] =
     ITEM_GREPA_BERRY,
     ITEM_MAGOST_BERRY,
     ITEM_WATMEL_BERRY,
-    ITEM_POKE_BALL,
+    ITEM_BOND,
     ITEM_ULTRA_BALL,
     ITEM_NONE
 };
@@ -378,7 +378,7 @@ static const u16 sFavorLadyAcceptedItems_Roundish[] =
 static const u16 sFavorLadyAcceptedItems_Whamish[] =
 {
     ITEM_REVIVAL_HERB,
-    ITEM_POTION,
+    ITEM_HEALING_HERBS,
     ITEM_FRESH_WATER,
     ITEM_SODA_POP,
     ITEM_LEMONADE,

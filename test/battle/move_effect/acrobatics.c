@@ -10,7 +10,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Acrobatics doubles in power if the user has no held item", s16 damage)
 {
     u16 heldItem;
-    PARAMETRIZE { heldItem = ITEM_POTION; }
+    PARAMETRIZE { heldItem = ITEM_HEALING_HERBS; }
     PARAMETRIZE { heldItem = ITEM_NONE; }
     GIVEN {
         PLAYER(SPECIES_WOBBUFFET);

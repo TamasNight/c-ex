@@ -172,12 +172,12 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_StrangeBall,
     },
 
-    [ITEM_POKE_BALL] =
+    [ITEM_BOND] =
     {
-        .name = _("Poké Ball"),
+        .name = _("Legami"),
         .price = 200,
         .description = COMPOUND_STRING(
-            "A tool used for\n"
+            "A magical item for\n"
             "catching wild\n"
             "Pokémon."),
         .pocket = POCKET_POKE_BALLS,
@@ -609,7 +609,7 @@ const struct Item gItemsInfo[] =
 
 // Medicine
 
-    [ITEM_POTION] =
+    [ITEM_HEALING_HERBS] =
     {
         .name = _("Healing herbs"),
         .price = (I_PRICE >= GEN_7) ? 200 : 300,

@@ -114,12 +114,12 @@ Moves all information from `gItemIconTable` to `gItemsInfo`.
 
 #### [src/data/item_icon_table.h](..src/data/item_icon_table.h)
 ```diff
--    [ITEM_POKE_BALL] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
+-    [ITEM_BOND] = {gItemIcon_PokeBall, gItemIconPalette_PokeBall},
 ```
 
 #### [src/data/items.h](..src/data/items.h)
 ```diff
-    [ITEM_POKE_BALL] =
+    [ITEM_BOND] =
     {
         .name = _("Poké Ball"),
         .price = 200,
@@ -353,7 +353,7 @@ Modifies all item ball scripts defined using to original Game Freak method to th
 #### [data/scripts/item_ball_scripts.inc](../data/scripts/item_ball_scripts.inc)
 ```diff
 - ValleFredda_EventScript_ItemPotion::
--	finditem ITEM_POTION
+-	finditem ITEM_HEALING_HERBS
 + Common_EventScript_FindItem::
 +   callnative GetObjectEventTrainerRangeFromTemplate
 +   finditem VAR_RESULT
@@ -373,7 +373,7 @@ Modifies all item ball scripts defined using to original Game Freak method to th
       "trainer_type": "TRAINER_TYPE_NONE",
 -      "trainer_sight_or_berry_tree_id": "0",
 -      "script": "ValleFredda_EventScript_ItemPotion",
-+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
++      "trainer_sight_or_berry_tree_id": "ITEM_HEALING_HERBS",
 +      "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_VALLE_FREDDA_POTION"
     },

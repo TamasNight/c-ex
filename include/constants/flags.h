@@ -45,15 +45,15 @@
 
 #define FLAG_PLAYER_IS_KNIGHT                   0x20
 #define FLAG_HIDE_DAD_FROM_STABLE               0x21
-#define FLAG_HIDE_MILTANK_FROM_FIELD             0x22
+#define FLAG_HIDE_MILTANK_FROM_FIELD            0x22
 #define FLAG_HIDE_MOM_FROM_FIELD                0x23
 #define FLAG_HIDE_HOUNDOUR_FROM_WOOD            0x24
 #define FLAG_HIDE_SCENE_HOUNDOUR_FROM_WOOD      0x25
 #define FLAG_HIDE_TAUROS_FROM_STABLE            0x26
 #define FLAG_HIDE_KNIGHT_FROM_FIELD             0x27
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
+#define FLAG_HIDE_PARENTS_DURING_INTRO_FIELD    0x28
+#define FLAG_SUBQUEST_KNIGHT_WAY_REWARD         0x29
+#define FLAG_HIDE_SAVERIO_AFTER_INTRO           0x2A
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
@@ -806,7 +806,7 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_HOUSE_VIGOROTH_2          0x2F3
 #define FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_TEAM_MAGMA          0x2F4
 #define FLAG_HIDE_LITTLEROOT_TOWN_PLAYERS_BEDROOM_MOM               0x2F5
-#define FLAG_HIDE_PARENTS_INTRO_IN_HOUSE                0x2F6
+#define FLAG_HIDE_PARENTS_INTRO_IN_HOUSE                            0x2F6
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM                    0x2F7
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM      0x2F8
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK              0x2F9

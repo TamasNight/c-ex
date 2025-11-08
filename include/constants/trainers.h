@@ -20,11 +20,11 @@
 #define TRAINER_PIC_FARMER_F               2
 #define TRAINER_PIC_COOLTRAINER_M          3
 #define TRAINER_PIC_BIRD_KEEPER            4
-#define TRAINER_PIC_COLLECTOR              5
+#define TRAINER_PIC_SAVERIO              5
 #define TRAINER_PIC_AQUA_GRUNT_F           6
 #define TRAINER_PIC_SWIMMER_M              7
 #define TRAINER_PIC_MAGMA_GRUNT_M          8
-#define TRAINER_PIC_EXPERT_M               9
+#define TRAINER_PIC_KNIGHT_M               9
 #define TRAINER_PIC_AQUA_ADMIN_M          10
 #define TRAINER_PIC_BLACK_BELT            11
 #define TRAINER_PIC_AQUA_ADMIN_F          12
@@ -39,7 +39,7 @@
 #define TRAINER_PIC_LADY                  21
 #define TRAINER_PIC_BEAUTY                22
 #define TRAINER_PIC_RICH_BOY              23
-#define TRAINER_PIC_EXPERT_F              24
+#define TRAINER_PIC_KNIGHT_F              24
 #define TRAINER_PIC_POKEMANIAC            25
 #define TRAINER_PIC_MAGMA_GRUNT_F         26
 #define TRAINER_PIC_GUITARIST             27
@@ -295,7 +295,7 @@
 #define TRAINER_CLASS_COLLECTOR      0x7
 #define TRAINER_CLASS_SWIMMER_M      0x8
 #define TRAINER_CLASS_TEAM_MAGMA     0x9
-#define TRAINER_CLASS_EXPERT         0xa
+#define TRAINER_CLASS_KNIGHT         0xa
 #define TRAINER_CLASS_AQUA_ADMIN     0xb
 #define TRAINER_CLASS_BLACK_BELT     0xc
 #define TRAINER_CLASS_AQUA_LEADER    0xd

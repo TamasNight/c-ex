@@ -620,7 +620,7 @@ EventScript_AfterWhiteOutMomHeal::
 	waitmovement 0
 	msgbox gText_HadQuiteAnExperienceTakeRest
 	call Common_EventScript_OutOfCenterPartyHeal
-	msgbox gText_MomExplainHPGetPotions
+	@ msgbox gText_MomExplainHPGetPotions
 	fadedefaultbgm
 	releaseall
 	end
@@ -904,7 +904,7 @@ gText_SandstormIsVicious::
 	.string "It's impossible to keep going.$"
 
 gText_SelectWithoutRegisteredItem::
-	.string "An item in the BAG can be\n"
+	.string "An item in the Bag can be\n"
 	.string "registered to SELECT for easy use.$"
 
 gText_PokemonTrainerSchoolEmail::
@@ -917,14 +917,14 @@ gText_PokemonTrainerSchoolEmail::
 	.string "… … … … … …$"
 
 gText_PlayerHouseBootPC::
-	.string "{PLAYER} booted up the PC.$"
+	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02} open the Chest.$"
 
 gText_PokeblockLinkCanceled::
 	.string "The link was canceled.$"
 
 gText_UnusedNicknameReceivedPokemon::
 	.string "Want to give a nickname to\n"
-	.string "the {STR_VAR_2} you received?$"
+	.string "the {COLOR}{GREEN}{STR_VAR_2}{COLOR}{02} you received?$"
 
 gText_PlayerWhitedOut::
 	.string "{PLAYER} is out of usable\n"
@@ -950,7 +950,7 @@ gText_MonsHealed::
 	.string "We hope you excel!$"
 
 gText_HadQuiteAnExperienceTakeRest::
-	.string "MOM: {PLAYER}!\n"
+	.string "{COLOR}{RED}Grandma{COLOR}{02}: {COLOR}{BLUE}{PLAYER}{COLOR}{02}!\n"
 	.string "Welcome home.\p"
 	.string "It sounds like you had quite\n"
 	.string "an experience.\p"
@@ -1031,12 +1031,12 @@ gText_ThankYouForAccessingMysteryGift::
 	.string "MYSTERY GIFT System.$"
 
 gText_PlayerFoundOneTMHM::
-	.string "{PLAYER} found one {STR_VAR_1}\n"
-	.string "{STR_VAR_2}!$"
+	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02} found one {COLOR}{BLUE}{STR_VAR_1}\n"
+	.string "{STR_VAR_2}{COLOR}{02}!$"
 
 gText_PlayerFoundTMHMs::
-	.string "{PLAYER} found {STR_VAR_3} {STR_VAR_1}\n"
-	.string "{STR_VAR_2}!$"
+	.string "{COLOR}{BLUE}{PLAYER}{COLOR}{02} found {STR_VAR_3} {COLOR}{BLUE}{STR_VAR_1}\n"
+	.string "{STR_VAR_2}{COLOR}{02}!$"
 
 gText_Sudowoodo_Attacked::
 	.string "The weird tree doesn't like the\n"
@@ -1044,7 +1044,7 @@ gText_Sudowoodo_Attacked::
 	.string "The weird tree attacked!$"
 
 gText_LegendaryFlewAway::
-	.string "The {STR_VAR_1} flew away!$"
+	.string "The {COLOR}{GREEN}{STR_VAR_1}{COLOR}{02} flew away!$"
 
 	.include "data/text/pc_transfer.inc"
 	.include "data/text/questionnaire.inc"

@@ -1,66 +1,77 @@
 ValleFredda_MapScripts::
 	.byte 0
 
-ValleFredda_EventScript_LittleBoy::
-	msgbox ValleFredda_Text_ImNotVeryTall, MSGBOX_NPC
+ValleFredda_EventScript_PlayerPositioningLeft::
+    lockall
+	applymovement LOCALID_PLAYER, ValleFredda_Movement_PlayerPositioningLeft
+	goto ValleFredda_EventScript_Saverio
+
+ValleFredda_EventScript_PlayerPositioningLeft2::
+    lockall
+	applymovement LOCALID_PLAYER, ValleFredda_Movement_PlayerPositioningLeft2
+	goto ValleFredda_EventScript_Saverio
+
+ValleFredda_EventScript_PlayerPositioningRight::
+    lockall
+	applymovement LOCALID_PLAYER, ValleFredda_Movement_PlayerPositioningRight
+	goto ValleFredda_EventScript_Saverio
+
+ValleFredda_EventScript_PlayerPositioningCenter::
+    lockall
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown4
+	goto ValleFredda_EventScript_Saverio
+
+ValleFredda_EventScript_Saverio::
+    waitmovement 0
+	msgbox ValleFredda_Text_SaverioIntro, MSGBOX_DEFAULT
+	msgbox ValleFredda_Text_PlayerIntro, MSGBOX_DEFAULT
+	msgbox ValleFredda_Text_SaverioBeforeGiveBond, MSGBOX_DEFAULT
+	closemessage
+	delay 16
+	giveitem ITEM_BOND, 5
+	msgbox ValleFredda_Text_SaverioExplainsBond, MSGBOX_DEFAULT
+	closemessage
+    delay 16
+	msgbox ValleFredda_Text_FirstLesson, MSGBOX_DEFAULT
+	setflag B_FLAG_NO_WHITEOUT
+	trainerbattle_no_intro TRAINER_SAVERIO_1, ValleFredda_Text_SaverioDefeated
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_WON, ValleFredda_EventScript_SaverioLessonEnd
+	msgbox ValleFredda_Text_SaverioPostBattlePlayerLost, MSGBOX_DEFAULT
+	goto ValleFredda_EventScript_SaverioLessonEnd
+
+ValleFredda_EventScript_SaverioLessonEnd::
+    msgbox ValleFredda_Text_SaverioHealingParty, MSGBOX_DEFAULT
+    closemessage
+    call Common_EventScript_OutOfCenterPartyHeal
+    msgbox ValleFredda_Text_SaverioNextQuest, MSGBOX_DEFAULT
+    closemessage
+    delay 16
+    applymovement LOCALID_SAVERIO_VALLE_FREDDA, Common_Movement_WalkDown2
+    waitmovement 0
+    applymovement LOCALID_RAPIDASH_VALLE_FREDDA, Common_Movement_WalkDown6
+    applymovement LOCALID_SAVERIO_VALLE_FREDDA, Common_Movement_WalkDown6
+    waitmovement 0
+    setvar VAR_KNIGHT_WAY_STATE, 3
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY SUB_QUEST_KNIGHT_WAY_2
+    subquestmenu QUEST_MENU_COMPLETE_QUEST QUEST_KNIGHT_WAY SUB_QUEST_KNIGHT_WAY_3
+    updatequestmsg QUEST_KNIGHT_WAY
+    removeobject LOCALID_SAVERIO_VALLE_FREDDA
+    removeobject LOCALID_RAPIDASH_VALLE_FREDDA
 	end
 
-ValleFredda_EventScript_RouteSignOldale::
-	msgbox ValleFredda_Text_RouteSignOldale, MSGBOX_SIGN
-	end
-
-ValleFredda_EventScript_RouteSignPetalburg::
-	msgbox ValleFredda_Text_RouteSignPetalburg, MSGBOX_SIGN
+ValleFredda_EventScript_RouteSign::
+	msgbox ValleFredda_Text_RouteSign, MSGBOX_SIGN
 	end
 
 ValleFredda_EventScript_Boy::
 	msgbox ValleFredda_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
 	end
 
-ValleFredda_EventScript_Calvin::
-	trainerbattle_single TRAINER_CALVIN_1, ValleFredda_Text_CalvinIntro, ValleFredda_Text_CalvinDefeated, ValleFredda_EventScript_CalvinRegisterMatchCallAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, ValleFredda_EventScript_CalvinRematch
-	setvar VAR_0x8004, TRAINER_CALVIN_1
-	specialvar VAR_RESULT, IsTrainerRegistered
-	goto_if_eq VAR_RESULT, FALSE, ValleFredda_EventScript_CalvinTryRegister
-	msgbox ValleFredda_Text_CalvinPostBattle, MSGBOX_DEFAULT
+ValleFredda_EventScript_Guido::
+	trainerbattle_single TRAINER_GUIDO_1, ValleFredda_Text_GuidoIntro, ValleFredda_Text_GuidoDefeated
+	msgbox ValleFredda_Text_GuidoPostBattle, MSGBOX_NPC
 	release
-	end
-
-ValleFredda_EventScript_CalvinRegisterMatchCallAfterBattle::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	goto_if_set FLAG_HAS_MATCH_CALL, ValleFredda_EventScript_CalvinRegisterMatchCall
-	release
-	end
-
-ValleFredda_EventScript_CalvinRegisterMatchCall::
-	msgbox ValleFredda_Text_CalvinRegisterShort, MSGBOX_DEFAULT
-	register_matchcall TRAINER_CALVIN_1
-	release
-	end
-
-ValleFredda_EventScript_CalvinTryRegister::
-	goto_if_set FLAG_HAS_MATCH_CALL, ValleFredda_EventScript_CalvinRegister
-	msgbox ValleFredda_Text_CalvinPostBattle, MSGBOX_DEFAULT
-	release
-	end
-
-ValleFredda_EventScript_CalvinRegister::
-	msgbox ValleFredda_Text_CalvinRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_CALVIN_1
-	release
-	end
-
-ValleFredda_EventScript_CalvinRematch::
-	trainerbattle_rematch TRAINER_CALVIN_1, ValleFredda_Text_CalvinRematchIntro, ValleFredda_Text_CalvinRematchDefeated
-	msgbox ValleFredda_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-ValleFredda_EventScript_Rick::
-	trainerbattle_single TRAINER_RICK, ValleFredda_Text_RickIntro, ValleFredda_Text_RickDefeated
-	msgbox ValleFredda_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 ValleFredda_EventScript_Tiana::
@@ -89,21 +100,83 @@ ValleFredda_Text_LetsGoBack:
 	.string "{PLAYER}, thank you!\n"
 	.string "Let's go back to the GYM!$"
 
-ValleFredda_Text_ImNotVeryTall:
-	.string "I'm…not very tall, so I sink right\n"
-	.string "into tall grass.\p"
-	.string "The grass goes up my nose and…\n"
-	.string "Fwafwafwafwafwa…\p"
-	.string "Fwatchoo!$"
-
 ValleFredda_Text_CatchWholeBunchOfPokemon:
 	.string "I'm going to catch a whole bunch of\n"
 	.string "POKéMON!$"
 
-ValleFredda_Text_RouteSignOldale:
-	.string "ROUTE 102\n"
-	.string "{RIGHT_ARROW} OLDALE TOWN$"
+ValleFredda_Text_RouteSign:
+	.string "Valle Fredda\n"
+	.string "{DOWN_ARROW} Locanda del Santo\l"
+	.string "{DOWN_ARROW} Valle di Pretoria$"
 
-ValleFredda_Text_RouteSignPetalburg:
-	.string "ROUTE 102\n"
-	.string "{LEFT_ARROW} PETALBURG CITY$"
+ValleFredda_Text_SaverioIntro:
+    .string "{COLOR}{BLUE}Saverio{COLOR}{02}: Before we go further, you’ll\n"
+	.string "need to learn how to defend yourself.\p"
+	.string "The wilds of Iria can be dangerous, even\n"
+	.string "for those who think they are ready.$"
+
+ValleFredda_Text_PlayerIntro:
+    .string "{COLOR}{BLUE}{PLAYER}{COLOR}{02}:I'll be ready, teach me!$"
+
+ValleFredda_Text_SaverioBeforeGiveBond:
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: First, you need to know how to\n"
+	.string "find new companions. Here, take these.$"
+
+ValleFredda_Text_SaverioExplainsBond:
+    .string "{COLOR}{BLUE}Saverio{COLOR}{02}: They’re called {COLOR}{RED}Legami{COLOR}{02}, magical\n"
+	.string "items empowered by runes of loyalty.\l"
+	.string "Use them to bind Pokémon to you, making\l"
+	.string "them your allies.$"
+
+ValleFredda_Text_FirstLesson:
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: Now let's move on to the most\n"
+	.string "important matters: during the journey,\l"
+	.string "we may encounter bandits and other\l"
+	.string "threats, so you must be prepared and\l"
+	.string "capable of fighting.\p"
+    .string "Let's start right away with the first\n"
+	.string "lesson: each Pokémon has a {COLOR}{GREEN}class\l"
+	.string "ability{COLOR}{02}. Learn how to make the most of\l"
+	.string "it to dominate the battlefield.$"
+
+ValleFredda_Text_SaverioHealingParty:
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: Let me heal your Pokémon.$"
+
+ValleFredda_Text_SaverioNextQuest:
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: I’ll be waiting for you at the\n"
+	.string "tavern down in the valley.\p"
+	.string "Catch something strong on your way...\n"
+	.string "the road to Fort Giove is long and\l"
+	.string "unforgiving.$"
+
+
+ValleFredda_Movement_PlayerPositioningLeft:
+    walk_left
+    walk_left
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+
+ValleFredda_Movement_PlayerPositioningLeft2:
+    walk_left
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+
+ValleFredda_Movement_PlayerPositioningRight:
+    walk_right
+    walk_down
+    walk_down
+    walk_down
+    walk_down
+    step_end
+
+
+
+
+
+

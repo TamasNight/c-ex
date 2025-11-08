@@ -51,8 +51,8 @@
 #define SUB_QUEST_START_JOURNEY_2          1
 #define SUB_QUEST_START_JOURNEY_3          2
 #define SUB_QUEST_KNIGHT_WAY_1             3
-#define SUB_QUEST_5          4
-#define SUB_QUEST_6          5
+#define SUB_QUEST_KNIGHT_WAY_2             4
+#define SUB_QUEST_KNIGHT_WAY_3             5
 #define SUB_QUEST_7          6
 #define SUB_QUEST_8          7
 #define SUB_QUEST_9          8

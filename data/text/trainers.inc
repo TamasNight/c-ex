@@ -1,38 +1,16 @@
-ValleFredda_Text_CalvinIntro:
-	.string "If you have POKéMON with you, then\n"
-	.string "you're an official POKéMON TRAINER!\l"
-	.string "You can't say no to my challenge!$"
+ValleFredda_Text_GuidoIntro:
+	.string "Guido: But you're {PLAYER}, I was just\n"
+	.string "going to visit your parents.\l"
+	.string "Wow, you finally have your own Pokémon,\l"
+	.string "how you've grown!\p"
+	.string "We have to have a good battle.$"
 
-ValleFredda_Text_CalvinDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "I should have trained mine more…$"
+ValleFredda_Text_GuidoDefeated:
+	.string "Guido: Arrgh, I lost…\n"
+	.string "Now I should rest a bit…$"
 
-ValleFredda_Text_CalvinPostBattle:
-	.string "Listen, you. If you're strong,\n"
-	.string "you should have told me before!$"
-
-ValleFredda_Text_CalvinRegister:
-	.string "I've been working hard at this since\n"
-	.string "I saw you before.\p"
-	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
-
-ValleFredda_Text_CalvinRegisterShort:
-	.string "I'd like to battle you again, so can\n"
-	.string "you register me in your POKéNAV?$"
-
-ValleFredda_Text_CalvinRematchIntro:
-	.string "Ever since I lost to you, I desperately\n"
-	.string "trained my POKéMON.\l"
-	.string "You can't say no to my challenge!$"
-
-ValleFredda_Text_CalvinRematchDefeated:
-	.string "Arrgh, I lost…\n"
-	.string "Is my training method not right?$"
-
-ValleFredda_Text_CalvinRematchPostBattle:
-	.string "If you're going to get stronger,\n"
-	.string "I'll get stronger, too.$"
+ValleFredda_Text_GuidoPostBattle:
+	.string "Guido: You've really grown into a man.$"
 
 ValleFredda_Text_AllenIntro:
 	.string "Did you just become a TRAINER?\n"
@@ -46,16 +24,16 @@ ValleFredda_Text_AllenPostBattle:
 	.string "I haven't won once yet…\n"
 	.string "I wish I would win soon…$"
 
-ValleFredda_Text_RickIntro:
-	.string "Hahah! Our eyes met!\n"
-	.string "I'll take you on with my BUG POKéMON!$"
+ValleFredda_Text_SaverioDefeated:
+    .string "{COLOR}{BLUE}Saverio{COLOR}{02}: You have controlled the\n"
+	.string "potential of your Pokémon very well.$"
 
-ValleFredda_Text_RickDefeated:
-	.string "Ow! Down and out!$"
-
-ValleFredda_Text_RickPostBattle:
-	.string "If you lock eyes with a TRAINER,\n"
-	.string "you have to challenge! It's a rule!$"
+ValleFredda_Text_SaverioPostBattlePlayerLost:
+	.string "{COLOR}{BLUE}Saverio{COLOR}{02}: There will be much tougher\n"
+	.string "battles than this one waiting for you\l"
+	.string "out there.\p"
+	.string "To improve, try to use your Pokémon's\n"
+	.string "{COLOR}{GREEN}class ability{COLOR}{02} to your advantage.$"
 
 ValleFredda_Text_TianaIntro:
 	.string "I'm going to keep winning and aim\n"
