@@ -219,7 +219,7 @@ static const u8 sText_QuestNumberDisplay[] =
       _("{STR_VAR_1}/{STR_VAR_2}");
 static const u8 sText_Unk[] = _("??????");
 static const u8 sText_Active[] = _("Active");
-static const u8 sText_ActiveOpt[] = _("Optional");
+static const u8 sText_ActiveOpt[] = _("Opt");
 static const u8 sText_Fail[] = _("Fail");
 static const u8 sText_Reward[] = _("Reward");
 static const u8 sText_Complete[] = _("Done");
@@ -320,7 +320,7 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 			gText_SubQuest1_Name4,
 			gText_SubQuest1_Desc4,
 			gText_SideQuestMap3,
-			OBJ_EVENT_GFX_KNIGHT_S,
+			OBJ_EVENT_GFX_FARMER_F_1,
 			OBJECT,
 			&sText_SubQuestDisplay_4
 	),
@@ -2307,7 +2307,7 @@ u8 GenerateSubquestState(u8 questId)
 	{
 		const u8 *type = sSideQuests[parentQuest].subquests[questId].type();
 		StringCopy(gStringVar4, type);
-		if (type == sText_Active) return 3;
+		if (type == sText_Active || type == sText_ActiveOpt) return 3;
 	}
 	else
 	{
