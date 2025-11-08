@@ -1416,3 +1416,11 @@ static const struct SpriteFrameImage sPicTable_Player_farmer_m[] = {
 static const struct SpriteFrameImage sPicTable_Farmer_2_m[] = {
         overworld_ascending_frames(gObjectEventPic_Farmer_2_m, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Treasure[] = {
+        overworld_ascending_frames(gObjectEventPic_Treasure, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Treasure_bag[] = {
+        overworld_ascending_frames(gObjectEventPic_Treasure_bag, 2, 4),
+};

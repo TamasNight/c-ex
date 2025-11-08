@@ -406,6 +406,10 @@ $(OBJEVENTGFXDIR)/people/youngster.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 # Medieval - Tamas Class System
+$(OBJEVENTGFXDIR)/peoplemedieval/treasure_bag.4bpp: %.4bpp: %.png 
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+$(OBJEVENTGFXDIR)/peoplemedieval/treasure.4bpp: %.4bpp: %.png 
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 $(OBJEVENTGFXDIR)/peoplemedieval/farmer_2_M.4bpp: %.4bpp: %.png 
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 $(OBJEVENTGFXDIR)/peoplemedieval/player_farmer_M.4bpp: %.4bpp: %.png 

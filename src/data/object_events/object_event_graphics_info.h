@@ -4975,3 +4975,41 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_2_m = {
         .images = sPicTable_Farmer_2_m,
         .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Treasure = {
+        .tileTag = TAG_NONE,
+        .paletteTag = OBJ_EVENT_PAL_TAG_TREASURE,
+        .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+        .size = 256,
+        .width = 16,
+        .height = 32,
+        .paletteSlot = 0,
+        .shadowSize = SHADOW_SIZE_M,
+        .inanimate = FALSE,
+        .compressed = FALSE,
+        .tracks = TRACKS_FOOT,
+        .oam = &gObjectEventBaseOam_16x32,
+        .subspriteTables = sOamTables_16x32,
+        .anims = sAnimTable_Standard,
+        .images = sPicTable_Treasure,
+        .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Treasure_bag = {
+        .tileTag = TAG_NONE,
+        .paletteTag = OBJ_EVENT_PAL_TAG_TREASURE,
+        .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+        .size = 256,
+        .width = 16,
+        .height = 32,
+        .paletteSlot = 0,
+        .shadowSize = SHADOW_SIZE_M,
+        .inanimate = FALSE,
+        .compressed = FALSE,
+        .tracks = TRACKS_FOOT,
+        .oam = &gObjectEventBaseOam_16x32,
+        .subspriteTables = sOamTables_16x32,
+        .anims = sAnimTable_Standard,
+        .images = sPicTable_Treasure_bag,
+        .affineAnims = gDummySpriteAffineAnimTable,
+};

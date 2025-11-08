@@ -241,6 +241,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight;
 // Medieval - Tamas Class System
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Treasure_bag;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Treasure;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Farmer_2_m;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Player_farmer_m;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Iacopo;
@@ -523,6 +525,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_IACOPO]  =            &gObjectEventGraphicsInfo_Iacopo,
     [OBJ_EVENT_GFX_PLAYER_FARMER_M]  =            &gObjectEventGraphicsInfo_Player_farmer_m,
     [OBJ_EVENT_GFX_FARMER_2_M]  =            &gObjectEventGraphicsInfo_Farmer_2_m,
+    [OBJ_EVENT_GFX_TREASURE]  =            &gObjectEventGraphicsInfo_Treasure,
+    [OBJ_EVENT_GFX_TREASURE_BAG]  =            &gObjectEventGraphicsInfo_Treasure_bag,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
