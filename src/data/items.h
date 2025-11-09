@@ -174,7 +174,8 @@ const struct Item gItemsInfo[] =
 
     [ITEM_BOND] =
     {
-        .name = _("Legami"),
+        .name = _("Legame"),
+        .pluralName = _("Legami"),
         .price = 200,
         .description = COMPOUND_STRING(
             "A magical item for\n"
@@ -612,6 +613,7 @@ const struct Item gItemsInfo[] =
     [ITEM_HEALING_HERBS] =
     {
         .name = _("Healing herbs"),
+        .pluralName = _("Healing herbs"),
         .price = (I_PRICE >= GEN_7) ? 200 : 300,
         .holdEffectParam = 20,
         .description = COMPOUND_STRING(

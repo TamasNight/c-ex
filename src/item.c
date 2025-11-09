@@ -108,7 +108,7 @@ const u8 sText_s[] =_("s");
 
 u8 *CopyItemNameHandlePlural(u16 itemId, u8 *dst, u32 quantity)
 {
-    if (quantity == 1 || itemId == ITEM_BOND || itemId == ITEM_HEALING_HERBS)
+    if (quantity == 1)
     {
         return StringCopy(dst, GetItemName(itemId));
     }
