@@ -11055,19 +11055,25 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_TIANA ===
 Name: TIANA
-Class: Lass
-Pic: Lass
+Class: Knight
+Pic: Knight F
 Gender: Female
 Music: Female
-Double Battle: No
-AI: Check Bad Move
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Zigzagoon
-Level: 4
+Teddiursa
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Class: 1
+- MOVE_LICK
+- MOVE_COVET
+- MOVE_FLING
+- MOVE_BABY_DOLL_EYES
 
-Shroomish
-Level: 4
+Zubat
+Level: 7
+Class: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HALEY_1 ===

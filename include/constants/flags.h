@@ -54,7 +54,7 @@
 #define FLAG_HIDE_PARENTS_DURING_INTRO_FIELD    0x28
 #define FLAG_SUBQUEST_KNIGHT_WAY_REWARD         0x29
 #define FLAG_HIDE_SAVERIO_AFTER_INTRO           0x2A
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
+#define FLAG_REACH_THE_TAVERN                   0x2B // Level Cap First Flag
 #define FLAG_UNUSED_0x02C    0x2C // Unused Flag
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
@@ -543,7 +543,7 @@
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
-#define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             (FLAG_HIDDEN_ITEMS_START + 0x00)
+#define FLAG_HIDDEN_ITEM_VALLE_FREDDA_TINY_MUSHROOM          (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
@@ -1051,8 +1051,8 @@
 
 // Item Ball Flags
 #define FLAG_ITEM_VALLE_FREDDA_HEALING_HERBS                        0x3E8
-#define FLAG_ITEM_BOSCO_DEI_LARICI_HEALING_HERBS                    0x3E9
-#define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
+#define FLAG_ITEM_BOSCO_DEI_LARICI_MIRACLE_SEED                     0x3E9
+#define FLAG_ITEM_VALLE_FREDDA_MAGIC_SCROLL_10                      0x3EA
 #define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
 #define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED

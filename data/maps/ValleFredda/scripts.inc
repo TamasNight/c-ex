@@ -64,8 +64,8 @@ ValleFredda_EventScript_RouteSign::
 	msgbox ValleFredda_Text_RouteSign, MSGBOX_SIGN
 	end
 
-ValleFredda_EventScript_Boy::
-	msgbox ValleFredda_Text_CatchWholeBunchOfPokemon, MSGBOX_NPC
+ValleFredda_EventScript_Farmer::
+	msgbox ValleFredda_Text_Farmer, MSGBOX_NPC
 	end
 
 ValleFredda_EventScript_Guido::
@@ -100,9 +100,11 @@ ValleFredda_Text_LetsGoBack:
 	.string "{PLAYER}, thank you!\n"
 	.string "Let's go back to the GYM!$"
 
-ValleFredda_Text_CatchWholeBunchOfPokemon:
-	.string "I'm going to catch a whole bunch of\n"
-	.string "POKéMON!$"
+ValleFredda_Text_Farmer:
+	.string "Mario: Keeping this cold valley\n"
+	.string "productive is no easy task, but the\n"
+	.string "fruits it yields are well worth the\l"
+	.string "effort.$"
 
 ValleFredda_Text_RouteSign:
 	.string "Valle Fredda\n"
