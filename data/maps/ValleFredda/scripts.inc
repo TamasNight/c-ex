@@ -110,8 +110,11 @@ ValleFredda_Text_RouteSign:
 	.string "{DOWN_ARROW} Valle di Pretoria$"
 
 ValleFredda_Text_SaverioIntro:
-    .string "{COLOR}{BLUE}Saverio{COLOR}{02}: Before we go further, you’ll\n"
-	.string "need to learn how to defend yourself.\p"
+    .string "{COLOR}{BLUE}Saverio{COLOR}{02}:  I know that leaving everything\n"
+    .string "behind is painful, but trust me, you're\n"
+    .string "doing the right thing.\p"
+    .string "Now, before we go further, you’ll need to\n"
+	.string "learn how to defend yourself.\p"
 	.string "The wilds of Iria can be dangerous, even\n"
 	.string "for those who think they are ready.$"
 
