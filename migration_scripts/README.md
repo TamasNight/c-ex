@@ -375,7 +375,7 @@ Modifies all item ball scripts defined using to original Game Freak method to th
 -      "script": "ValleFredda_EventScript_ItemPotion",
 +      "trainer_sight_or_berry_tree_id": "ITEM_HEALING_HERBS",
 +      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_VALLE_FREDDA_POTION"
+      "flag": "FLAG_ITEM_VALLE_FREDDA_HEALING_HERBS"
     },
 ```
 

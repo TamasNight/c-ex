@@ -36,16 +36,19 @@ ValleFredda_Text_SaverioPostBattlePlayerLost:
 	.string "{COLOR}{GREEN}class ability{COLOR}{02} to your advantage.$"
 
 ValleFredda_Text_TianaIntro:
-	.string "I'm going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
-	.string "Help me further my career!$"
+    .string "Tiana: A young apprentice, how nice to\n"
+	.string "meet you. Our job is to keep the streets\l"
+	.string "of the duchy safe, but I can take a\l"
+	.string "break to train with you.$"
 
 ValleFredda_Text_TianaDefeated:
-	.string "I ended up furthering your career…$"
+	.string "You have great potential, don't stop\n"
+	.string "training.$"
 
 ValleFredda_Text_TianaPostBattle:
-	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
+	.string "Tiana: A knight's duty is to always\n"
+	.string "remain vigilant and ready to help\n"
+	.string "others. Don't forget that.$"
 
 Route103_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"

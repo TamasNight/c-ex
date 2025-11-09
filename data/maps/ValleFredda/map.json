@@ -61,21 +61,21 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 19,
-      "y": 34,
+      "graphics_id": "OBJ_EVENT_GFX_KNIGHT_F_1",
+      "x": 14,
+      "y": 49,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "ValleFredda_EventScript_Tiana",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
-      "x": 18,
+      "x": 19,
       "y": 34,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -97,7 +97,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_HEALING_HERBS",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_VALLE_FREDDA_POTION"
+      "flag": "FLAG_ITEM_VALLE_FREDDA_HEALING_HERBS"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
