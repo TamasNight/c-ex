@@ -12,17 +12,15 @@ ValleFredda_Text_GuidoDefeated:
 ValleFredda_Text_GuidoPostBattle:
 	.string "Guido: You've really grown into a man.$"
 
-ValleFredda_Text_AllenIntro:
-	.string "Did you just become a TRAINER?\n"
-	.string "We're both beginners!$"
+ValleFredda_Text_CarloIntro:
+	.string "Carlo: Stay away, there's nothing here.$"
 
-ValleFredda_Text_AllenDefeated:
-	.string "I called you because I thought\n"
-	.string "I could beat you…$"
+ValleFredda_Text_CarloDefeated:
+	.string "Argh…$"
 
-ValleFredda_Text_AllenPostBattle:
-	.string "I haven't won once yet…\n"
-	.string "I wish I would win soon…$"
+ValleFredda_Text_CarloPostBattle:
+	.string "Carlo: Maybe there's something here\n"
+	.string "that isn't mine, but you'll never find it.$"
 
 ValleFredda_Text_SaverioDefeated:
     .string "You have controlled the potential of\n"

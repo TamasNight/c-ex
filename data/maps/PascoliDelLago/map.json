@@ -384,6 +384,14 @@
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PascoliDelLago_EventScript_PlayersHouseSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 43,
+      "y": 48,
+      "elevation": 0,
+      "item": "ITEM_HARD_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_PASCOLI_DEL_LAGO_HARD_STONE"
     }
   ]
 }

@@ -9775,6 +9775,7 @@ static u8 ObjectEventGetNearbyReflectionType(struct ObjectEvent *objEvent)
 
 static u8 GetReflectionTypeByMetatileBehavior(u32 behavior)
 {
+    return REFL_TYPE_NONE;
     if (MetatileBehavior_IsIce(behavior))
         return REFL_TYPE_ICE;
     else if (MetatileBehavior_IsReflective(behavior))

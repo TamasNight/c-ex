@@ -79,9 +79,9 @@ ValleFredda_EventScript_Tiana::
 	msgbox ValleFredda_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-ValleFredda_EventScript_Allen::
-	trainerbattle_single TRAINER_ALLEN, ValleFredda_Text_AllenIntro, ValleFredda_Text_AllenDefeated
-	msgbox ValleFredda_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
+ValleFredda_EventScript_Carlo::
+	trainerbattle_single TRAINER_CARLO, ValleFredda_Text_CarloIntro, ValleFredda_Text_CarloDefeated
+	msgbox ValleFredda_Text_CarloPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 ValleFredda_Text_WatchMeCatchPokemon:
