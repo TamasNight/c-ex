@@ -16,4 +16,13 @@ Download https://www.deviantart.com/kyle-dove/art/Gigantic-Battle-Background-342
 ## Battle Trainer
 Download https://www.deviantart.com/aveontrainer/gallery/68197158/trainer
 Download https://www.deviantart.com/porygatto/art/Pokemon-Trainer-Hermana-766964347
- 
+
+# Trainer Abilities
+Basato sulla classe dei pokemon che hai in squadra si attiveranno alcune opzioni. Es: Druido -> permette di parlare con i Pokemon, Ladro -> permette di scassinare una porta, ecc 
+## Long and Short Rest
+### Long Rest
+Per curare completamente i pokemon e ridargli tutti i PP si deve fare un riposo lungo che annulla gli effetti di per esempio parlare con gli animali (pokemon), o individuazione dei pensieri.
+Causerà anche eventi in gioco e spostamenti di oggetti/nemici. Ripristina completamente gli usi delle abilità.
+
+### Short Rest 
+Fa recuperare solo parte degli HP persi dai pokemon e ripristina l'uso di alcune abilità minori.

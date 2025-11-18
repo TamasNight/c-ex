@@ -263,11 +263,12 @@
 #define OBJ_EVENT_GFX_FARMER_2_M               256
 #define OBJ_EVENT_GFX_TREASURE               257
 #define OBJ_EVENT_GFX_TREASURE_BAG               258
+#define OBJ_EVENT_GFX_FARMER_2_F               259
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX 259
+#define NUM_OBJ_EVENT_GFX 260
 
 
 // These are dynamic object gfx ids.
@@ -412,6 +413,7 @@
 #define OBJ_EVENT_PAL_TAG_PLAYER_FARMER_M            0x1131
 #define OBJ_EVENT_PAL_TAG_FARMER_2_M            0x1132
 #define OBJ_EVENT_PAL_TAG_TREASURE            0x1133
+#define OBJ_EVENT_PAL_TAG_FARMER_2_F            0x1134
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

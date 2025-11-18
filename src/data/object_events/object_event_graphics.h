@@ -504,3 +504,5 @@ const u16 gObjectEventPal_Treasure[] = INCBIN_U16("graphics/object_events/pics/p
 const u32 gObjectEventPic_Treasure[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/treasure.4bpp");
 
 const u32 gObjectEventPic_Treasure_bag[] = INCBIN_U32("graphics/object_events/pics/peoplemedieval/treasure_bag.4bpp");
+
+const u16 gObjectEventPal_Farmer_2_f[] = INCBIN_U16("graphics/object_events/pics/peoplemedieval/palettes/farmer_2_F.gbapal");
