@@ -1,0 +1,103 @@
+{
+  "original_image": {
+    "width": 16,
+    "height": 32
+  },
+  "block_size": 8,
+  "grid": {
+    "cols": 16,
+    "rows": 4
+  },
+  "atlas": {
+    "path": "inner_bar_light_beer_atlas.png",
+    "width": 128,
+    "height": 8,
+    "cols": 16,
+    "rows": 1
+  },
+  "unique_count": 8,
+  "unique_order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "blocks": [
+    {
+      "orig_bx": 0,
+      "orig_by": 0,
+      "atlas_bx": 0,
+      "atlas_by": 0,
+      "unique_id": 0,
+      "flip_x": false,
+      "flip_y": false
+    },
+    {
+      "orig_bx": 1,
+      "orig_by": 0,
+      "atlas_bx": 1,
+      "atlas_by": 0,
+      "unique_id": 1,
+      "flip_x": false,
+      "flip_y": false
+    },
+    {
+      "orig_bx": 0,
+      "orig_by": 1,
+      "atlas_bx": 2,
+      "atlas_by": 0,
+      "unique_id": 2,
+      "flip_x": false,
+      "flip_y": false
+    },
+    {
+      "orig_bx": 1,
+      "orig_by": 1,
+      "atlas_bx": 3,
+      "atlas_by": 0,
+      "unique_id": 3,
+      "flip_x": false,
+      "flip_y": false
+    },
+    {
+      "orig_bx": 0,
+      "orig_by": 2,
+      "atlas_bx": 4,
+      "atlas_by": 0,
+      "unique_id": 4,
+      "flip_x": false,
+      "flip_y": false
+    },
+    {
+      "orig_bx": 1,
+      "orig_by": 2,
+      "atlas_bx": 5,
+      "atlas_by": 0,
+      "unique_id": 5,
+      "flip_x": false,
+      "flip_y": false
+    },
+    {
+      "orig_bx": 0,
+      "orig_by": 3,
+      "atlas_bx": 6,
+      "atlas_by": 0,
+      "unique_id": 6,
+      "flip_x": false,
+      "flip_y": false
+    },
+    {
+      "orig_bx": 1,
+      "orig_by": 3,
+      "atlas_bx": 7,
+      "atlas_by": 0,
+      "unique_id": 7,
+      "flip_x": false,
+      "flip_y": false
+    }
+  ]
+}
