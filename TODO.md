@@ -26,8 +26,3 @@ Causerà anche eventi in gioco e spostamenti di oggetti/nemici. Ripristina compl
 
 ### Short Rest 
 Fa recuperare solo parte degli HP persi dai pokemon e ripristina l'uso di alcune abilità minori.
-
-
-# Tileset
-## Farm + Tavern
-Finire di ridurre il tile della taverna, il tileset ha a disposizione 162 blocchi liberi al momento l'atlas si compone di 183.
