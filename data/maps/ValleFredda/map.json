@@ -17,6 +17,11 @@
       "map": "MAP_PASCOLI_DEL_LAGO",
       "offset": 4,
       "direction": "up"
+    },
+    {
+      "map": "MAP_OLDALE_TOWN",
+      "offset": 12,
+      "direction": "down"
     }
   ],
   "object_events": [

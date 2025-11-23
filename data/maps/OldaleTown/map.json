@@ -14,20 +14,15 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE103",
-      "offset": 0,
+      "map": "MAP_ROUTE102",
+      "offset": -12,
       "direction": "up"
-    },
-    {
-      "map": "MAP_ROUTE101",
-      "offset": 0,
-      "direction": "left"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FARMER_M_1",
-      "x": 7,
+      "x": 11,
       "y": 11,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -41,7 +36,7 @@
     {
       "local_id": "LOCALID_OLDALE_MART_EMPLOYEE",
       "graphics_id": "OBJ_EVENT_GFX_SHOPKEEPER_M",
-      "x": 13,
+      "x": 17,
       "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -55,7 +50,7 @@
     {
       "local_id": "LOCALID_FOOTPRINTS_MAN",
       "graphics_id": "OBJ_EVENT_GFX_BLACKSMITH_M",
-      "x": 8,
+      "x": 12,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -69,7 +64,7 @@
     {
       "local_id": "LOCALID_OLDALE_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 11,
+      "x": 15,
       "y": 19,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -82,7 +77,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MILTANK)",
-      "x": 3,
+      "x": 7,
       "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -96,28 +91,28 @@
   ],
   "warp_events": [
     {
-      "x": 3,
+      "x": 7,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE1",
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
+      "x": 18,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_HOUSE2",
       "dest_warp_id": "0"
     },
     {
-      "x": 2,
+      "x": 6,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 14,
+      "x": 18,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_OLDALE_TOWN_MART",
@@ -127,7 +122,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 0,
+      "x": 4,
       "y": 10,
       "elevation": 3,
       "var": "VAR_OLDALE_TOWN_STATE",
@@ -136,7 +131,7 @@
     },
     {
       "type": "trigger",
-      "x": 8,
+      "x": 12,
       "y": 19,
       "elevation": 3,
       "var": "VAR_OLDALE_RIVAL_STATE",
@@ -145,7 +140,7 @@
     },
     {
       "type": "trigger",
-      "x": 9,
+      "x": 13,
       "y": 19,
       "elevation": 3,
       "var": "VAR_OLDALE_RIVAL_STATE",
@@ -154,7 +149,7 @@
     },
     {
       "type": "trigger",
-      "x": 10,
+      "x": 14,
       "y": 19,
       "elevation": 3,
       "var": "VAR_OLDALE_RIVAL_STATE",
@@ -165,7 +160,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 11,
+      "x": 15,
       "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -173,7 +168,7 @@
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 11,
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -181,7 +176,7 @@
     },
     {
       "type": "sign",
-      "x": 15,
+      "x": 19,
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -189,7 +184,7 @@
     },
     {
       "type": "sign",
-      "x": 8,
+      "x": 12,
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
@@ -197,7 +192,7 @@
     },
     {
       "type": "sign",
-      "x": 16,
+      "x": 20,
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
