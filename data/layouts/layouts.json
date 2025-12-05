@@ -104,7 +104,7 @@
     {
       "id": "LAYOUT_OLDALE_TOWN",
       "name": "OldaleTown_Layout",
-      "width": 44,
+      "width": 46,
       "height": 21,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
@@ -185,9 +185,9 @@
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
       "width": 80,
-      "height": 22,
+      "height": 28,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route103/border.bin",
       "blockdata_filepath": "data/layouts/Route103/map.bin"
     },

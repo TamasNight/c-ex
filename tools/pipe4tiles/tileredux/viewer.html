@@ -16,8 +16,9 @@
 <body>
 <h1>Tileset Viewer</h1>
 <p>Carica i file JSON e PNG generati dallo script Python:</p>
-<input type="file" id="jsonInput" accept=".json">
-<input type="file" id="atlasInput" accept="image/png">
+<label>json file <input type="file" id="jsonInput" accept=".json"></label>
+<label>png file <input type="file" id="atlasInput" accept="image/png"></label>
+<label>show grid<input type="checkbox" id="showGrid" checked="checked"></label>
 <div id="info"></div>
 <div class="box">
 <div>
@@ -43,6 +44,7 @@
 
     document.getElementById('jsonInput').addEventListener('change', handleJson);
     document.getElementById('atlasInput').addEventListener('change', handleAtlas);
+	document.getElementById('showGrid').addEventListener('change', tryReconstruct);
 
     function handleJson(e) {
         const file = e.target.files[0];
@@ -67,7 +69,8 @@
 
     function tryReconstruct() {
         if (!mappingData || !atlasImage) return;
-
+		isGrid2Show = document.getElementById('showGrid').checked
+		
         // Disegna atlas
         atlasCanvas.width = mappingData.atlas.width;
         atlasCanvas.height = mappingData.atlas.height;
@@ -105,7 +108,7 @@
         });
 
         // Disegna griglia 16x16 sopra
-        drawGrid();
+        if (isGrid2Show) drawGrid();
         reconstructedCanvas.addEventListener('mousemove', onHover);
         reconstructedCanvas.addEventListener('click', onHover);
     }
