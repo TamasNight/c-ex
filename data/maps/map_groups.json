@@ -17,7 +17,7 @@
     "gMapGroup_IndoorMossdeep",
     "gMapGroup_IndoorSootopolis",
     "gMapGroup_IndoorEverGrande",
-    "gMapGroup_IndoorRoute104",
+    "gMapGroup_IndoorPassoDiGiove",
     "gMapGroup_IndoorRoute111",
     "gMapGroup_IndoorRoute112",
     "gMapGroup_IndoorRoute114",
@@ -27,7 +27,7 @@
     "gMapGroup_Dungeons",
     "gMapGroup_IndoorDynamic",
     "gMapGroup_SpecialArea",
-    "gMapGroup_IndoorRoute104Prototype",
+    "gMapGroup_IndoorPassoDiGiovePrototype",
     "gMapGroup_IndoorRoute109",
     "gMapGroup_IndoorRoute110",
     "gMapGroup_IndoorRoute113",
@@ -46,7 +46,7 @@
     "SootopolisCity",
     "EverGrandeCity",
     "PascoliDelLago",
-    "OldaleTown",
+    "Lungavalle",
     "DewfordTown",
     "LavaridgeTown",
     "FallarborTown",
@@ -54,8 +54,8 @@
     "PacifidlogTown",
     "BoscoDeiLarici",
     "ValleFredda",
-    "Route103",
-    "Route104",
+    "ValleBassa",
+    "PassoDiGiove",
     "Route105",
     "Route106",
     "Route107",
@@ -102,11 +102,11 @@
     "LittlerootTown_ProfessorBirchsLab"
   ],
   "gMapGroup_IndoorOldale": [
-    "OldaleTown_House1",
-    "OldaleTown_House2",
-    "OldaleTown_PokemonCenter_1F",
-    "OldaleTown_PokemonCenter_2F",
-    "OldaleTown_Mart"
+    "Lungavalle_House1",
+    "Lungavalle_House2",
+    "Lungavalle_PokemonCenter_1F",
+    "Lungavalle_PokemonCenter_2F",
+    "Lungavalle_Mart"
   ],
   "gMapGroup_IndoorDewford": [
     "DewfordTown_House1",
@@ -295,9 +295,9 @@
     "EverGrandeCity_PokemonCenter_2F",
     "EverGrandeCity_PokemonLeague_2F"
   ],
-  "gMapGroup_IndoorRoute104": [
-    "Route104_MrBrineysHouse",
-    "Route104_PrettyPetalFlowerShop"
+  "gMapGroup_IndoorPassoDiGiove": [
+    "PassoDiGiove_MrBrineysHouse",
+    "PassoDiGiove_PrettyPetalFlowerShop"
   ],
   "gMapGroup_IndoorRoute111": [
     "Route111_WinstrateFamilysHouse",
@@ -585,9 +585,9 @@
     "NavelRock_Bottom",
     "TrainerHill_Elevator"
   ],
-  "gMapGroup_IndoorRoute104Prototype": [
-    "Route104_Prototype",
-    "Route104_PrototypePrettyPetalFlowerShop"
+  "gMapGroup_IndoorPassoDiGiovePrototype": [
+    "PassoDiGiove_Prototype",
+    "PassoDiGiove_PrototypePrettyPetalFlowerShop"
   ],
   "gMapGroup_IndoorRoute109": [
     "Route109_SeashoreHouse"

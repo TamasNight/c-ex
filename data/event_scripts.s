@@ -121,7 +121,7 @@ gStdScripts_End::
 	.include "data/maps/SootopolisCity/scripts.inc"
 	.include "data/maps/EverGrandeCity/scripts.inc"
 	.include "data/maps/PascoliDelLago/scripts.inc"
-	.include "data/maps/OldaleTown/scripts.inc"
+	.include "data/maps/Lungavalle/scripts.inc"
 	.include "data/maps/DewfordTown/scripts.inc"
 	.include "data/maps/LavaridgeTown/scripts.inc"
 	.include "data/maps/FallarborTown/scripts.inc"
@@ -129,8 +129,8 @@ gStdScripts_End::
 	.include "data/maps/PacifidlogTown/scripts.inc"
 	.include "data/maps/BoscoDeiLarici/scripts.inc"
 	.include "data/maps/ValleFredda/scripts.inc"
-	.include "data/maps/Route103/scripts.inc"
-	.include "data/maps/Route104/scripts.inc"
+	.include "data/maps/ValleBassa/scripts.inc"
+	.include "data/maps/PassoDiGiove/scripts.inc"
 	.include "data/maps/Route105/scripts.inc"
 	.include "data/maps/Route106/scripts.inc"
 	.include "data/maps/Route107/scripts.inc"
@@ -173,11 +173,11 @@ gStdScripts_End::
 	.include "data/maps/LittlerootTown_MaysHouse_1F/scripts.inc"
 	.include "data/maps/LittlerootTown_MaysHouse_2F/scripts.inc"
 	.include "data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc"
-	.include "data/maps/OldaleTown_House1/scripts.inc"
-	.include "data/maps/OldaleTown_House2/scripts.inc"
-	.include "data/maps/OldaleTown_PokemonCenter_1F/scripts.inc"
-	.include "data/maps/OldaleTown_PokemonCenter_2F/scripts.inc"
-	.include "data/maps/OldaleTown_Mart/scripts.inc"
+	.include "data/maps/Lungavalle_House1/scripts.inc"
+	.include "data/maps/Lungavalle_House2/scripts.inc"
+	.include "data/maps/Lungavalle_PokemonCenter_1F/scripts.inc"
+	.include "data/maps/Lungavalle_PokemonCenter_2F/scripts.inc"
+	.include "data/maps/Lungavalle_Mart/scripts.inc"
 	.include "data/maps/DewfordTown_House1/scripts.inc"
 	.include "data/maps/DewfordTown_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/DewfordTown_PokemonCenter_2F/scripts.inc"
@@ -337,8 +337,8 @@ gStdScripts_End::
 	.include "data/maps/EverGrandeCity_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/EverGrandeCity_PokemonCenter_2F/scripts.inc"
 	.include "data/maps/EverGrandeCity_PokemonLeague_2F/scripts.inc"
-	.include "data/maps/Route104_MrBrineysHouse/scripts.inc"
-	.include "data/maps/Route104_PrettyPetalFlowerShop/scripts.inc"
+	.include "data/maps/PassoDiGiove_MrBrineysHouse/scripts.inc"
+	.include "data/maps/PassoDiGiove_PrettyPetalFlowerShop/scripts.inc"
 	.include "data/maps/Route111_WinstrateFamilysHouse/scripts.inc"
 	.include "data/maps/Route111_OldLadysRestStop/scripts.inc"
 	.include "data/maps/Route112_CableCarStation/scripts.inc"
@@ -558,8 +558,8 @@ gStdScripts_End::
 	.include "data/maps/NavelRock_Down11/scripts.inc"
 	.include "data/maps/NavelRock_Bottom/scripts.inc"
 	.include "data/maps/TrainerHill_Elevator/scripts.inc"
-	.include "data/maps/Route104_Prototype/scripts.inc"
-	.include "data/maps/Route104_PrototypePrettyPetalFlowerShop/scripts.inc"
+	.include "data/maps/PassoDiGiove_Prototype/scripts.inc"
+	.include "data/maps/PassoDiGiove_PrototypePrettyPetalFlowerShop/scripts.inc"
 	.include "data/maps/Route109_SeashoreHouse/scripts.inc"
 	.include "data/maps/Route110_TrickHouseEntrance/scripts.inc"
 	.include "data/maps/Route110_TrickHouseEnd/scripts.inc"
@@ -636,7 +636,7 @@ EventScript_MoveMrBrineyToHouse::
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
 	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY
 	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	clearflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+	clearflag FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY_BOAT
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	end
@@ -644,8 +644,8 @@ EventScript_MoveMrBrineyToHouse::
 EventScript_MoveMrBrineyToDewford::
 	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY
 	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+	setflag FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY
+	setflag FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	clearflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
@@ -653,8 +653,8 @@ EventScript_MoveMrBrineyToDewford::
 	end
 
 EventScript_MoveMrBrineyToRoute109::
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+	setflag FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY
+	setflag FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
@@ -674,7 +674,7 @@ EverGrandeCity_HallOfFame_EventScript_ResetEliteFour::
 Common_EventScript_UpdateBrineyLocation::
 	goto_if_unset FLAG_RECEIVED_POKENAV, Common_EventScript_NopReturn
 	goto_if_set FLAG_DEFEATED_PETALBURG_GYM, Common_EventScript_NopReturn
-	goto_if_unset FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT, EventScript_SetBrineyLocation_House
+	goto_if_unset FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY_BOAT, EventScript_SetBrineyLocation_House
 	goto_if_unset FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN, EventScript_SetBrineyLocation_Dewford
 	goto_if_unset FLAG_HIDE_ROUTE_109_MR_BRINEY, EventScript_SetBrineyLocation_Route109
 	return
@@ -815,8 +815,8 @@ EventScript_HideMrBriney::
 	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
 	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY
 	setflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
-	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+	setflag FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY
+	setflag FLAG_HIDE_PASSO_DI_GIOVE_MR_BRINEY_BOAT
 	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
 	setvar VAR_BRINEY_LOCATION, 0

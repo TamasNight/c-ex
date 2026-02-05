@@ -48,361 +48,361 @@ ValleFredda_Text_TianaPostBattle:
 	.string "remain vigilant and ready to help\n"
 	.string "others. Don't forget that.$"
 
-Route103_Text_DaisyIntro:
+ValleBassa_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"
 	.string "soul-soothing fragrance?$"
 
-Route103_Text_DaisyDefeated:
+ValleBassa_Text_DaisyDefeated:
 	.string "You weren't led astray by our aroma…$"
 
-Route103_Text_DaisyPostBattle:
+ValleBassa_Text_DaisyPostBattle:
 	.string "Aromatherapy is a form of mental\n"
 	.string "healing that works with fragrances.$"
 
-Route103_Text_AmyIntro:
+ValleBassa_Text_AmyIntro:
 	.string "AMY: I'm AMY.\n"
 	.string "And this is my little sister LIV.\l"
 	.string "We battle together!$"
 
-Route103_Text_AmyDefeated:
+ValleBassa_Text_AmyDefeated:
 	.string "AMY: Uh-oh, we lost.$"
 
-Route103_Text_AmyPostBattle:
+ValleBassa_Text_AmyPostBattle:
 	.string "AMY: You have to think about all\n"
 	.string "kinds of things when you're battling\l"
 	.string "against two TRAINERS.$"
 
-Route103_Text_AmyNotEnoughPokemon:
+ValleBassa_Text_AmyNotEnoughPokemon:
 	.string "AMY: Uh-oh, you have only one\n"
 	.string "POKéMON with you.\l"
 	.string "You can't battle us like that.$"
 
-Route103_Text_LivIntro:
+ValleBassa_Text_LivIntro:
 	.string "LIV: We battle together as one\n"
 	.string "team.$"
 
-Route103_Text_LivDefeated:
+ValleBassa_Text_LivDefeated:
 	.string "LIV: Oh, we lost, big sister…$"
 
-Route103_Text_LivPostBattle:
+ValleBassa_Text_LivPostBattle:
 	.string "LIV: We work perfectly together,\n"
 	.string "me and my big sister…\p"
 	.string "But we still lost…$"
 
-Route103_Text_AmyLivRegister:
+ValleBassa_Text_AmyLivRegister:
 	.string "LIV: Really, we're a lot better…\n"
 	.string "It's true! We'll show you next time!$"
 
-Route103_Text_LivNotEnoughPokemon:
+ValleBassa_Text_LivNotEnoughPokemon:
 	.string "LIV: If you want to battle us,\n"
 	.string "you have to have two POKéMON!\l"
 	.string "It's not fair if you don't!$"
 
-Route103_Text_AmyRematchIntro:
+ValleBassa_Text_AmyRematchIntro:
 	.string "AMY: I'm AMY.\n"
 	.string "And this is my little sister LIV.\l"
 	.string "We battle together!$"
 
-Route103_Text_AmyRematchDefeated:
+ValleBassa_Text_AmyRematchDefeated:
 	.string "AMY: Aww, boo!\n"
 	.string "We couldn't win again…$"
 
-Route103_Text_AmyRematchPostBattle:
+ValleBassa_Text_AmyRematchPostBattle:
 	.string "AMY: You have to think about all\n"
 	.string "kinds of things when you're battling\l"
 	.string "against two TRAINERS.$"
 
-Route103_Text_AmyRematchNotEnoughPokemon:
+ValleBassa_Text_AmyRematchNotEnoughPokemon:
 	.string "AMY: Uh-oh, you have only one\n"
 	.string "POKéMON with you.\l"
 	.string "You can't battle us like that.$"
 
-Route103_Text_LivRematchIntro:
+ValleBassa_Text_LivRematchIntro:
 	.string "LIV: We battle together as one\n"
 	.string "team.$"
 
-Route103_Text_LivRematchDefeated:
+ValleBassa_Text_LivRematchDefeated:
 	.string "LIV: Awww, we lost again…\n"
 	.string "Big sister…$"
 
-Route103_Text_LivRematchPostBattle:
+ValleBassa_Text_LivRematchPostBattle:
 	.string "LIV: We work perfectly together,\n"
 	.string "me and my big sister…\p"
 	.string "But why did we lose again?$"
 
-Route103_Text_LivRematchNotEnoughPokemon:
+ValleBassa_Text_LivRematchNotEnoughPokemon:
 	.string "LIV: If you want to battle us, you\n"
 	.string "have to have two POKéMON!\l"
 	.string "It's not fair if you don't!$"
 
-Route103_Text_AndrewIntro:
+ValleBassa_Text_AndrewIntro:
 	.string "Gah! My fishing line's all snarled up!\n"
 	.string "I'm getting frustrated and mean!\l"
 	.string "That's it! Battle me!$"
 
-Route103_Text_AndrewDefeated:
+ValleBassa_Text_AndrewDefeated:
 	.string "Gah! Lost it!\n"
 	.string "I'm even more annoyed now!$"
 
-Route103_Text_AndrewPostBattle:
+ValleBassa_Text_AndrewPostBattle:
 	.string "Gah, I'm still boiling mad…\n"
 	.string "Grrrrr…$"
 
-Route103_Text_MiguelIntro:
+ValleBassa_Text_MiguelIntro:
 	.string "My POKéMON is delightfully adorable!\n"
 	.string "Don't be shy--I'll show you!$"
 
-Route103_Text_MiguelDefeated:
+ValleBassa_Text_MiguelDefeated:
 	.string "Oh, my gosh!\n"
 	.string "My darling POKéMON!$"
 
-Route103_Text_MiguelPostBattle:
+ValleBassa_Text_MiguelPostBattle:
 	.string "My delightful POKéMON looks darling\n"
 	.string "even when it's fainted!$"
 
-Route103_Text_MiguelRegister:
+ValleBassa_Text_MiguelRegister:
 	.string "I'll get you to come out and look in\n"
 	.string "on my delightful POKéMON again!$"
 
-Route103_Text_MiguelRematchIntro:
+ValleBassa_Text_MiguelRematchIntro:
 	.string "Hi, you! My delightfully adorable\n"
 	.string "POKéMON has become more darling!$"
 
-Route103_Text_MiguelRematchDefeated:
+ValleBassa_Text_MiguelRematchDefeated:
 	.string "Oh!\n"
 	.string "My darling POKéMON!$"
 
-Route103_Text_MiguelRematchPostBattle:
+ValleBassa_Text_MiguelRematchPostBattle:
 	.string "The more I spend time with it,\n"
 	.string "the more adorable my POKéMON becomes.$"
 
-Route103_Text_PeteIntro:
+ValleBassa_Text_PeteIntro:
 	.string "This sort of distance…\n"
 	.string "You should just swim it!$"
 
-Route103_Text_PeteDefeated:
+ValleBassa_Text_PeteDefeated:
 	.string "Oh, that's good going!$"
 
-Route103_Text_PetePostBattle:
+ValleBassa_Text_PetePostBattle:
 	.string "Oh, I understand where you're coming\n"
 	.string "from now.\p"
 	.string "If I had a POKéMON that trusty,\n"
 	.string "I'd want to SURF on it, too!$"
 
-Route103_Text_IsabelleIntro:
+ValleBassa_Text_IsabelleIntro:
 	.string "Watch where you're going!\n"
 	.string "We're going to crash!$"
 
-Route103_Text_IsabelleDefeated:
+ValleBassa_Text_IsabelleDefeated:
 	.string "Groan…$"
 
-Route103_Text_IsabellePostBattle:
+ValleBassa_Text_IsabellePostBattle:
 	.string "I'm a poor swimmer so I was practicing…\n"
 	.string "Sorry for almost crashing into you.$"
 
-Route103_Text_RhettIntro:
+ValleBassa_Text_RhettIntro:
 	.string "Whoa!\n"
 	.string "How'd you get into a space this small?$"
 
-Route103_Text_RhettDefeated:
+ValleBassa_Text_RhettDefeated:
 	.string "Whoa!\n"
 	.string "The kid can rock!$"
 
-Route103_Text_RhettPostBattle:
+ValleBassa_Text_RhettPostBattle:
 	.string "Do you like cramped quarters\n"
 	.string "like this?$"
 
-Route103_Text_MarcosIntro:
+ValleBassa_Text_MarcosIntro:
 	.string "Did my guitar's wailing draw you in?$"
 
-Route103_Text_MarcosDefeated:
+ValleBassa_Text_MarcosDefeated:
 	.string "My one-man show is ruined…$"
 
-Route103_Text_MarcosPostBattle:
+ValleBassa_Text_MarcosPostBattle:
 	.string "I was playing my guitar where few\n"
 	.string "people were around, but a lot of fans\l"
 	.string "have gathered.\p"
 	.string "Heh, maybe I should turn pro.$"
 
-Route104_Text_GinaIntro:
+PassoDiGiove_Text_GinaIntro:
 	.string "GINA: Okay, let's battle with our\n"
 	.string "POKéMON!$"
 
-Route104_Text_GinaDefeat:
+PassoDiGiove_Text_GinaDefeat:
 	.string "GINA: Losing upsets me!$"
 
-Route104_Text_GinaPostBattle:
+PassoDiGiove_Text_GinaPostBattle:
 	.string "GINA: You are strong!\n"
 	.string "We have to train lots more!$"
 
-Route104_Text_GinaNotEnoughMons:
+PassoDiGiove_Text_GinaNotEnoughMons:
 	.string "GINA: Oh? Only one POKéMON?\n"
 	.string "Then, we don't battle with you.\p"
 	.string "If there's only one POKéMON, it will\n"
 	.string "be lonesome. That's not nice.$"
 
-Route104_Text_MiaIntro:
+PassoDiGiove_Text_MiaIntro:
 	.string "MIA: We are twins, so we battle\n"
 	.string "POKéMON together.$"
 
-Route104_Text_MiaDefeat:
+PassoDiGiove_Text_MiaDefeat:
 	.string "MIA: We battled together, but we\n"
 	.string "both lost…$"
 
-Route104_Text_MiaPostBattle:
+PassoDiGiove_Text_MiaPostBattle:
 	.string "MIA: We will train our POKéMON more\n"
 	.string "and be strong like you.$"
 
-Route104_Text_MiaNotEnoughMons:
+PassoDiGiove_Text_MiaNotEnoughMons:
 	.string "MIA: You want to battle with us?\p"
 	.string "It's a big no-no if you don't have two\n"
 	.string "POKéMON with you.\l"
 	.string "We're too strong for you!$"
 
-Route104_Text_IvanIntro:
+PassoDiGiove_Text_IvanIntro:
 	.string "Why keep it a secret?\n"
 	.string "I'm the WATER POKéMON expert!\p"
 	.string "Huh?\n"
 	.string "You don't know me?$"
 
-Route104_Text_IvanDefeat:
+PassoDiGiove_Text_IvanDefeat:
 	.string "I thought I wasn't too bad, if I may\n"
 	.string "say so, but I guess not… Bleah…$"
 
-Route104_Text_IvanPostBattle:
+PassoDiGiove_Text_IvanPostBattle:
 	.string "I got too into fishing.\n"
 	.string "I forgot I had to raise my POKéMON…$"
 
-Route104_Text_BillyIntro:
+PassoDiGiove_Text_BillyIntro:
 	.string "Leaving footprints in the sand is\n"
 	.string "so fun!$"
 
-Route104_Text_BillyDefeat:
+PassoDiGiove_Text_BillyDefeat:
 	.string "Waah! I got sand in my runners!\n"
 	.string "They're all gritty!$"
 
-Route104_Text_BillyPostBattle:
+PassoDiGiove_Text_BillyPostBattle:
 	.string "I want to leave my footprints in\n"
 	.string "the sand everywhere, but they\l"
 	.string "disappear quickly…$"
 
-Route104_Text_HaleyIntro:
+PassoDiGiove_Text_HaleyIntro:
 	.string "Should I…\n"
 	.string "Or shouldn't I?\p"
 	.string "Okay, sure, I will battle!$"
 
-Route104_Text_HaleyDefeat:
+PassoDiGiove_Text_HaleyDefeat:
 	.string "I shouldn't have battled…$"
 
-Route104_Text_HaleyPostBattle:
+PassoDiGiove_Text_HaleyPostBattle:
 	.string "If you're faced with a decision and\n"
 	.string "you let someone else choose for you,\l"
 	.string "you will regret it, however things\l"
 	.string "turn out.$"
 
-Route104_Text_HaleyRegister1:
+PassoDiGiove_Text_HaleyRegister1:
 	.string "You're strong, but should I register\n"
 	.string "you in my POKéNAV?\l"
 	.string "Maybe I shouldn't…\p"
 	.string "Okay, sure, I will register you!$"
 
-Route104_Text_HaleyRegister2:
+PassoDiGiove_Text_HaleyRegister2:
 	.string "You're strong, but should I register\n"
 	.string "you in my POKéNAV?\l"
 	.string "Maybe I shouldn't…\p"
 	.string "Okay, sure, I will register you!$"
 
-Route104_Text_HaleyRematchIntro:
+PassoDiGiove_Text_HaleyRematchIntro:
 	.string "Come on, battle with me!$"
 
-Route104_Text_HaleyRematchDefeat:
+PassoDiGiove_Text_HaleyRematchDefeat:
 	.string "Ohh…\n"
 	.string "I thought I could win…$"
 
-Route104_Text_HaleyPostRematch:
+PassoDiGiove_Text_HaleyPostRematch:
 	.string "I made the decision to battle, so\n"
 	.string "I can accept this loss with grace.\p"
 	.string "I am still upset about losing!$"
 
-Route104_Text_WinstonIntro:
+PassoDiGiove_Text_WinstonIntro:
 	.string "Oh, sure, I'll accept your challenge.\n"
 	.string "I have a lot of money.$"
 
-Route104_Text_WinstonDefeat:
+PassoDiGiove_Text_WinstonDefeat:
 	.string "Why couldn't I win?$"
 
-Route104_Text_WinstonPostBattle:
+PassoDiGiove_Text_WinstonPostBattle:
 	.string "There are some things money can't buy.\n"
 	.string "That's POKéMON…$"
 
-Route104_Text_WinstonRegister1:
+PassoDiGiove_Text_WinstonRegister1:
 	.string "Hm?\n"
 	.string "Ah, you've obtained a POKéNAV.\p"
 	.string "I will gladly register you.\n"
 	.string "After all, I have plenty of money.$"
 
-Route104_Text_WinstonRegister2:
+PassoDiGiove_Text_WinstonRegister2:
 	.string "Hm?\n"
 	.string "Ah, you've obtained a POKéNAV.\p"
 	.string "I will gladly register you.\n"
 	.string "After all, I have plenty of money.$"
 
-Route104_Text_WinstonRematchIntro:
+PassoDiGiove_Text_WinstonRematchIntro:
 	.string "After I lost to you, I learned a bunch\n"
 	.string "of things about POKéMON.$"
 
-Route104_Text_WinstonRematchDefeat:
+PassoDiGiove_Text_WinstonRematchDefeat:
 	.string "I lost again?\n"
 	.string "Why couldn't I win?$"
 
-Route104_Text_WinstonPostRematch:
+PassoDiGiove_Text_WinstonPostRematch:
 	.string "I'm fabulously wealthy, but I can't\n"
 	.string "seem to win at POKéMON…\p"
 	.string "It's so deep, the world of POKéMON…$"
 
-Route104_Text_CindyIntro:
+PassoDiGiove_Text_CindyIntro:
 	.string "We must have been fated to meet.\n"
 	.string "May I ask you for a battle?$"
 
-Route104_Text_CindyDefeat:
+PassoDiGiove_Text_CindyDefeat:
 	.string "Oh, my!$"
 
-Route104_Text_CindyPostBattle:
+PassoDiGiove_Text_CindyPostBattle:
 	.string "“Hello” is the beginning of “good-bye.”\n"
 	.string "I hope we meet again.$"
 
-Route104_Text_CindyRegister1:
+PassoDiGiove_Text_CindyRegister1:
 	.string "Hello, we meet again.\p"
 	.string "We seem to be drawn together. Let's\n"
 	.string "register each other in our POKéNAVS.$"
 
-Route104_Text_CindyRegister2:
+PassoDiGiove_Text_CindyRegister2:
 	.string "We should commemorate how we seem\n"
 	.string "to be drawn to each other.\p"
 	.string "Let's register each other in our\n"
 	.string "POKéNAVS.$"
 
-Route104_Text_CindyRematchIntro:
+PassoDiGiove_Text_CindyRematchIntro:
 	.string "Hello, we meet again.\n"
 	.string "May I ask you for a battle?$"
 
-Route104_Text_CindyRematchDefeat:
+PassoDiGiove_Text_CindyRematchDefeat:
 	.string "Oh, my…\n"
 	.string "I did the best that I could…$"
 
-Route104_Text_CindyPostRematch:
+PassoDiGiove_Text_CindyPostRematch:
 	.string "“Hello” is the beginning of “good-bye.”\n"
 	.string "I hope we meet again.$"
 
-Route104_Text_DarianIntro:
+PassoDiGiove_Text_DarianIntro:
 	.string "I fished up a tough-looking POKéMON!\p"
 	.string "It has this magical quality to it!\n"
 	.string "It surely looks tough, yes it does!$"
 
-Route104_Text_DarianDefeat:
+PassoDiGiove_Text_DarianDefeat:
 	.string "What the…$"
 
-Route104_Text_DarianPostBattle:
+PassoDiGiove_Text_DarianPostBattle:
 	.string "Hey, MAGIKARP, you sure don't live up\n"
 	.string "to your name, do you?$"
 

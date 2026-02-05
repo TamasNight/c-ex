@@ -101,15 +101,15 @@
   ],
   "warp_events": [
     {
-      "x": 6,
-      "y": 13,
+      "x": 5,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_PASCOLI_DEL_LAGO",
       "dest_warp_id": "2"
     },
     {
-      "x": 7,
-      "y": 13,
+      "x": 6,
+      "y": 12,
       "elevation": 0,
       "dest_map": "MAP_PASCOLI_DEL_LAGO",
       "dest_warp_id": "2"

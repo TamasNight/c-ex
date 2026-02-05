@@ -9,8 +9,8 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_OLDALE_TOWN",
-      "name": "OLDALE TOWN",
+      "id": "MAPSEC_LUNGAVALLE",
+      "name": "Lungavalle",
       "x": 4,
       "y": 9,
       "width": 1,
@@ -145,16 +145,16 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_103",
-      "name": "ROUTE 103",
+      "id": "MAPSEC_VALLE_BASSA",
+      "name": "Valle Bassa",
       "x": 4,
       "y": 8,
       "width": 4,
       "height": 1
     },
     {
-      "id": "MAPSEC_ROUTE_104",
-      "name": "ROUTE 104",
+      "id": "MAPSEC_PASSO_DI_GIOVE",
+      "name": "Passo di Giove",
       "x": 0,
       "y": 7,
       "width": 1,

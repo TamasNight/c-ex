@@ -331,7 +331,7 @@
 #define MUS_VERDANTURF              398 // MUS_GOMACHI0
 #define MUS_RUSTBORO                399 // MUS_GOTOWN           // Also used in Mauville City, Mossdeep City, Daycare, Weather Institute and several Route houses.
 #define MUS_POKE_CENTER             400 // MUS_POKECEN          // Also used in the Pokémon League's lobby.
-#define MUS_ROUTE104                401 // MUS_NEXTROAD         // Also used in Routes 105, 106, 107, 108, 109, 115 and 116.
+#define MUS_PASSO_DI_GIOVE                401 // MUS_NEXTROAD         // Also used in Routes 105, 106, 107, 108, 109, 115 and 116.
 #define MUS_ROUTE119                402 // MUS_GRANROAD         // Also used in Routes 129, 130, 131, 132, 133, 134 and 118's east half.
 #define MUS_CYCLING                 403 // MUS_CYCLING
 #define MUS_POKE_MART               404 // MUS_FRIENDLY         // Also used in Lilycove's Department Store.

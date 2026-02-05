@@ -112,8 +112,8 @@ LittlerootTown_MaysHouse_1F_Movement_RivalMomApproach:
 RivalsHouse_1F_EventScript_RivalMom::
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_RIVAL_ROUTE103, RivalsHouse_1F_EventScript_GoHomeEverySoOften
-	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnRoute103
+	goto_if_set FLAG_DEFEATED_RIVAL_VALLE_BASSA, RivalsHouse_1F_EventScript_GoHomeEverySoOften
+	goto_if_set FLAG_SYS_POKEMON_GET, RivalsHouse_1F_EventScript_RivalIsOnValleBassa
 	goto_if_eq VAR_LITTLEROOT_RIVAL_STATE, 3, RivalsHouse_1F_EventScript_RivalTooBusy
 	special GetRivalSonDaughterString
 	msgbox RivalsHouse_1F_Text_LikeChildLikeFather, MSGBOX_DEFAULT
@@ -125,8 +125,8 @@ RivalsHouse_1F_EventScript_RivalTooBusy::
 	release
 	end
 
-RivalsHouse_1F_EventScript_RivalIsOnRoute103::
-	msgbox RivalsHouse_1F_Text_WentOutToRoute103, MSGBOX_DEFAULT
+RivalsHouse_1F_EventScript_RivalIsOnValleBassa::
+	msgbox RivalsHouse_1F_Text_WentOutToValleBassa, MSGBOX_DEFAULT
 	release
 	end
 
@@ -341,7 +341,7 @@ RivalsHouse_1F_Text_TooBusyToNoticeVisit:
 	.string "POKéMON to notice that you came\l"
 	.string "to visit, {PLAYER}{KUN}.$"
 
-RivalsHouse_1F_Text_WentOutToRoute103:
+RivalsHouse_1F_Text_WentOutToValleBassa:
 	.string "Oh, {RIVAL} went out to ROUTE 103\n"
 	.string "just a little while ago.\p"
 	.string "Like father, like child.\n"

@@ -1424,3 +1424,7 @@ static const struct SpriteFrameImage sPicTable_Treasure[] = {
 static const struct SpriteFrameImage sPicTable_Treasure_bag[] = {
         overworld_ascending_frames(gObjectEventPic_Treasure_bag, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Farmer_3_m[] = {
+        overworld_ascending_frames(gObjectEventPic_Farmer_3_m, 2, 4),
+};

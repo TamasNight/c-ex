@@ -1,0 +1,97 @@
+PassoDiGiove_PrettyPetalFlowerShop_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PassoDiGiove_PrettyPetalFlowerShop_OnTransition
+	.byte 0
+
+PassoDiGiove_PrettyPetalFlowerShop_OnTransition:
+	setflag FLAG_LANDMARK_FLOWER_SHOP
+	goto_if_unset FLAG_MET_PRETTY_PETAL_SHOP_OWNER, PassoDiGiove_PrettyPetalFlowerShop_EventScript_MoveShopOwner
+	goto_if_unset FLAG_BADGE03_GET, PassoDiGiove_PrettyPetalFlowerShop_EventScript_MoveShopOwner
+	setflag FLAG_TEMP_1
+	end
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
+	setobjectxyperm LOCALID_FLOWER_SHOP_OWNER, 4, 6
+	end
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_ShopOwner::
+	lock
+	faceplayer
+	goto_if_set FLAG_TEMP_1, PassoDiGiove_PrettyPetalFlowerShop_EventScript_SellDecorations
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_ThisIsPrettyPetalFlowerShop, MSGBOX_DEFAULT
+	goto_if_set FLAG_MET_PRETTY_PETAL_SHOP_OWNER, PassoDiGiove_PrettyPetalFlowerShop_EventScript_AlreadyMet
+	setflag FLAG_MET_PRETTY_PETAL_SHOP_OWNER
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_IntroLearnAboutBerries, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, PassoDiGiove_PrettyPetalFlowerShop_EventScript_ExplainBerries
+	call_if_eq VAR_RESULT, NO, PassoDiGiove_PrettyPetalFlowerShop_EventScript_DontExplainBerries
+	release
+	end
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_AlreadyMet::
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_LearnAboutBerries, MSGBOX_YESNO
+	call_if_eq VAR_RESULT, YES, PassoDiGiove_PrettyPetalFlowerShop_EventScript_ExplainBerries
+	call_if_eq VAR_RESULT, NO, PassoDiGiove_PrettyPetalFlowerShop_EventScript_DontExplainBerries
+	release
+	end
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_ExplainBerries::
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_BerriesExplanation, MSGBOX_DEFAULT
+	return
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_DontExplainBerries::
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_FlowersBringHappiness, MSGBOX_DEFAULT
+	return
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_SellDecorations::
+	message gText_PlayerWhatCanIDoForYou
+	waitmessage
+	pokemartdecoration2 PassoDiGiove_PrettyPetalFlowerShop_Pokemart_Plants
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+PassoDiGiove_PrettyPetalFlowerShop_Pokemart_Plants:
+	.2byte DECOR_RED_PLANT
+	.2byte DECOR_TROPICAL_PLANT
+	.2byte DECOR_PRETTY_FLOWERS
+	.2byte DECOR_COLORFUL_PLANT
+	.2byte DECOR_BIG_PLANT
+	.2byte DECOR_GORGEOUS_PLANT
+	pokemartlistend
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_WailmerPailGirl::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, PassoDiGiove_PrettyPetalFlowerShop_EventScript_GiveWailmerPail
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_WailmerPailExplanation, MSGBOX_DEFAULT
+	release
+	end
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_GiveWailmerPail::
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_YouCanHaveThis, MSGBOX_DEFAULT
+	giveitem ITEM_WAILMER_PAIL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_WailmerPailExplanation, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_WAILMER_PAIL
+	release
+	end
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_RandomBerryGirl::
+	lock
+	faceplayer
+	dotimebasedevents
+	goto_if_set FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY, PassoDiGiove_PrettyPetalFlowerShop_EventScript_AlreadyReceivedBerry
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_ImGrowingFlowers, MSGBOX_DEFAULT
+	random 8
+	addvar VAR_RESULT, FIRST_BERRY_INDEX
+	giveitem VAR_RESULT
+	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
+	setflag FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_MachineMixesBerries, MSGBOX_DEFAULT
+	release
+	end
+
+PassoDiGiove_PrettyPetalFlowerShop_EventScript_AlreadyReceivedBerry::
+	msgbox PassoDiGiove_PrettyPetalFlowerShop_Text_MachineMixesBerries, MSGBOX_DEFAULT
+	release
+	end

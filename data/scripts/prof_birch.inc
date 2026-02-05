@@ -5,8 +5,8 @@ ProfBirch_EventScript_UpdateLocation::
 	call_if_eq VAR_BIRCH_STATE, 1, ProfBirch_EventScript_MoveToLab
 	call_if_eq VAR_BIRCH_STATE, 2, ProfBirch_EventScript_MoveToBoscoDeiLarici
 	call_if_eq VAR_BIRCH_STATE, 3, ProfBirch_EventScript_MoveToBoscoDeiLarici
-	call_if_eq VAR_BIRCH_STATE, 4, ProfBirch_EventScript_MoveToRoute103
-	call_if_eq VAR_BIRCH_STATE, 5, ProfBirch_EventScript_MoveToRoute103
+	call_if_eq VAR_BIRCH_STATE, 4, ProfBirch_EventScript_MoveToValleBassa
+	call_if_eq VAR_BIRCH_STATE, 5, ProfBirch_EventScript_MoveToValleBassa
 	call_if_eq VAR_BIRCH_STATE, 6, ProfBirch_EventScript_MoveToLab
 	call_if_eq VAR_BIRCH_STATE, 7, ProfBirch_EventScript_MoveToLab
 	return
@@ -15,18 +15,18 @@ ProfBirch_EventScript_MoveToLab::
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380
 	setflag FLAG_HIDE_ROUTE_101_BIRCH
-	setflag FLAG_HIDE_ROUTE_103_BIRCH
+	setflag FLAG_HIDE_VALLE_BASSA_BIRCH
 	return
 
 ProfBirch_EventScript_MoveToBoscoDeiLarici::
 	clearflag FLAG_HIDE_ROUTE_101_BIRCH
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380
-	setflag FLAG_HIDE_ROUTE_103_BIRCH
+	setflag FLAG_HIDE_VALLE_BASSA_BIRCH
 	return
 
-ProfBirch_EventScript_MoveToRoute103::
-	clearflag FLAG_HIDE_ROUTE_103_BIRCH
+ProfBirch_EventScript_MoveToValleBassa::
+	clearflag FLAG_HIDE_VALLE_BASSA_BIRCH
 	setflag FLAG_HIDE_ROUTE_101_BIRCH
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
 	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_UNKNOWN_0x380

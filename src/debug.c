@@ -1332,7 +1332,7 @@ static void DebugAction_DestroyExtraWindow(u8 taskId)
 static const u16 sLocationFlags[] =
 {
     FLAG_VISITED_PASCOLI_DEL_LAGO,
-    FLAG_VISITED_OLDALE_TOWN,
+    FLAG_VISITED_LUNGAVALLE,
     FLAG_VISITED_DEWFORD_TOWN,
     FLAG_VISITED_LAVARIDGE_TOWN,
     FLAG_VISITED_FALLARBOR_TOWN,
@@ -4240,7 +4240,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_VERDANTURF) \
     X(MUS_RUSTBORO) \
     X(MUS_POKE_CENTER) \
-    X(MUS_ROUTE104) \
+    X(MUS_PASSO_DI_GIOVE) \
     X(MUS_ROUTE119) \
     X(MUS_CYCLING) \
     X(MUS_POKE_MART) \

@@ -100,19 +100,19 @@ static const struct Landmark Landmark_AlteringCave = {LandmarkName_AlteringCave,
 static const struct Landmark Landmark_DesertUnderpass = {LandmarkName_DesertUnderpass, FLAG_LANDMARK_DESERT_UNDERPASS};
 static const struct Landmark Landmark_TrainerHill = {LandmarkName_TrainerHill, FLAG_LANDMARK_TRAINER_HILL};
 
-static const struct Landmark *const Landmarks_Route103_2[]  =
+static const struct Landmark *const Landmarks_ValleBassa_2[]  =
 {
     &Landmark_AlteringCave,
     NULL,
 };
 
-static const struct Landmark *const Landmarks_Route104_0[]  =
+static const struct Landmark *const Landmarks_PassoDiGiove_0[]  =
 {
     &Landmark_FlowerShop,
     NULL,
 };
 
-static const struct Landmark *const Landmarks_Route104_1[]  =
+static const struct Landmark *const Landmarks_PassoDiGiove_1[]  =
 {
     &Landmark_PetalburgWoods,
     &Landmark_MrBrineysCottage,
@@ -338,9 +338,9 @@ static const struct Landmark *const Landmarks_MtChimney_2[]  =
 
 static const struct LandmarkList sLandmarkLists[] =
 {
-    {MAPSEC_ROUTE_103, 2, Landmarks_Route103_2},
-    {MAPSEC_ROUTE_104, 0, Landmarks_Route104_0},
-    {MAPSEC_ROUTE_104, 1, Landmarks_Route104_1},
+    {MAPSEC_VALLE_BASSA, 2, Landmarks_ValleBassa_2},
+    {MAPSEC_PASSO_DI_GIOVE, 0, Landmarks_PassoDiGiove_0},
+    {MAPSEC_PASSO_DI_GIOVE, 1, Landmarks_PassoDiGiove_1},
     {MAPSEC_ROUTE_105, 0, Landmarks_Route105_0},
     {MAPSEC_ROUTE_106, 1, Landmarks_Route106_1},
     {MAPSEC_ROUTE_108, 0, Landmarks_Route108_0},

@@ -73,10 +73,10 @@
       "y": 43
     },
     {
-      "id": "HEAL_LOCATION_OLDALE_TOWN",
-      "map": "MAP_OLDALE_TOWN",
-      "x": 6,
-      "y": 8
+      "id": "HEAL_LOCATION_LUNGAVALLE",
+      "map": "MAP_LUNGAVALLE",
+      "x": 11,
+      "y": 7
     },
     {
       "id": "HEAL_LOCATION_DEWFORD_TOWN",

@@ -300,8 +300,8 @@
           }
         },
         {
-          "map": "MAP_ROUTE103",
-          "base_label": "gRoute103",
+          "map": "MAP_VALLE_BASSA",
+          "base_label": "gValleBassa",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [
@@ -454,8 +454,8 @@
           }
         },
         {
-          "map": "MAP_ROUTE104",
-          "base_label": "gRoute104",
+          "map": "MAP_PASSO_DI_GIOVE",
+          "base_label": "gPassoDiGiove",
           "land_mons": {
             "encounter_rate": 20,
             "mons": [

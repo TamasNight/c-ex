@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE105",
   "name": "Route105",
   "layout": "LAYOUT_ROUTE105",
-  "music": "MUS_ROUTE104",
+  "music": "MUS_PASSO_DI_GIOVE",
   "region_map_section": "MAPSEC_ROUTE_105",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -13,11 +13,6 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
-    {
-      "map": "MAP_ROUTE104",
-      "offset": 0,
-      "direction": "up"
-    },
     {
       "map": "MAP_ROUTE106",
       "offset": 0,

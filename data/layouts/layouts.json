@@ -102,14 +102,14 @@
       "blockdata_filepath": "data/layouts/LittlerootTown/map.bin"
     },
     {
-      "id": "LAYOUT_OLDALE_TOWN",
-      "name": "OldaleTown_Layout",
+      "id": "LAYOUT_LUNGAVALLE",
+      "name": "Lungavalle_Layout",
       "width": 46,
       "height": 21,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/OldaleTown/border.bin",
-      "blockdata_filepath": "data/layouts/OldaleTown/map.bin"
+      "border_filepath": "data/layouts/Lungavalle/border.bin",
+      "blockdata_filepath": "data/layouts/Lungavalle/map.bin"
     },
     {
       "id": "LAYOUT_DEWFORD_TOWN",
@@ -182,24 +182,24 @@
       "blockdata_filepath": "data/layouts/ValleFredda/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE103",
-      "name": "Route103_Layout",
+      "id": "LAYOUT_VALLE_BASSA",
+      "name": "ValleBassa_Layout",
       "width": 80,
       "height": 28,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/Route103/border.bin",
-      "blockdata_filepath": "data/layouts/Route103/map.bin"
+      "border_filepath": "data/layouts/ValleBassa/border.bin",
+      "blockdata_filepath": "data/layouts/ValleBassa/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE104",
-      "name": "Route104_Layout",
+      "id": "LAYOUT_PASSO_DI_GIOVE",
+      "name": "PassoDiGiove_Layout",
       "width": 40,
       "height": 80,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/Route104/border.bin",
-      "blockdata_filepath": "data/layouts/Route104/map.bin"
+      "border_filepath": "data/layouts/PassoDiGiove/border.bin",
+      "blockdata_filepath": "data/layouts/PassoDiGiove/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE105",
@@ -255,9 +255,9 @@
       "id": "LAYOUT_ROUTE110",
       "name": "Route110_Layout",
       "width": 40,
-      "height": 100,
+      "height": 72,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mauville",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route110/border.bin",
       "blockdata_filepath": "data/layouts/Route110/map.bin"
     },
@@ -1012,14 +1012,14 @@
       "blockdata_filepath": "data/layouts/FortreeCity_House2/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE104_MR_BRINEYS_HOUSE",
-      "name": "Route104_MrBrineysHouse_Layout",
+      "id": "LAYOUT_PASSO_DI_GIOVE_MR_BRINEYS_HOUSE",
+      "name": "PassoDiGiove_MrBrineysHouse_Layout",
       "width": 12,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/Route104_MrBrineysHouse/border.bin",
-      "blockdata_filepath": "data/layouts/Route104_MrBrineysHouse/map.bin"
+      "border_filepath": "data/layouts/PassoDiGiove_MrBrineysHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PassoDiGiove_MrBrineysHouse/map.bin"
     },
     {
       "id": "LAYOUT_LILYCOVE_CITY_LILYCOVE_MUSEUM_1F",
@@ -1162,14 +1162,14 @@
       "blockdata_filepath": "data/layouts/EverGrandeCity_ShortHall/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE104_PRETTY_PETAL_FLOWER_SHOP",
-      "name": "Route104_PrettyPetalFlowerShop_Layout",
+      "id": "LAYOUT_PASSO_DI_GIOVE_PRETTY_PETAL_FLOWER_SHOP",
+      "name": "PassoDiGiove_PrettyPetalFlowerShop_Layout",
       "width": 15,
       "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PrettyPetalFlowerShop",
-      "border_filepath": "data/layouts/Route104_PrettyPetalFlowerShop/border.bin",
-      "blockdata_filepath": "data/layouts/Route104_PrettyPetalFlowerShop/map.bin"
+      "border_filepath": "data/layouts/PassoDiGiove_PrettyPetalFlowerShop/border.bin",
+      "blockdata_filepath": "data/layouts/PassoDiGiove_PrettyPetalFlowerShop/map.bin"
     },
     {
       "id": "LAYOUT_CABLE_CAR_STATION",
@@ -2862,14 +2862,14 @@
       "blockdata_filepath": "data/layouts/VictoryRoad_B2F/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE104_PROTOTYPE",
-      "name": "Route104_Prototype_Layout",
+      "id": "LAYOUT_PASSO_DI_GIOVE_PROTOTYPE",
+      "name": "PassoDiGiove_Prototype_Layout",
       "width": 1,
       "height": 1,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
-      "border_filepath": "data/layouts/Route104_Prototype/border.bin",
-      "blockdata_filepath": "data/layouts/Route104_Prototype/map.bin"
+      "border_filepath": "data/layouts/PassoDiGiove_Prototype/border.bin",
+      "blockdata_filepath": "data/layouts/PassoDiGiove_Prototype/map.bin"
     },
     {
       "id": "LAYOUT_GRANITE_CAVE_STEVENS_ROOM",
